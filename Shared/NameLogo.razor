@@ -1,0 +1,28 @@
+﻿
+
+
+
+<button type="button" class="btn">
+<img @onclick="pictureClicked" src="@imageSource" />
+</button>
+
+
+@code {
+    String imageSource = "images/image11.png";
+    public int count= 0;
+    public List<String> images { get; set; } = new List<String>
+    {"images/image12.png", "images/image13.png",
+    "images/image14.png", "images/image15.png", 
+    "images/image11.png" };
+
+    public void pictureClicked()
+    {
+            if(count == 4){
+                count=0;
+            }else{
+                count ++;
+            }
+
+            imageSource = images[count];
+        }
+    }

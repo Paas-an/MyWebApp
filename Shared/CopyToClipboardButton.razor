@@ -3,10 +3,10 @@
 @inject ClippboardService ClippboardService
 
 
-<button class="@buttonData.ButtonClass btn-dark" disabled="@buttonData.IsDisabled" 
+<a class="@buttonData.ButtonClass  btn-primary" disabled="@buttonData.IsDisabled" 
         @onclick="CopyToClipboard">
     <i class="@buttonData.FontAwesomeClass"></i> @buttonData.ButtonText
-    </button> 
+    </a> 
 <br/><br />
 
 @code{
@@ -14,7 +14,7 @@
     private const string _infoButtonClass = "btn btn-info";
     private const string _errorButtonClass = "btn btn-danger";
 
-    private const string _copyToClipboardText = "Copy to clipboard";
+    private const string _copyToClipboardText = "Copy email to clipboard";
     private const string _copiedToClipboardText = "Copied to clipboard!";
     private const string _errorText = "Oops. Try again.";
 

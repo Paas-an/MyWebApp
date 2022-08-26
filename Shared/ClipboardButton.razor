@@ -1,0 +1,15 @@
+﻿@using webapp.Services
+
+@inject IClipboardService ClipboardService
+
+<button @onclick="OnClick" class="btn btn-primary">Copy to Clipboard</button>
+
+@code {
+    [Parameter]
+    public string TextToCopy { get; set; }
+
+    private async Task OnClick()
+    {
+        await ClipboardService.CopyToClipboard(TextToCopy);
+    }
+}

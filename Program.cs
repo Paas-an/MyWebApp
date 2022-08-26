@@ -8,5 +8,6 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddScoped<webapp.Services.ClippboardService>();
 await builder.Build().RunAsync();
+builder.Services.AddScoped<webapp.Services.IClipboardService, webapp.Services.ClipboardService>();
+

@@ -11,37 +11,37 @@ build_property.EnableTrimAnalyzer = true
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = webapp
 build_property.RootNamespace = webapp
-build_property.ProjectDir = c:\Users\Jolse\no\c#\prosjekter\homesite\webapp\
+build_property.ProjectDir = C:\Users\Jolse\no\c#\prosjekter\homesite\webapp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Jolse\no\c#\prosjekter\homesite\webapp
+build_property.MSBuildProjectDirectory = C:\Users\Jolse\no\c#\prosjekter\homesite\webapp
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/App.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Pages/Contact.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Pages/Contact.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Pages/Index.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Shared/MyLayout.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Shared/MyLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE15TGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Shared/NameLogo.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Shared/NameLogo.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hbWVMb2dvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Shared/NavBar.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/Shared/NavBar.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdkJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/_Imports.razor]
+[C:/Users/Jolse/no/c\#/prosjekter/homesite/webapp/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

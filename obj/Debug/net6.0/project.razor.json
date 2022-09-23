@@ -236,59 +236,6 @@
         }
       },
       {
-        "HashCode": 390281498,
-        "Kind": "Components.Component",
-        "Name": "webapp.Pages.Contact",
-        "AssemblyName": "webapp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Contact"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "ButtonText",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "ButtonText"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "webapp.Pages.Contact"
-        }
-      },
-      {
-        "HashCode": -433249476,
-        "Kind": "Components.Component",
-        "Name": "webapp.Pages.Contact",
-        "AssemblyName": "webapp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "webapp.Pages.Contact"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "ButtonText",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "ButtonText"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "webapp.Pages.Contact",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 386194371,
         "Kind": "Components.Component",
         "Name": "webapp.Pages.CTF",
@@ -354,6 +301,92 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "webapp.Pages.CTF",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1217929811,
+        "Kind": "Components.Component",
+        "Name": "webapp.Pages._6017aalesund",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "_6017aalesund"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.Pages._6017aalesund"
+        }
+      },
+      {
+        "HashCode": 1664726599,
+        "Kind": "Components.Component",
+        "Name": "webapp.Pages._6017aalesund",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "webapp.Pages._6017aalesund"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.Pages._6017aalesund",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 390281498,
+        "Kind": "Components.Component",
+        "Name": "webapp.Pages.Contact",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Contact"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ButtonText",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ButtonText"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.Pages.Contact"
+        }
+      },
+      {
+        "HashCode": -433249476,
+        "Kind": "Components.Component",
+        "Name": "webapp.Pages.Contact",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "webapp.Pages.Contact"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ButtonText",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ButtonText"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.Pages.Contact",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -13697,6 +13730,11 @@
     {
       "FilePath": "c:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\Shared\\NameLogo.razor",
       "TargetPath": "Shared\\NameLogo.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\Pages\\6017aalesund.razor",
+      "TargetPath": "Pages\\6017aalesund.razor",
       "FileKind": "component"
     },
     {

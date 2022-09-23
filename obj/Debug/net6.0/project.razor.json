@@ -8,39 +8,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 906658840,
-        "Kind": "Components.Component",
-        "Name": "webapp.App",
-        "AssemblyName": "webapp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "webapp.App"
-        }
-      },
-      {
-        "HashCode": 397805637,
-        "Kind": "Components.Component",
-        "Name": "webapp.App",
-        "AssemblyName": "webapp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "webapp.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "webapp.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -714162598,
         "Kind": "Components.Component",
         "Name": "webapp.Shared.MyLayout",
@@ -203,6 +170,39 @@
         }
       },
       {
+        "HashCode": 906658840,
+        "Kind": "Components.Component",
+        "Name": "webapp.App",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.App"
+        }
+      },
+      {
+        "HashCode": 397805637,
+        "Kind": "Components.Component",
+        "Name": "webapp.App",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "webapp.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 1209847091,
         "Kind": "Components.Component",
         "Name": "webapp.Pages.Index",
@@ -305,39 +305,6 @@
         }
       },
       {
-        "HashCode": 1217929811,
-        "Kind": "Components.Component",
-        "Name": "webapp.Pages._6017aalesund",
-        "AssemblyName": "webapp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "_6017aalesund"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "webapp.Pages._6017aalesund"
-        }
-      },
-      {
-        "HashCode": 1664726599,
-        "Kind": "Components.Component",
-        "Name": "webapp.Pages._6017aalesund",
-        "AssemblyName": "webapp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "webapp.Pages._6017aalesund"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "webapp.Pages._6017aalesund",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 390281498,
         "Kind": "Components.Component",
         "Name": "webapp.Pages.Contact",
@@ -387,6 +354,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "webapp.Pages.Contact",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1217929811,
+        "Kind": "Components.Component",
+        "Name": "webapp.Pages._6017aalesund",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "_6017aalesund"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.Pages._6017aalesund"
+        }
+      },
+      {
+        "HashCode": 1664726599,
+        "Kind": "Components.Component",
+        "Name": "webapp.Pages._6017aalesund",
+        "AssemblyName": "webapp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "webapp.Pages._6017aalesund"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "webapp.Pages._6017aalesund",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

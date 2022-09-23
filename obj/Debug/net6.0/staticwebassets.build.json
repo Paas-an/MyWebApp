@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4/KjF24v1RXZ4vIRFaUEvAqvWsfIyEipnwuRcLxMqag=",
+  "Hash": "xXOrguZz5yy8no2U7zkLd9yiJFCYav7DiPAQHL7ezvQ=",
   "Source": "webapp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7055,6 +7055,23 @@
       "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
+      "Identity": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\wwwroot\\images\\6017aalesund.png",
+      "SourceId": "webapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/6017aalesund.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6017aalesund.png"
+    },
+    {
       "Identity": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\wwwroot\\images\\image11.png",
       "SourceId": "webapp",
       "SourceType": "Discovered",
@@ -7104,23 +7121,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\image13.png"
-    },
-    {
-      "Identity": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\wwwroot\\images\\image14.png",
-      "SourceId": "webapp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "images/image14.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\image14.png"
     },
     {
       "Identity": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\wwwroot\\images\\image15.png",

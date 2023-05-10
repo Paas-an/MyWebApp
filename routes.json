@@ -1,11 +1,23 @@
+
 {
   "routes": [
     {
-      "route": "/*",
+      "route": "/",
+      "redirect": "/index.html"
+    },
+    {
+      "route": "/:path*",
       "rewrite": {
-        "host": "{*hostWithoutPrefix}",
+        "host": "www.{*hostWithoutPrefix}",
+        "path": "/{path}",
         "preserveUnmatchedPathAndQuery": true
       }
+    }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "NotFound",
+      "fallbackFilePath": "/index.html"
     }
   ]
 }

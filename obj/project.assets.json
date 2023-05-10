@@ -1762,24 +1762,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jolse\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jolse\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\webapp.csproj",
+      "projectUniqueName": "C:\\Users\\jolse\\Source\\Repos\\MyWebApp\\webapp.csproj",
       "projectName": "webapp",
-      "projectPath": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\webapp.csproj",
-      "packagesPath": "C:\\Users\\Jolse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jolse\\no\\c#\\prosjekter\\homesite\\webapp\\obj\\",
+      "projectPath": "C:\\Users\\jolse\\Source\\Repos\\MyWebApp\\webapp.csproj",
+      "packagesPath": "C:\\Users\\jolse\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jolse\\Source\\Repos\\MyWebApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Jolse\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\jolse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1829,7 +1824,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[6.0.11, 6.0.11]"
+            "version": "[6.0.16, 6.0.16]"
           }
         ],
         "frameworkReferences": {
@@ -1837,7 +1832,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

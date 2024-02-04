@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WGL/DuY9f4Ft16J1XM6CndCLqspcLKw7Hft8iF3kCXOvls8h7U5/zOBLRbGaG9d+MDpx/O45RgRiB11Q5nbftQ==",
+  "dgSpecHash": "bl2yHGaEbHGPSr6tIHIzGcY3oHxETPeevghesdCJYZMnWzU8++Eb2mw1HaEQp/UdU+Z0xeeZvKeki9m5uA8lbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jolse\\source\\repos\\MyWebApp\\webapp.csproj",
+  "projectFilePath": "C:\\Users\\jolse\\source\\repos\\MyWebApp\\MyWebApp\\webapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0\\microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.0\\microsoft.aspnetcore.components.6.0.0.nupkg.sha512",

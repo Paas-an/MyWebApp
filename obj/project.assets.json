@@ -1767,11 +1767,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jolse\\Source\\Repos\\MyWebApp\\webapp.csproj",
+      "projectUniqueName": "C:\\Users\\jolse\\source\\repos\\MyWebApp\\MyWebApp\\webapp.csproj",
       "projectName": "webapp",
-      "projectPath": "C:\\Users\\jolse\\Source\\Repos\\MyWebApp\\webapp.csproj",
+      "projectPath": "C:\\Users\\jolse\\source\\repos\\MyWebApp\\MyWebApp\\webapp.csproj",
       "packagesPath": "C:\\Users\\jolse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jolse\\Source\\Repos\\MyWebApp\\obj\\",
+      "outputPath": "C:\\Users\\jolse\\source\\repos\\MyWebApp\\MyWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jolse\\AppData\\Roaming\\NuGet\\NuGet.Config",

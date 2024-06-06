@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bl2yHGaEbHGPSr6tIHIzGcY3oHxETPeevghesdCJYZMnWzU8++Eb2mw1HaEQp/UdU+Z0xeeZvKeki9m5uA8lbA==",
+  "dgSpecHash": "j46z/JlbIxGnNokJ4OZ6jqscHFanTIDs639bjPSaRxze5EOgkV8O6G1ztgYJxgaGVXxPxDB9LfXito+obBTwIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jolse\\source\\repos\\MyWebApp\\MyWebApp\\webapp.csproj",
+  "projectFilePath": "C:\\Users\\jolse\\OneDrive\\Skrivebord\\web\\MyWebApp\\webapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0\\microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.0\\microsoft.aspnetcore.components.6.0.0.nupkg.sha512",
@@ -28,12 +28,15 @@
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.jsinterop\\6.0.0\\microsoft.jsinterop.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.0\\microsoft.jsinterop.webassembly.6.0.0.nupkg.sha512",
+    "C:\\Users\\jolse\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\jolse\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\jolse\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.1\\microsoft.net.sdk.webassembly.pack.8.0.1.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\system.io.pipelines\\6.0.0\\system.io.pipelines.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\jolse\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\jolse\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.16\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.16.nupkg.sha512"
+    "C:\\Users\\jolse\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.26\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

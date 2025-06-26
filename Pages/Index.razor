@@ -5,7 +5,7 @@
 <link href="https://bootswatch.com/vapor/bootstrap.min.css" rel="stylesheet" /> <!-- Added CSS link for Vapor theme -->
 
 <div class="container text-center">
-    <h1 class="display-4 text-lead">Jonas Skogtrø Olsen</h1> 
+    <h1 class="display-4 text-lead">Jonas</h1> 
     
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -44,6 +44,6 @@
                             targetDate = targetDate.AddYears(1); // If the date has passed this year, set it for next year
                         }
                         TimeSpan timeUntil = targetDate - DateTime.Now;
-                        return $"{timeUntil.Days} days, {timeUntil.Hours} hours, {timeUntil.Minutes} minutes";
+                        return $"{timeUntil.Days} dager";
                     }
                 }

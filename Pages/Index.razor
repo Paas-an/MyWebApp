@@ -11,8 +11,8 @@
             <div class="col-md-4">
                 <div class="card mb-4 bg-light vapor-card"> <!-- Added 'bg-light' class for background color and 'vapor-card' class for Vapor styling -->
                     <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title">Tid til Thea kommer hjem</h5>
+                        <p class="card-text">@GetTimeUntilJuly16()</p>
                     </div>
                 </div>
             </div>
@@ -34,5 +34,16 @@
                     private string GetTodaysDate()
                     {
                         return DateTime.Now.ToShortDateString();
+                    }
+                    
+                    private string GetTimeUntilJuly16()
+                    {
+                        DateTime targetDate = new DateTime(DateTime.Now.Year, 7, 16);
+                        if (targetDate < DateTime.Now)
+                        {
+                            targetDate = targetDate.AddYears(1); // If the date has passed this year, set it for next year
+                        }
+                        TimeSpan timeUntil = targetDate - DateTime.Now;
+                        return $"{timeUntil.Days} days, {timeUntil.Hours} hours, {timeUntil.Minutes} minutes";
                     }
                 }

@@ -7,11 +7,22 @@
 <div class="container text-center">
     <h1 class="display-4 text-lead">Jonas</h1> 
     
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light vapor-card"> <!-- Added 'bg-light' class for background color and 'vapor-card' class for Vapor styling -->
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
                         <div class="row justify-content-center">
                             <div class="col-md-4">
                                 <div class="card mb-4 bg-light vapor-card"> <!-- Added 'bg-light' class for background color and 'vapor-card' class for Vapor styling -->
                                     <div class="card-body">
-                                        <h5 class="card-title">Today's Date</h5>
+                                        <h5 class="card-title">Dato i dag/h5> >
                                         <p class="card-text">@GetTodaysDate()</p> <!-- Referencing the GetTodaysDate() function -->
                                     </div>
                                 </div>
@@ -26,4 +37,15 @@
                     }
                     
                 
+                    
+                    private string GetTimeUntilJuly16()
+                    {
+                        DateTime targetDate = new DateTime(DateTime.Now.Year, 7, 16);
+                        if (targetDate < DateTime.Now)
+                        {
+                            targetDate = targetDate.AddYears(1); // If the date has passed this year, set it for next year
+                        }
+                        TimeSpan timeUntil = targetDate - DateTime.Now;
+                        return $"{timeUntil.Days} dager";
+                    }
                 }

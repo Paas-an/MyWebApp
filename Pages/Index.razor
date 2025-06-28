@@ -38,14 +38,5 @@
                     
                 
                     
-                    private string GetTimeUntilJuly16()
-                    {
-                        DateTime targetDate = new DateTime(DateTime.Now.Year, 7, 16);
-                        if (targetDate < DateTime.Now)
-                        {
-                            targetDate = targetDate.AddYears(1); // If the date has passed this year, set it for next year
-                        }
-                        TimeSpan timeUntil = targetDate - DateTime.Now;
-                        return $"{timeUntil.Days} dager";
-                    }
+                
                 }

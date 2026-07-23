@@ -20,7 +20,7 @@ jobs:
     name: Build and Deploy Job
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: true
       - name: Set up .NET
@@ -47,6 +47,21 @@ jobs:
           output_location: ""
           skip_app_build: true
           ###### End of Repository/Build Configurations ######
+      - name: Smoke test production routes
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          for route in / /contact; do
+            curl \
+              --fail \
+              --silent \
+              --show-error \
+              --retry 6 \
+              --retry-all-errors \
+              --retry-delay 10 \
+              "https://delightful-beach-06032ef10.7.azurestaticapps.net${route}" \
+              > /dev/null
+          done
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

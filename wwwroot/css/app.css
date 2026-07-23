@@ -2,7 +2,8 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    
+    background: #f8fafc;
+    color: #172033;
 }
 
 h1:focus {
@@ -20,7 +21,146 @@ a, .btn-link {
 }
 
 .content {
-    padding-top: 1.1rem;
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+}
+
+.site-nav {
+    align-items: center;
+    background: #101827;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    padding: 1rem max(1rem, calc((100% - 1140px) / 2));
+}
+
+.site-brand,
+.site-nav-link {
+    color: #f8fafc;
+    text-decoration: none;
+}
+
+.site-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.site-nav-links {
+    display: flex;
+    gap: .5rem;
+}
+
+.site-nav-link {
+    border-radius: .5rem;
+    padding: .5rem .75rem;
+}
+
+.site-nav-link:hover,
+.site-nav-link:focus-visible,
+.site-nav-link.active {
+    background: #26344d;
+    color: #fff;
+}
+
+.hero {
+    max-width: 760px;
+    padding: 4rem 0 3rem;
+}
+
+.hero h1,
+.contact-intro h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 750;
+    letter-spacing: -.04em;
+    line-height: 1;
+}
+
+.hero-eyebrow,
+.contact-card-label {
+    color: #52617a;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.hero-lead,
+.contact-intro p {
+    color: #52617a;
+    font-size: 1.25rem;
+    margin: 1.5rem 0;
+    max-width: 680px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.home-status {
+    background: #fff;
+    border: 1px solid #dbe2ea;
+    border-radius: 1rem;
+    max-width: 760px;
+    padding: 2rem;
+}
+
+.contact-page {
+    max-width: 960px;
+}
+
+.contact-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #fff;
+    border: 1px solid #dbe2ea;
+    border-radius: 1rem;
+    color: #172033;
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+    padding: 1.5rem;
+    text-decoration: none;
+}
+
+a.contact-card:hover,
+a.contact-card:focus-visible {
+    border-color: #0d6efd;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 10%);
+    color: #172033;
+    transform: translateY(-2px);
+}
+
+.contact-card strong {
+    font-size: 1.2rem;
+    margin: auto 0 .5rem;
+}
+
+.clipboard-status {
+    min-height: 1.5rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+    .site-nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .content {
+        padding-top: 1.5rem;
+    }
+
+    .hero {
+        padding-top: 2rem;
+    }
 }
 
 .valid.modified:not([type=checkbox]) {

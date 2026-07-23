@@ -1,42 +1,36 @@
 @page "/"
+@using System.Globalization
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Jonas Skogtrø Olsen</PageTitle>
 
-<link href="https://bootswatch.com/vapor/bootstrap.min.css" rel="stylesheet" /> <!-- Added CSS link for Vapor theme -->
+<section class="hero" aria-labelledby="hero-title">
+    <p class="hero-eyebrow">Utvikler · Norge</p>
+    <h1 id="hero-title">Hei, jeg er Jonas.</h1>
+    <p class="hero-lead">
+        Jeg bygger og utforsker løsninger med .NET, Blazor og moderne
+        webteknologi.
+    </p>
+    <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="/contact">Ta kontakt</a>
+        <a class="btn btn-outline-secondary btn-lg"
+           href="https://github.com/Paas-an"
+           target="_blank"
+           rel="noopener noreferrer">Se GitHub-profil</a>
+    </div>
+</section>
 
-<div class="container text-center">
-    <h1 class="display-4 text-lead">Jonas Har Nettside</h1> 
-    
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light vapor-card"> <!-- Added 'bg-light' class for background color and 'vapor-card' class for Vapor styling -->
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Content</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="card mb-4 bg-light vapor-card"> <!-- Added 'bg-light' class for background color and 'vapor-card' class for Vapor styling -->
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dato i dag</h5>
-                                        <p class="card-text">@GetTodaysDate()</p> <!-- Referencing the GetTodaysDate() function -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<section class="home-status" aria-labelledby="status-title">
+    <h2 id="status-title">Nettsiden er under utvikling</h2>
+    <p>
+        Porteføljen bygges ut trinnvis. I mellomtiden finner du kontaktinformasjon,
+        GitHub, LinkedIn og CV på kontaktsiden.
+    </p>
+    <p class="text-secondary mb-0">Sist besøkt: @GetTodaysDate()</p>
+</section>
 
-                @code {
-                    private string GetTodaysDate()
-                    {
-                        return DateTime.Now.ToShortDateString();
-                    }
-                    
-                
-                    
-                
-                }
+@code {
+    private static string GetTodaysDate()
+    {
+        return DateTime.Now.ToString("d. MMMM yyyy", CultureInfo.GetCultureInfo("nb-NO"));
+    }
+}

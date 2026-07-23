@@ -1,14 +1,9 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
-<div class="page">
-	<div class="sidebar">
-		<NavBar/>
-</div>
+<header>
+    <NavBar />
+</header>
 
-
-<div class="container">
-	<div class="content rem-1 ">
-		@Body
-	</div>
-	</div>
-</div>
+<main class="container content" id="main-content">
+    @Body
+</main>

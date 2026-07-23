@@ -23,63 +23,63 @@ a, .btn-link {
 
 .btn-primary {
     color: #fff;
-    background: linear-gradient(135deg, #176fbe, #278de0);
-    border-color: #5bb9ff;
+    background: linear-gradient(135deg, #087a42, #16a65d);
+    border-color: #43e28b;
     box-shadow:
-        0 0 0 1px rgb(53 167 255 / 18%),
-        0 6px 16px rgb(23 111 190 / 22%);
+        0 0 0 1px rgb(40 217 121 / 18%),
+        0 6px 16px rgb(8 122 66 / 22%);
     text-shadow: 0 1px 2px rgb(23 20 44 / 45%);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-    background: linear-gradient(135deg, #1a7ccc, #319cf0);
-    border-color: #83caff;
+    background: linear-gradient(135deg, #098a4a, #1ab969);
+    border-color: #72eca8;
     box-shadow:
-        0 0 0 2px rgb(53 167 255 / 18%),
-        0 0 18px rgb(53 167 255 / 28%),
-        0 8px 20px rgb(23 111 190 / 24%);
+        0 0 0 2px rgb(40 217 121 / 18%),
+        0 0 18px rgb(40 217 121 / 28%),
+        0 8px 20px rgb(8 122 66 / 24%);
     color: #fff;
     transform: translateY(-1px);
 }
 
 .btn-outline-primary {
     background: rgb(255 255 255 / 72%);
-    border-color: rgb(23 111 190 / 55%);
-    color: #155f9f;
+    border-color: rgb(8 122 66 / 55%);
+    color: #08703d;
     box-shadow:
-        inset 0 0 0 1px rgb(53 167 255 / 8%),
-        0 4px 12px rgb(53 167 255 / 9%);
+        inset 0 0 0 1px rgb(40 217 121 / 8%),
+        0 4px 12px rgb(40 217 121 / 9%);
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus-visible {
-    background: #f7fdff;
-    border-color: var(--neon-blue);
+    background: #f5fff9;
+    border-color: var(--neon-green);
     box-shadow:
-        0 0 0 2px rgb(53 167 255 / 14%),
-        0 0 16px rgb(53 167 255 / 22%);
-    color: #104f75;
+        0 0 0 2px rgb(40 217 121 / 14%),
+        0 0 16px rgb(40 217 121 / 22%);
+    color: #075b33;
     transform: translateY(-1px);
 }
 
 .btn-outline-secondary {
     background: rgb(255 255 255 / 78%);
-    border-color: rgb(205 156 0 / 65%);
-    color: #715800;
+    border-color: rgb(184 34 59 / 65%);
+    color: #9d2539;
     box-shadow:
-        inset 0 0 0 1px rgb(255 212 59 / 10%),
-        0 4px 12px rgb(255 212 59 / 11%);
+        inset 0 0 0 1px rgb(255 59 92 / 10%),
+        0 4px 12px rgb(255 59 92 / 11%);
 }
 
 .btn-outline-secondary:hover,
 .btn-outline-secondary:focus-visible {
-    background: #fffdf3;
-    border-color: var(--neon-yellow);
+    background: #fff7f8;
+    border-color: var(--neon-red);
     box-shadow:
-        0 0 0 2px rgb(255 212 59 / 16%),
-        0 0 16px rgb(255 212 59 / 24%);
-    color: #5d4900;
+        0 0 0 2px rgb(255 59 92 / 16%),
+        0 0 16px rgb(255 59 92 / 24%);
+    color: #842033;
     transform: translateY(-1px);
 }
 

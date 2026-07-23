@@ -6,6 +6,14 @@ html, body {
     color: #172033;
 }
 
+:root {
+    --neon-blue: #42c9ff;
+    --neon-blue-dark: #136a9a;
+    --neon-violet: #a855f7;
+    --neon-pink: #e55cff;
+    --neon-ink: #17142c;
+}
+
 h1:focus {
     outline: none;
 }
@@ -16,8 +24,58 @@ a, .btn-link {
 
 .btn-primary {
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    background: linear-gradient(135deg, #7048d8, #a43ad1);
+    border-color: #bd63ed;
+    box-shadow:
+        0 0 0 1px rgb(229 92 255 / 18%),
+        0 6px 16px rgb(112 72 216 / 22%);
+    text-shadow: 0 1px 2px rgb(23 20 44 / 45%);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: linear-gradient(135deg, #7d52e5, #b541df);
+    border-color: #d185f5;
+    box-shadow:
+        0 0 0 2px rgb(229 92 255 / 18%),
+        0 0 18px rgb(229 92 255 / 28%),
+        0 8px 20px rgb(112 72 216 / 24%);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-outline-secondary,
+.btn-outline-primary {
+    background: rgb(255 255 255 / 72%);
+    border-color: rgb(19 106 154 / 55%);
+    color: #185d87;
+    box-shadow:
+        inset 0 0 0 1px rgb(66 201 255 / 8%),
+        0 4px 12px rgb(66 201 255 / 9%);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus-visible,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus-visible {
+    background: #f7fdff;
+    border-color: var(--neon-blue);
+    box-shadow:
+        0 0 0 2px rgb(66 201 255 / 14%),
+        0 0 16px rgb(66 201 255 / 22%);
+    color: #104f75;
+    transform: translateY(-1px);
+}
+
+.btn {
+    border-radius: .7rem;
+    font-weight: 650;
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
 }
 
 .content {
@@ -60,7 +118,14 @@ a, .btn-link {
 .site-nav-link:focus-visible,
 .site-nav-link.active {
     background: #26344d;
+    box-shadow:
+        inset 0 0 0 1px rgb(66 201 255 / 16%),
+        0 0 14px rgb(66 201 255 / 10%);
     color: #fff;
+}
+
+.site-nav-link.active {
+    border-bottom: 1px solid rgb(66 201 255 / 80%);
 }
 
 .hero {
@@ -132,8 +197,11 @@ a, .btn-link {
 
 a.contact-card:hover,
 a.contact-card:focus-visible {
-    border-color: #0d6efd;
-    box-shadow: 0 8px 24px rgb(15 23 42 / 10%);
+    border-color: rgb(168 85 247 / 58%);
+    box-shadow:
+        0 0 0 1px rgb(229 92 255 / 8%),
+        0 0 18px rgb(168 85 247 / 12%),
+        0 8px 24px rgb(15 23 42 / 10%);
     color: #172033;
     transform: translateY(-2px);
 }
@@ -160,6 +228,20 @@ a.contact-card:focus-visible {
 
     .hero {
         padding-top: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .contact-card {
+        transition: none;
+    }
+
+    .btn:hover,
+    .btn:focus-visible,
+    a.contact-card:hover,
+    a.contact-card:focus-visible {
+        transform: none;
     }
 }
 

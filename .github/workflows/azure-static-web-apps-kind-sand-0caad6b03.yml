@@ -1,5 +1,9 @@
 name: Azure Static Web Apps CI/CD
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   push:
     branches:
@@ -15,9 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out repository
+        uses: actions/checkout@v4
         with:
           submodules: true
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Publish
+        run: dotnet publish --configuration Release --no-build
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -27,9 +42,10 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "." # App source code path
+          app_location: "bin/Release/net10.0/publish/wwwroot"
           api_location: "" # Api source code path - optional
-          output_location: "wwwroot" # Built app content directory - optional
+          output_location: ""
+          skip_app_build: true
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:

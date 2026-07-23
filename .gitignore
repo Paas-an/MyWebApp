@@ -1,0 +1,31 @@
+## Build output
+bin/
+obj/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+## JetBrains
+.idea/
+*.sln.iml
+
+## Test and coverage output
+TestResults/
+coverage/
+coverage.*
+
+## Local configuration and secrets
+.env
+.env.*
+appsettings.*.local.json
+
+## Operating-system files
+.DS_Store
+Thumbs.db

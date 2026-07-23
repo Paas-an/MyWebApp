@@ -1,6 +1,5 @@
 @page "/thea"
-
-<link href="https://bootswatch.com/vapor/bootstrap.min.css" rel="stylesheet" />
+@implements IDisposable
 
 <style>
     .countdown-container {
@@ -52,7 +51,7 @@
 <div class="container text-center">
     <div class="countdown-container">
         <h1 class="countdown-title">Hun kommer hjem</h1>
-        <p>16. juli 2025</p>
+        <p>@TargetDate.ToString("d. MMMM yyyy", NorwegianCulture)</p>
         
         <div class="time-grid">
             <div class="time-box">
@@ -63,6 +62,14 @@
                 <span class="time-number">@GetHoursUntilJuly16()</span>
                 <div class="time-label">Timer</div>
             </div>
+            <div class="time-box">
+                <span class="time-number">@Remaining.Minutes</span>
+                <div class="time-label">Minutter</div>
+            </div>
+            <div class="time-box">
+                <span class="time-number">@Remaining.Seconds</span>
+                <div class="time-label">Sekunder</div>
+            </div>
         </div>
         
         <div class="today-date">
@@ -72,38 +79,61 @@
 </div>
 
 @code {
+    private static readonly System.Globalization.CultureInfo NorwegianCulture =
+        new("nb-NO");
+
+    private System.Threading.Timer? timer;
+    private DateTime TargetDate { get; set; }
+    private TimeSpan Remaining { get; set; }
+
+    protected override void OnInitialized()
+    {
+        TargetDate = GetNextJuly16(DateTime.Now);
+        UpdateRemaining();
+        timer = new System.Threading.Timer(
+            _ => InvokeAsync(() =>
+            {
+                UpdateRemaining();
+                StateHasChanged();
+            }),
+            null,
+            TimeSpan.FromSeconds(1),
+            TimeSpan.FromSeconds(1));
+    }
+
     private string GetTodaysDate()
     {
-        return DateTime.Now.ToString("d. MMMM yyyy", new System.Globalization.CultureInfo("da-DK"));
+        return DateTime.Now.ToString("d. MMMM yyyy", NorwegianCulture);
     }
-    
-    private TimeSpan GetTimeUntilJuly16()
+
+    private static DateTime GetNextJuly16(DateTime now)
     {
-        DateTime targetDate = new DateTime(2025, 7, 16);
-        if (targetDate < DateTime.Now)
-        {
-            targetDate = targetDate.AddYears(1);
-        }
-        return targetDate - DateTime.Now;
+        var targetDate = new DateTime(now.Year, 7, 16);
+        return targetDate > now ? targetDate : targetDate.AddYears(1);
     }
-    
+
+    private void UpdateRemaining()
+    {
+        Remaining = TargetDate - DateTime.Now;
+        if (Remaining < TimeSpan.Zero)
+        {
+            TargetDate = GetNextJuly16(DateTime.Now);
+            Remaining = TargetDate - DateTime.Now;
+        }
+    }
+
     private int GetDaysUntilJuly16()
     {
-        return Math.Max(0, GetTimeUntilJuly16().Days);
+        return Math.Max(0, Remaining.Days);
     }
-    
+
     private int GetHoursUntilJuly16()
     {
-        return Math.Max(0, GetTimeUntilJuly16().Hours);
+        return Math.Max(0, Remaining.Hours);
     }
-    
-    private int GetMinutesUntilJuly16()
+
+    public void Dispose()
     {
-        return Math.Max(0, GetTimeUntilJuly16().Minutes);
-    }
-    
-    private int GetSecondsUntilJuly16()
-    {
-        return Math.Max(0, GetTimeUntilJuly16().Seconds);
+        timer?.Dispose();
     }
 }

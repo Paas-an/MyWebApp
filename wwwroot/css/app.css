@@ -134,14 +134,25 @@ a, .btn-link {
 .site-nav-link:focus-visible,
 .site-nav-link.active {
     background: #26344d;
-    box-shadow:
-        inset 0 0 0 1px rgb(53 167 255 / 16%),
-        0 0 14px rgb(53 167 255 / 10%);
     color: #fff;
 }
 
-.site-nav-link.active {
-    border-bottom: 1px solid rgb(53 167 255 / 80%);
+.site-nav-link:nth-child(1):hover,
+.site-nav-link:nth-child(1):focus-visible,
+.site-nav-link:nth-child(1).active {
+    border-bottom: 1px solid rgb(40 217 121 / 85%);
+    box-shadow:
+        inset 0 0 0 1px rgb(40 217 121 / 18%),
+        0 0 14px rgb(40 217 121 / 14%);
+}
+
+.site-nav-link:nth-child(2):hover,
+.site-nav-link:nth-child(2):focus-visible,
+.site-nav-link:nth-child(2).active {
+    border-bottom: 1px solid rgb(255 59 92 / 85%);
+    box-shadow:
+        inset 0 0 0 1px rgb(255 59 92 / 18%),
+        0 0 14px rgb(255 59 92 / 14%);
 }
 
 .hero {

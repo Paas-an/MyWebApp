@@ -7,11 +7,10 @@ html, body {
 }
 
 :root {
-    --neon-blue: #42c9ff;
-    --neon-blue-dark: #136a9a;
-    --neon-violet: #a855f7;
-    --neon-pink: #e55cff;
-    --neon-ink: #17142c;
+    --neon-red: #ff3b5c;
+    --neon-green: #28d979;
+    --neon-blue: #35a7ff;
+    --neon-yellow: #ffd43b;
 }
 
 h1:focus {
@@ -24,46 +23,63 @@ a, .btn-link {
 
 .btn-primary {
     color: #fff;
-    background: linear-gradient(135deg, #7048d8, #a43ad1);
-    border-color: #bd63ed;
+    background: linear-gradient(135deg, #176fbe, #278de0);
+    border-color: #5bb9ff;
     box-shadow:
-        0 0 0 1px rgb(229 92 255 / 18%),
-        0 6px 16px rgb(112 72 216 / 22%);
+        0 0 0 1px rgb(53 167 255 / 18%),
+        0 6px 16px rgb(23 111 190 / 22%);
     text-shadow: 0 1px 2px rgb(23 20 44 / 45%);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-    background: linear-gradient(135deg, #7d52e5, #b541df);
-    border-color: #d185f5;
+    background: linear-gradient(135deg, #1a7ccc, #319cf0);
+    border-color: #83caff;
     box-shadow:
-        0 0 0 2px rgb(229 92 255 / 18%),
-        0 0 18px rgb(229 92 255 / 28%),
-        0 8px 20px rgb(112 72 216 / 24%);
+        0 0 0 2px rgb(53 167 255 / 18%),
+        0 0 18px rgb(53 167 255 / 28%),
+        0 8px 20px rgb(23 111 190 / 24%);
     color: #fff;
     transform: translateY(-1px);
 }
 
-.btn-outline-secondary,
 .btn-outline-primary {
     background: rgb(255 255 255 / 72%);
-    border-color: rgb(19 106 154 / 55%);
-    color: #185d87;
+    border-color: rgb(23 111 190 / 55%);
+    color: #155f9f;
     box-shadow:
-        inset 0 0 0 1px rgb(66 201 255 / 8%),
-        0 4px 12px rgb(66 201 255 / 9%);
+        inset 0 0 0 1px rgb(53 167 255 / 8%),
+        0 4px 12px rgb(53 167 255 / 9%);
 }
 
-.btn-outline-secondary:hover,
-.btn-outline-secondary:focus-visible,
 .btn-outline-primary:hover,
 .btn-outline-primary:focus-visible {
     background: #f7fdff;
     border-color: var(--neon-blue);
     box-shadow:
-        0 0 0 2px rgb(66 201 255 / 14%),
-        0 0 16px rgb(66 201 255 / 22%);
+        0 0 0 2px rgb(53 167 255 / 14%),
+        0 0 16px rgb(53 167 255 / 22%);
     color: #104f75;
+    transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+    background: rgb(255 255 255 / 78%);
+    border-color: rgb(205 156 0 / 65%);
+    color: #715800;
+    box-shadow:
+        inset 0 0 0 1px rgb(255 212 59 / 10%),
+        0 4px 12px rgb(255 212 59 / 11%);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus-visible {
+    background: #fffdf3;
+    border-color: var(--neon-yellow);
+    box-shadow:
+        0 0 0 2px rgb(255 212 59 / 16%),
+        0 0 16px rgb(255 212 59 / 24%);
+    color: #5d4900;
     transform: translateY(-1px);
 }
 
@@ -119,13 +135,13 @@ a, .btn-link {
 .site-nav-link.active {
     background: #26344d;
     box-shadow:
-        inset 0 0 0 1px rgb(66 201 255 / 16%),
-        0 0 14px rgb(66 201 255 / 10%);
+        inset 0 0 0 1px rgb(53 167 255 / 16%),
+        0 0 14px rgb(53 167 255 / 10%);
     color: #fff;
 }
 
 .site-nav-link.active {
-    border-bottom: 1px solid rgb(66 201 255 / 80%);
+    border-bottom: 1px solid rgb(53 167 255 / 80%);
 }
 
 .hero {
@@ -197,13 +213,32 @@ a, .btn-link {
 
 a.contact-card:hover,
 a.contact-card:focus-visible {
-    border-color: rgb(168 85 247 / 58%);
-    box-shadow:
-        0 0 0 1px rgb(229 92 255 / 8%),
-        0 0 18px rgb(168 85 247 / 12%),
-        0 8px 24px rgb(15 23 42 / 10%);
     color: #172033;
     transform: translateY(-2px);
+}
+
+.contact-card:nth-child(1):hover,
+.contact-card:nth-child(1):focus-visible {
+    border-color: rgb(255 59 92 / 62%);
+    box-shadow: 0 0 18px rgb(255 59 92 / 15%), 0 8px 24px rgb(15 23 42 / 10%);
+}
+
+.contact-card:nth-child(2):hover,
+.contact-card:nth-child(2):focus-visible {
+    border-color: rgb(40 217 121 / 62%);
+    box-shadow: 0 0 18px rgb(40 217 121 / 15%), 0 8px 24px rgb(15 23 42 / 10%);
+}
+
+.contact-card:nth-child(3):hover,
+.contact-card:nth-child(3):focus-visible {
+    border-color: rgb(53 167 255 / 62%);
+    box-shadow: 0 0 18px rgb(53 167 255 / 15%), 0 8px 24px rgb(15 23 42 / 10%);
+}
+
+.contact-card:nth-child(4):hover,
+.contact-card:nth-child(4):focus-within {
+    border-color: rgb(255 212 59 / 72%);
+    box-shadow: 0 0 18px rgb(255 212 59 / 17%), 0 8px 24px rgb(15 23 42 / 10%);
 }
 
 .contact-card strong {

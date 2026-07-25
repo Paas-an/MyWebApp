@@ -1,0 +1,38 @@
+name: Production availability
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check public routes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for url in \
+            "https://www.olsenjonas.no/" \
+            "https://www.olsenjonas.no/contact" \
+            "https://www.olsenjonas.no/robots.txt" \
+            "https://www.olsenjonas.no/sitemap.xml" \
+            "https://delightful-beach-06032ef10.7.azurestaticapps.net/"; do
+            curl \
+              --fail \
+              --location \
+              --silent \
+              --show-error \
+              --retry 3 \
+              --retry-all-errors \
+              --retry-delay 10 \
+              --max-time 30 \
+              "$url" \
+              > /dev/null
+          done

@@ -33,3 +33,15 @@ Pushes to `main` and pull requests targeting `main` are validated by GitHub
 Actions. Successful builds are deployed to Azure Static Web Apps. The
 `AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_SAND_0CAAD6B03` repository secret must be
 configured for deployment.
+
+## Site contracts and monitoring
+
+Run the lightweight SEO and routing contract checks with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./tests/SiteContracts.ps1
+```
+
+GitHub Actions checks the production routes after each deployment and every six
+hours. The scheduled workflow only performs HTTP availability checks and does
+not add client-side tracking or collect visitor data.

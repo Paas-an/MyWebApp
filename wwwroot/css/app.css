@@ -257,6 +257,96 @@ a.contact-card:focus-visible {
     margin: auto 0 .5rem;
 }
 
+.thea-page {
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+.thea-message,
+.countdown-container {
+    border-radius: 1.25rem;
+    padding: clamp(2rem, 6vw, 4rem);
+}
+
+.thea-message {
+    background:
+        radial-gradient(circle at top, rgb(255 59 92 / 10%), transparent 55%),
+        #fff;
+    border: 1px solid rgb(255 59 92 / 38%);
+    box-shadow:
+        0 0 24px rgb(255 59 92 / 10%),
+        0 16px 40px rgb(15 23 42 / 8%);
+}
+
+.thea-message h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 750;
+    letter-spacing: -.04em;
+    line-height: 1;
+    margin: 1rem auto;
+    max-width: 720px;
+}
+
+.thea-lead {
+    color: #52617a;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    margin: 1.5rem auto 0;
+    max-width: 620px;
+}
+
+.thea-heart {
+    color: var(--neon-red);
+    display: inline-block;
+    filter: drop-shadow(0 0 8px rgb(255 59 92 / 45%));
+    font-size: 2rem;
+    margin-top: 1.25rem;
+}
+
+.countdown-container {
+    background: #101827;
+    border: 1px solid rgb(40 217 121 / 35%);
+    box-shadow: 0 0 22px rgb(40 217 121 / 10%);
+    color: #f8fafc;
+    margin-top: 1.5rem;
+}
+
+.countdown-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: .75rem;
+}
+
+.time-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 2rem;
+}
+
+.time-box {
+    background: #18243a;
+    border: 1px solid rgb(40 217 121 / 24%);
+    border-radius: .85rem;
+    padding: 1.25rem .75rem;
+}
+
+.time-number {
+    display: block;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 750;
+}
+
+.time-label {
+    color: #b9c6d9;
+    font-size: .9rem;
+    margin-top: .35rem;
+}
+
+.today-date {
+    color: #b9c6d9;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
 .clipboard-status {
     min-height: 1.5rem;
     margin-top: 1rem;
@@ -274,6 +364,10 @@ a.contact-card:focus-visible {
 
     .hero {
         padding-top: 2rem;
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 

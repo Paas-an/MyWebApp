@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /thea
+
+Sitemap: https://www.olsenjonas.no/sitemap.xml

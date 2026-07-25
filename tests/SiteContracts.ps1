@@ -44,6 +44,13 @@ Assert-Contains $contactPage 'property="og:title"' "contact page must have Open 
 
 Assert-Contains $privatePage 'noindex, nofollow' "/thea is intentionally public but must not be indexed"
 Assert-Contains $privatePage 'Den fineste jenta i verden' "/thea must contain the intentional personal message"
+Assert-Contains $privatePage 'images/thea/strand.jpeg' "/thea must contain the beach photo"
+Assert-Contains $privatePage 'images/thea/sammen.jpeg' "/thea must contain the photo of Thea and Jonas together"
+foreach ($imagePath in @("wwwroot/images/thea/strand.jpeg", "wwwroot/images/thea/sammen.jpeg")) {
+    if (-not (Test-Path -LiteralPath (Join-Path $repositoryRoot $imagePath) -PathType Leaf)) {
+        throw "Contract failed: referenced image does not exist: $imagePath"
+    }
+}
 if ($privatePage.IndexOf("<style>", [StringComparison]::OrdinalIgnoreCase) -ge 0) {
     throw "Contract failed: /thea styles must use the shared design system"
 }

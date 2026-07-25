@@ -287,11 +287,30 @@ a.contact-card:focus-visible {
     max-width: 720px;
 }
 
-.thea-lead {
-    color: #52617a;
-    font-size: clamp(1.15rem, 3vw, 1.5rem);
-    margin: 1.5rem auto 0;
-    max-width: 620px;
+.thea-gallery {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 2rem auto 0;
+    max-width: 720px;
+}
+
+.thea-gallery figure {
+    background: #101827;
+    border: 1px solid rgb(255 59 92 / 35%);
+    border-radius: 1rem;
+    box-shadow: 0 0 18px rgb(255 59 92 / 12%);
+    margin: 0;
+    overflow: hidden;
+}
+
+.thea-gallery img {
+    aspect-ratio: 3 / 4;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    object-position: center 65%;
+    width: 100%;
 }
 
 .thea-heart {
@@ -368,6 +387,10 @@ a.contact-card:focus-visible {
 
     .time-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .thea-gallery {
+        grid-template-columns: 1fr;
     }
 }
 

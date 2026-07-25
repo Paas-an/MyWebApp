@@ -6,58 +6,20 @@
     <meta name="robots" content="noindex, nofollow" />
 </HeadContent>
 
-<style>
-    .countdown-container {
-        background: #6c757d;
-        border-radius: 15px;
-        padding: 3rem 2rem;
-        margin: 2rem auto;
-        max-width: 800px;
-        color: white;
-    }
-    
-    .countdown-title {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
-    
-    .time-grid {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-    
-    .time-box {
-        background:rgb(83, 93, 123);
-        border-radius: 10px;
-        padding: 1.5rem;
-        text-align: center;
-        min-width: 120px;
-    }
-    
-    .time-number {
-        font-size: 2.5rem;
-        font-weight: bold;
-        display: block;
-    }
-    
-    .time-label {
-        font-size: 1rem;
-        margin-top: 0.5rem;
-    }
-    
-    .today-date {
-        margin-top: 2rem;
-        font-size: 1.2rem;
-    }
-</style>
+<section class="thea-page text-center" aria-labelledby="thea-title">
+    <div class="thea-message">
+        <p class="hero-eyebrow">Til Thea</p>
+        <h1 id="thea-title">Den fineste jenta i verden</h1>
+        <p class="thea-lead">
+            Hun er den fineste jenta i verden, med et stort hjerte.
+        </p>
+        <span class="thea-heart" aria-hidden="true">♥</span>
+    </div>
 
-<div class="container text-center">
-    <div class="countdown-container">
-        <h1 class="countdown-title">Hun kommer hjem</h1>
+    <div class="countdown-container" aria-labelledby="countdown-title">
+        <h2 class="countdown-title" id="countdown-title">Hun kommer hjem</h2>
         <p>@TargetDate.ToString("d. MMMM yyyy", NorwegianCulture)</p>
-        
+
         <div class="time-grid">
             <div class="time-box">
                 <span class="time-number">@GetDaysUntilJuly16()</span>
@@ -81,7 +43,7 @@
             I dag: @GetTodaysDate()
         </div>
     </div>
-</div>
+</section>
 
 @code {
     private static readonly System.Globalization.CultureInfo NorwegianCulture =

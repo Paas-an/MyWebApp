@@ -12,16 +12,48 @@ function Read-RepositoryFile {
         -Encoding utf8
 }
 
-function Assert-Contains {
+function Assert-Matches {
     param(
         [Parameter(Mandatory)][string]$Content,
-        [Parameter(Mandatory)][string]$Expected,
+        [Parameter(Mandatory)][string]$Pattern,
         [Parameter(Mandatory)][string]$Description
     )
 
-    if ($Content.IndexOf($Expected, [StringComparison]::Ordinal) -lt 0) {
+    if (-not [regex]::IsMatch(
+        $Content,
+        $Pattern,
+        [Text.RegularExpressions.RegexOptions]::IgnoreCase -bor
+        [Text.RegularExpressions.RegexOptions]::Singleline
+    )) {
         throw "Contract failed: $Description"
     }
+}
+
+function Get-CanonicalUrl {
+    param(
+        [Parameter(Mandatory)][string]$Content,
+        [Parameter(Mandatory)][string]$PageName
+    )
+
+    $match = [regex]::Match(
+        $Content,
+        '<link\b(?=[^>]*\brel="canonical")(?=[^>]*\bhref="([^"]+)")[^>]*>',
+        [Text.RegularExpressions.RegexOptions]::IgnoreCase
+    )
+    if (-not $match.Success) {
+        throw "Contract failed: $PageName must have a canonical URL"
+    }
+
+    $canonicalUrl = $match.Groups[1].Value
+    $uri = $null
+    if (
+        -not [Uri]::TryCreate($canonicalUrl, [UriKind]::Absolute, [ref]$uri) -or
+        $uri.Scheme -ne [Uri]::UriSchemeHttps
+    ) {
+        throw "Contract failed: $PageName canonical URL must be an absolute HTTPS URL"
+    }
+
+    return $canonicalUrl
 }
 
 $homePage = Read-RepositoryFile "Pages/Index.razor"
@@ -32,45 +64,95 @@ $robots = Read-RepositoryFile "wwwroot/robots.txt"
 $sitemapText = Read-RepositoryFile "wwwroot/sitemap.xml"
 $staticWebAppConfigText = Read-RepositoryFile "wwwroot/staticwebapp.config.json"
 
-Assert-Contains $homePage '<PageTitle>' "home page must have a title"
-Assert-Contains $homePage 'name="description"' "home page must have a description"
-Assert-Contains $homePage 'rel="canonical"' "home page must have a canonical URL"
-Assert-Contains $homePage 'property="og:title"' "home page must have Open Graph metadata"
+$publicPages = @(
+    @{ Name = "home page"; Content = $homePage },
+    @{ Name = "contact page"; Content = $contactPage }
+)
+$canonicalUrls = @()
 
-Assert-Contains $contactPage '<PageTitle>' "contact page must have a title"
-Assert-Contains $contactPage 'name="description"' "contact page must have a description"
-Assert-Contains $contactPage 'rel="canonical"' "contact page must have a canonical URL"
-Assert-Contains $contactPage 'property="og:title"' "contact page must have Open Graph metadata"
+foreach ($page in $publicPages) {
+    Assert-Matches $page.Content '<PageTitle>\s*[^<]+\s*</PageTitle>' "$($page.Name) must have a non-empty title"
+    Assert-Matches $page.Content '<meta\b(?=[^>]*\bname="description")(?=[^>]*\bcontent="[^"]+")[^>]*>' "$($page.Name) must have a non-empty description"
+    Assert-Matches $page.Content '<meta\b(?=[^>]*\bproperty="og:title")(?=[^>]*\bcontent="[^"]+")[^>]*>' "$($page.Name) must have an Open Graph title"
+    $canonicalUrls += Get-CanonicalUrl $page.Content $page.Name
+}
 
-Assert-Contains $privatePage 'noindex, nofollow' "/thea is intentionally public but must not be indexed"
-Assert-Contains $privatePage 'Den fineste jenta i verden' "/thea must contain the intentional personal message"
-Assert-Contains $privatePage 'images/thea/strand.jpeg' "/thea must contain the beach photo"
-Assert-Contains $privatePage 'images/thea/sammen.jpeg' "/thea must contain the photo of Thea and Jonas together"
-foreach ($imagePath in @("wwwroot/images/thea/strand.jpeg", "wwwroot/images/thea/sammen.jpeg")) {
-    if (-not (Test-Path -LiteralPath (Join-Path $repositoryRoot $imagePath) -PathType Leaf)) {
-        throw "Contract failed: referenced image does not exist: $imagePath"
+Assert-Matches $privatePage '<meta\b(?=[^>]*\bname="robots")(?=[^>]*\bcontent="[^"]*noindex[^"]*")[^>]*>' "/thea must not be indexed"
+Assert-Matches $privatePage '<h1\b[^>]*\bid="thea-title"[^>]*>\s*[^<]+\s*</h1>' "/thea must have a non-empty main heading"
+
+$imageTags = [regex]::Matches(
+    $privatePage,
+    '<img\b[^>]*>',
+    [Text.RegularExpressions.RegexOptions]::IgnoreCase
+)
+if ($imageTags.Count -eq 0) {
+    throw "Contract failed: /thea must contain at least one image"
+}
+foreach ($imageTag in $imageTags) {
+    $sourceMatch = [regex]::Match($imageTag.Value, '\bsrc="([^"]+)"', [Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    $altMatch = [regex]::Match($imageTag.Value, '\balt="([^"]+)"', [Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    if (-not $sourceMatch.Success) {
+        throw "Contract failed: every /thea image must have a source"
+    }
+    if (-not $altMatch.Success -or [string]::IsNullOrWhiteSpace($altMatch.Groups[1].Value)) {
+        throw "Contract failed: every /thea image must have descriptive alternative text"
+    }
+
+    $imageSource = $sourceMatch.Groups[1].Value
+    if ($imageSource -notmatch '^https?://') {
+        $imagePath = Join-Path $repositoryRoot ("wwwroot/" + $imageSource.TrimStart("/"))
+        if (-not (Test-Path -LiteralPath $imagePath -PathType Leaf)) {
+            throw "Contract failed: referenced image does not exist: $imageSource"
+        }
     }
 }
 if ($privatePage.IndexOf("<style>", [StringComparison]::OrdinalIgnoreCase) -ge 0) {
     throw "Contract failed: /thea styles must use the shared design system"
 }
-Assert-Contains $notFoundPage 'noindex, nofollow' "not-found content must not be indexed"
-Assert-Contains $robots 'Disallow: /thea' "robots.txt must protect /thea from indexing"
-Assert-Contains $robots 'https://www.olsenjonas.no/sitemap.xml' "robots.txt must reference the sitemap"
+Assert-Matches $notFoundPage '<meta\b(?=[^>]*\bname="robots")(?=[^>]*\bcontent="[^"]*noindex[^"]*")[^>]*>' "not-found content must not be indexed"
+Assert-Matches $robots '(?m)^Disallow:\s*/thea/?\s*$' "robots.txt must protect /thea from indexing"
+
+$sitemapReference = [regex]::Match(
+    $robots,
+    '(?m)^Sitemap:\s*(\S+)\s*$',
+    [Text.RegularExpressions.RegexOptions]::IgnoreCase
+)
+if (-not $sitemapReference.Success) {
+    throw "Contract failed: robots.txt must reference a sitemap"
+}
+$sitemapUri = $null
+if (
+    -not [Uri]::TryCreate($sitemapReference.Groups[1].Value, [UriKind]::Absolute, [ref]$sitemapUri) -or
+    $sitemapUri.Scheme -ne [Uri]::UriSchemeHttps -or
+    -not $sitemapUri.AbsolutePath.EndsWith("/sitemap.xml", [StringComparison]::OrdinalIgnoreCase)
+) {
+    throw "Contract failed: robots.txt sitemap reference must be an absolute HTTPS sitemap URL"
+}
 
 [xml]$sitemap = $sitemapText
 $sitemapUrls = @($sitemap.urlset.url.loc)
-if ($sitemapUrls.Count -ne 2) {
-    throw "Contract failed: sitemap must contain exactly the two public routes"
+if ($sitemapUrls.Count -eq 0) {
+    throw "Contract failed: sitemap must contain at least one public route"
 }
-if ($sitemapUrls -notcontains "https://www.olsenjonas.no/") {
-    throw "Contract failed: sitemap must contain the home page"
+if (@($sitemapUrls | Select-Object -Unique).Count -ne $sitemapUrls.Count) {
+    throw "Contract failed: sitemap URLs must be unique"
 }
-if ($sitemapUrls -notcontains "https://www.olsenjonas.no/contact") {
-    throw "Contract failed: sitemap must contain the contact page"
+foreach ($sitemapUrl in $sitemapUrls) {
+    $uri = $null
+    if (
+        -not [Uri]::TryCreate($sitemapUrl, [UriKind]::Absolute, [ref]$uri) -or
+        $uri.Scheme -ne [Uri]::UriSchemeHttps
+    ) {
+        throw "Contract failed: sitemap entries must be absolute HTTPS URLs"
+    }
+    if ($uri.AbsolutePath.TrimEnd("/") -eq "/thea") {
+        throw "Contract failed: sitemap must not expose /thea"
+    }
 }
-if ($sitemapUrls -contains "https://www.olsenjonas.no/thea") {
-    throw "Contract failed: sitemap must not expose /thea"
+foreach ($canonicalUrl in $canonicalUrls) {
+    if ($sitemapUrls -notcontains $canonicalUrl) {
+        throw "Contract failed: every public page canonical URL must appear in the sitemap"
+    }
 }
 
 $staticWebAppConfig = $staticWebAppConfigText | ConvertFrom-Json

@@ -36,6 +36,11 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Publish
         run: dotnet publish --configuration Release --no-build
+      - name: Publish and validate static SEO metadata
+        shell: pwsh
+        run: |
+          ./scripts/PublishSeo.ps1 -PublishedRoot ./bin/Release/net10.0/publish/wwwroot
+          ./tests/SeoMetadata.ps1 -PublishedRoot ./bin/Release/net10.0/publish/wwwroot
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

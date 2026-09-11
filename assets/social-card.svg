@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101827"/>
+  <rect x="72" y="80" width="64" height="6" rx="3" fill="#28d979"/>
+  <text x="72" y="146" fill="#b9c6d9" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">UTVIKLER · NORGE</text>
+  <text x="68" y="269" fill="#f8fafc" font-family="Arial, sans-serif" font-size="76" font-weight="700">Jonas Skogtrø Olsen</text>
+  <text x="72" y="346" fill="#b9c6d9" font-family="Arial, sans-serif" font-size="32">.NET, Blazor og moderne webteknologi.</text>
+  <path d="M72 440H1128" stroke="#26344d" stroke-width="2"/>
+  <text x="72" y="525" fill="#28d979" font-family="Arial, sans-serif" font-size="30" font-weight="700">olsenjonas.no</text>
+  <text x="1128" y="525" text-anchor="end" fill="#b9c6d9" font-family="Arial, sans-serif" font-size="24">Portefølje &amp; kontakt</text>
+</svg>

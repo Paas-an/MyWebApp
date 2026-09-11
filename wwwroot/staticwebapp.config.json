@@ -1,7 +1,6 @@
 {
   "routes": [
     { "route": "/contact", "rewrite": "/contact.html" },
-    { "route": "/contact/", "rewrite": "/contact.html" },
     { "route": "/contact.html", "redirect": "/contact", "statusCode": 301 }
   ],
   "navigationFallback": {

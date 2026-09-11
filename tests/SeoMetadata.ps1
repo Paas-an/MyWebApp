@@ -22,11 +22,12 @@ function Get-Meta([string]$Html, [string]$Key) {
 }
 
 $config = Get-Content -Raw -LiteralPath (Join-Path $PublishedRoot 'staticwebapp.config.json') | ConvertFrom-Json
-foreach ($route in @('/contact', '/contact/')) {
-    $rule = @($config.routes | Where-Object route -eq $route)
-    Assert-Equal $rule.Count 1 "A unique rule must serve $route"
-    Assert-Equal $rule[0].rewrite '/contact.html' "$route must serve contact metadata without JavaScript"
-}
+# Azure normalizes a trailing slash before detecting duplicate route rules.
+$normalizedRoutes = @($config.routes | ForEach-Object { $_.route.TrimEnd('/') })
+Assert-Equal @($normalizedRoutes | Select-Object -Unique).Count $normalizedRoutes.Count 'Azure routes must be unique after trailing-slash normalization'
+$contactRule = @($config.routes | Where-Object route -eq '/contact')
+Assert-Equal $contactRule.Count 1 'A unique rule must serve the contact route'
+Assert-Equal $contactRule[0].rewrite '/contact.html' 'The contact route must serve metadata without JavaScript'
 
 $pages = @(
     @{ File = 'index.html'; Source = 'Pages/Index.razor'; Url = 'https://www.olsenjonas.no/' },

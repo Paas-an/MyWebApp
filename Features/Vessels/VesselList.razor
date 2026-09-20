@@ -22,22 +22,29 @@
             {
                 var key = $"{Category}-{vessel.Id}";
                 var expanded = openVessels.Contains(vessel.Id);
-                <li class="vessel-item" @key="vessel.Id">
+                var pinkGlow = vessel.Id == PinkGlowVesselId;
+                <li class="vessel-item @(pinkGlow ? "vessel-item--pink" : null) @(expanded ? "is-expanded" : null)" @key="vessel.Id">
                     <button class="vessel-toggle" type="button"
                             aria-expanded="@(expanded ? "true" : "false")"
                             aria-controls="@($"history-{key}")" @onclick="() => Toggle(vessel.Id)">
                         <span class="vessel-identity">
-                            <span class="vessel-name">@vessel.Name</span>
+                            <span class="vessel-title">
+                                <span class="vessel-name">@vessel.Name</span>
+                                @if (pinkGlow && expanded)
+                                {
+                                    <span class="vessel-heart" aria-hidden="true">♥</span>
+                                }
+                            </span>
                             @if (ShowInfo)
                             {
                                 <span class="vessel-info">
-                                    @vessel.Entries.Count @(IsUnloading ? (vessel.Entries.Count == 1 ? "lossing" : "lossinger") : "oppdrag")
+                                    <span>@vessel.Entries.Count @(IsUnloading ? (vessel.Entries.Count == 1 ? "lossing" : "lossinger") : "oppdrag")</span>
                                     @if (IsUnloading)
                                     {
-                                        <span> · @(vessel.TotalTonnes is { } total ? $"{FormatTonnes(total)} tonn totalt" : "Tonn ikke registrert")</span>
+                                        <span class="vessel-weight-summary">@(vessel.TotalTonnes is { } total ? $"{FormatTonnes(total)} tonn totalvekt" : "Tonn ikke registrert")</span>
                                         @if (vessel.HasExcludedWeights)
                                         {
-                                            <span> · ufullstendig vektgrunnlag</span>
+                                            <span class="vessel-weight-caution">Ufullstendig vektgrunnlag</span>
                                         }
                                     }
                                 </span>
@@ -55,7 +62,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Dato om bord</th>
-                                    <th scope="col" class="@(IsUnloading ? "vessel-tonnes" : "")">@(IsUnloading ? "Tonn" : "Arbeidsbeskrivelse")</th>
+                                    <th scope="col" class="@(IsUnloading ? "vessel-tonnes" : "")">@(IsUnloading ? "" : "Arbeidsbeskrivelse")</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,7 +100,7 @@
         </ul>
         @if (IsUnloading)
         {
-            <p class="vessel-footnote">Tonn gjelder registrert last.</p>
+            <p class="vessel-footnote">All vekt opgitt i tonn.</p>
         }
     }
 </section>
@@ -107,6 +114,8 @@
     [Parameter] public bool SortDescending { get; set; }
 
     private readonly HashSet<string> openVessels = [];
+    // Presentation-only accent; the history and imported data stay independent.
+    private const string PinkGlowVesselId = "fangstdata-2013062792";
     private static readonly CultureInfo Norwegian = CultureInfo.GetCultureInfo("nb-NO");
     private static readonly StringComparer NameComparer = StringComparer.Create(Norwegian, true);
     private bool IsUnloading => Category == "unloading";

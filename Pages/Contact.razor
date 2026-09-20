@@ -19,43 +19,43 @@
     <div class="contact-intro">
         <p class="hero-eyebrow">Kontakt</p>
         <h1 id="contact-title">Min kontaktinformasjon</h1>
-        <p>
+        <p class="contact-lead">
             Du finner meg på GitHub, LinkedIn og via e-post. 
         </p>
     </div>
 
     <div class="contact-grid">
-        <a class="contact-card"
+        <a class="contact-card contact-card--github"
            href="https://github.com/Paas-an"
            target="_blank"
            rel="noopener noreferrer">
             <span class="contact-card-label">GitHub</span>
             <strong>Min profil</strong>
-            <span>github.com/Paas-an</span>
+            <span class="contact-card-detail">github.com/Paas-an</span>
         </a>
 
-        <a class="contact-card"
+        <a class="contact-card contact-card--linkedin"
            href="https://www.linkedin.com/in/jonas-skogtr%C3%B8-olsen-6a2397167/"
            target="_blank"
            rel="noopener noreferrer">
             <span class="contact-card-label">LinkedIn</span>
             <strong>Min profil</strong>
-            <span>Jonas Skogtrø Olsen</span>
+            <span class="contact-card-detail">Jonas Skogtrø Olsen</span>
         </a>
 
-        <a class="contact-card"
+        <a class="contact-card contact-card--cv"
            href="https://drive.google.com/file/d/1HqqwA0tYgKgEucA-czPKoEd4eTtTI9SR/view?usp=sharing"
            target="_blank"
            rel="noopener noreferrer">
             <span class="contact-card-label">CV</span>
             <strong>Åpne CV</strong>
-            <span>Åpnes i ny fane</span>
+            <span class="contact-card-detail">Åpnes i ny fane</span>
         </a>
 
-        <div class="contact-card">
+        <div class="contact-card contact-card--email">
             <span class="contact-card-label">E-post</span>
             <strong>jolsenskogtro@gmail.com</strong>
-            <button class="btn btn-outline-primary mt-3"
+            <button class="btn btn-outline-primary contact-copy"
                     type="button"
                     @onclick="CopyEmailAsync">
                 Kopier e-postadresse

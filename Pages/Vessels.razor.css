@@ -2,12 +2,99 @@
 .vessels-intro h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 750; letter-spacing: -.04em; }
 .vessels-intro p { color: #52617a; font-size: 1.125rem; }
 .vessels-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
-.vessels-sort, .vessels-info-control { min-height: 44px; background: #fff; color: #172033; border-radius: .6rem; padding: .5rem .75rem; }
-.vessels-sort { border: 1px solid var(--neon-yellow); }
-.vessels-sort:hover, .vessels-sort:focus-visible { box-shadow: 0 0 18px rgb(255 212 59 / 22%); }
-.vessels-info-control { display: inline-flex; align-items: center; gap: .5rem; margin: 0; border: 1px solid var(--neon-red); }
-.vessels-info-control:has(input:checked) { border-color: var(--neon-blue); box-shadow: 0 0 18px rgb(53 167 255 / 15%); }
-.vessels-info-control:hover, .vessels-info-control:focus-within { box-shadow: 0 0 18px rgb(255 59 92 / 15%); }
-.vessels-info-control input { width: 18px; height: 18px; margin: 0; accent-color: #0071c1; }
-.vessels-switch-state { color: #52617a; font-size: .875rem; min-width: 20px; }
+.vessels-sort,
+.vessels-info-control,
+.vessels-retry {
+    min-height: 44px;
+    padding: .55rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--control-accent) 35%, #fff);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--control-accent);
+    font: inherit;
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 4%);
+    transition: box-shadow 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.vessels-sort { --control-accent: #126397; }
+.vessels-retry { --control-accent: #08703d; }
+.vessels-info-control {
+    --control-accent: #52617a;
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.vessels-info-control:has(input:checked) { --control-accent: #08683c; }
+.vessels-sort:hover,
+.vessels-sort:focus-visible,
+.vessels-retry:hover,
+.vessels-retry:focus-visible,
+.vessels-info-control:hover,
+.vessels-info-control:focus-within,
+.vessels-info-control:has(input:checked) {
+    background: color-mix(in srgb, var(--control-accent) 5%, #fff);
+    border-color: color-mix(in srgb, var(--control-accent) 65%, #fff);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--control-accent) 8%, transparent);
+}
+
+.vessels-sort:focus-visible,
+.vessels-retry:focus-visible { outline: 2px solid #172033; outline-offset: 4px; }
+.vessels-info-control input {
+    appearance: none;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 1.375rem;
+    margin: 0;
+    border: 1px solid #8190a5;
+    border-radius: 1rem;
+    background: #8190a5;
+    cursor: pointer;
+}
+
+.vessels-info-control input::before {
+    content: "";
+    display: block;
+    width: .875rem;
+    height: .875rem;
+    margin: 3px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 18%);
+    transition: transform 160ms ease;
+}
+
+.vessels-info-control:has(input:checked) {
+    background: #eaf9f0;
+    border-color: #28b76a;
+    box-shadow: 0 0 0 2px rgb(40 183 106 / 10%);
+}
+.vessels-info-control input:checked { background: #087a42; border-color: #087a42; }
+.vessels-info-control input:checked::before { transform: translateX(1.125rem); }
+.vessels-info-control input:focus-visible { outline: 2px solid #126397; outline-offset: 3px; }
+.vessels-switch-state {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    padding: .25rem .5rem;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #475569;
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.vessels-info-control:has(input:checked) .vessels-switch-state { background: #087a42; color: #fff; }
 .vessels-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+@media (prefers-reduced-motion: reduce) {
+    .vessels-sort,
+    .vessels-info-control,
+    .vessels-retry,
+    .vessels-info-control input::before { transition: none; }
+}

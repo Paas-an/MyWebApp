@@ -1,0 +1,171 @@
+.contact-page {
+    width: 100%;
+}
+
+.contact-intro h1 {
+    color: #172033;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -.035em;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.contact-intro .hero-eyebrow {
+    margin: 0 0 1rem;
+}
+
+.contact-lead {
+    color: #52617a;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 1rem 0 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    --card-text: color-mix(in srgb, rgb(var(--card-neon)) 45%, #172033);
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    min-width: 0;
+    min-height: 220px;
+    padding: 1.5rem;
+    background: #fff;
+    color: var(--card-text);
+    border: 1px solid rgb(var(--card-neon));
+    border-radius: .75rem;
+    box-shadow:
+        0 0 3px rgba(var(--card-neon), .3),
+        0 0 16px rgba(var(--card-neon), .1);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition:
+        background-color 160ms ease,
+        box-shadow 160ms ease,
+        text-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+.contact-card--github {
+    --card-neon: 255, 59, 92;
+}
+
+.contact-card--linkedin {
+    --card-neon: 40, 217, 121;
+}
+
+.contact-card--cv {
+    --card-neon: 53, 167, 255;
+}
+
+.contact-card--email {
+    --card-neon: 255, 212, 59;
+}
+
+.contact-card:hover,
+.contact-card:focus-within {
+    color: var(--card-text);
+    background: color-mix(in srgb, rgb(var(--card-neon)) 3%, #fff);
+    text-shadow:
+        0 0 1px rgba(var(--card-neon), .3),
+        0 0 9px rgba(var(--card-neon), .5);
+    box-shadow:
+        0 0 4px rgba(var(--card-neon), .75),
+        0 0 22px rgba(var(--card-neon), .35),
+        inset 0 0 16px rgba(var(--card-neon), .06);
+}
+
+a.contact-card:hover {
+    transform: translateY(-2px);
+}
+
+a.contact-card:focus-visible {
+    outline: 2px solid #172033;
+    outline-offset: 4px;
+}
+
+.contact-card-label {
+    margin-bottom: .5rem;
+    color: inherit;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.contact-card strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.contact-card-detail {
+    margin-top: auto;
+    color: inherit;
+    line-height: 1.5;
+}
+
+.contact-copy {
+    width: 100%;
+    min-height: 44px;
+    margin-top: auto;
+    padding: .5rem .75rem;
+    line-height: 1.4;
+    color: inherit;
+    background: transparent;
+    border-color: rgb(var(--card-neon));
+    box-shadow: 0 0 8px rgba(var(--card-neon), .12);
+    text-shadow: inherit;
+}
+
+.contact-copy:hover,
+.contact-copy:focus-visible {
+    color: inherit;
+    background: rgba(var(--card-neon), .12);
+    border-color: rgb(var(--card-neon));
+    box-shadow:
+        0 0 3px rgba(var(--card-neon), .65),
+        0 0 14px rgba(var(--card-neon), .3);
+}
+
+.clipboard-status {
+    min-height: 1.5rem;
+    margin-top: 1rem;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 1199.98px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .contact-card {
+        min-height: 180px;
+        padding: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-card {
+        transition: none;
+    }
+
+    a.contact-card:hover {
+        transform: none;
+    }
+}

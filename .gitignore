@@ -31,3 +31,6 @@ appsettings.*.local.json
 ## Operating-system files
 .DS_Store
 Thumbs.db
+
+## Excel lock files
+~$*.xlsx

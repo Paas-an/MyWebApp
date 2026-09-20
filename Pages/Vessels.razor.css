@@ -2,7 +2,6 @@
 .vessels-intro h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 750; letter-spacing: -.04em; }
 .vessels-intro p { color: #52617a; font-size: 1.125rem; }
 .vessels-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
-.vessels-sort,
 .vessels-info-control,
 .vessels-retry {
     min-height: 44px;
@@ -17,7 +16,6 @@
     transition: box-shadow 160ms ease, border-color 160ms ease, background-color 160ms ease;
 }
 
-.vessels-sort { --control-accent: #126397; }
 .vessels-retry { --control-accent: #08703d; }
 .vessels-info-control {
     --control-accent: #52617a;
@@ -29,8 +27,6 @@
 }
 
 .vessels-info-control:has(input:checked) { --control-accent: #08683c; }
-.vessels-sort:hover,
-.vessels-sort:focus-visible,
 .vessels-retry:hover,
 .vessels-retry:focus-visible,
 .vessels-info-control:hover,
@@ -41,7 +37,6 @@
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--control-accent) 8%, transparent);
 }
 
-.vessels-sort:focus-visible,
 .vessels-retry:focus-visible { outline: 2px solid #172033; outline-offset: 4px; }
 .vessels-info-control input {
     appearance: none;
@@ -90,10 +85,8 @@
     text-transform: uppercase;
 }
 .vessels-info-control:has(input:checked) .vessels-switch-state { background: #087a42; color: #fff; }
-.vessels-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 
 @media (prefers-reduced-motion: reduce) {
-    .vessels-sort,
     .vessels-info-control,
     .vessels-retry,
     .vessels-info-control input::before { transition: none; }

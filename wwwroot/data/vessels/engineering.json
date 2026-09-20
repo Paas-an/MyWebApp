@@ -1,5 +1,188 @@
 {
   "schemaVersion": 1,
   "category": "engineering",
-  "vessels": []
+  "vessels": [
+    {
+      "id": "engineering-vessel-3013a7098089a3cb53b9",
+      "name": "Barholm",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-59cabb87ae7ff9933214",
+          "periods": [
+            {
+              "start": "2026-09-16",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "REM",
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-2aff9a171dd8561a4d01",
+      "name": "Benjaco",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-42f68c19aee57e744f15",
+          "periods": [
+            {
+              "start": "2026-09-15",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "skjermer og gyro",
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-763c3c774926a8fb9d72",
+      "name": "MS Freøy Viking",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-6edbdb2a69eea5de71ba",
+          "periods": [
+            {
+              "start": "2026-06-16",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kamera",
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-036470f1126a272f4aa8",
+      "name": "MV Atlantic",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-3dbdd2fbf046a3ca78cf",
+          "periods": [
+            {
+              "start": "2026-08-07",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kabling av SSAS",
+          "sourceUrls": []
+        },
+        {
+          "id": "engineering-job-490b75dbf65288f72f2b",
+          "periods": [
+            {
+              "start": "2026-08-05",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kabling av SSAS",
+          "sourceUrls": []
+        },
+        {
+          "id": "engineering-job-746cceeb07d3bd8043b1",
+          "periods": [
+            {
+              "start": "2026-08-04",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kabling av SSAS",
+          "sourceUrls": []
+        },
+        {
+          "id": "engineering-job-35445d7ac7a204f0644b",
+          "periods": [
+            {
+              "start": "2026-07-09",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kabling av SSAS",
+          "sourceUrls": []
+        },
+        {
+          "id": "engineering-job-849cf37113d867f260c8",
+          "periods": [
+            {
+              "start": "2026-06-17",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kabling av SSAS",
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-08d5073b5ce2c5e362ec",
+      "name": "MV Scotia",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-678ebc264aff4d251e0c",
+          "periods": [
+            {
+              "start": "2026-08-25",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kompass",
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-ff2750fa686714e50cb8",
+      "name": "Skipsholmen",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-300b1d4942bd975975af",
+          "periods": [
+            {
+              "start": "2026-06-22",
+              "end": "2026-06-26"
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": "Kamera og rem",
+          "sourceUrls": []
+        }
+      ]
+    }
+  ]
 }

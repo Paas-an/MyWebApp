@@ -4,6 +4,12 @@
 <section class="vessel-section vessel-section--@Category" aria-labelledby="@HeadingId">
     <div class="vessel-section-heading">
         <h2 id="@HeadingId">@Title</h2>
+        @if (ShowInfo && !IsUnloading && Vessels.Count > 0)
+        {
+            <span class="badge rounded-pill vessel-total" title="Totalt antall ingeniøroppdrag">
+                @Vessels.Sum(vessel => vessel.Entries.Count) oppdrag
+            </span>
+        }
         @if (ShowInfo && IsUnloading && TotalTonnes is { } totalTonnes)
         {
             <span class="badge rounded-pill vessel-total" title="Totalt losset, inkludert estimerte mengder.">
@@ -38,10 +44,19 @@
                             @if (ShowInfo)
                             {
                                 <span class="vessel-info">
-                                    <span>@vessel.Entries.Count @(IsUnloading ? (vessel.Entries.Count == 1 ? "lossing" : "lossinger") : "oppdrag")</span>
+                                    <span class="badge rounded-pill vessel-work-count"><strong>@vessel.Entries.Count</strong> @(IsUnloading ? (vessel.Entries.Count == 1 ? "lossing" : "lossinger") : "oppdrag")</span>
                                     @if (IsUnloading)
                                     {
-                                        <span class="vessel-weight-summary">@(vessel.TotalTonnes is { } total ? $"{FormatTonnes(total)} tonn totalvekt" : "Tonn ikke registrert")</span>
+                                        <span class="vessel-weight-summary">
+                                            @if (vessel.TotalTonnes is { } total)
+                                            {
+                                                <strong>@FormatTonnes(total)</strong><span> tonn totalvekt</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Tonn ikke registrert</span>
+                                            }
+                                        </span>
                                         @if (vessel.HasExcludedWeights)
                                         {
                                             <span class="vessel-weight-caution">Ufullstendig vektgrunnlag</span>
@@ -88,7 +103,7 @@
                                         }
                                         else
                                         {
-                                            <td>@entry.Description</td>
+                                            <td>@(string.IsNullOrWhiteSpace(entry.Description) ? "Ikke registrert" : entry.Description)</td>
                                         }
                                     </tr>
                                 }

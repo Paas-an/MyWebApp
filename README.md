@@ -48,6 +48,32 @@ GitHub Actions checks the production routes after each deployment and every six
 hours. The scheduled workflow only performs HTTP availability checks and does
 not add client-side tracking or collect visitor data.
 
+## Visitor analytics
+
+Cloudflare Web Analytics is loaded once from `wwwroot/index.html` using the
+site's public beacon token. `PublishSeo.ps1` also includes the snippet in the
+generated home and contact HTML shells. Cloudflare's default SPA measurement
+tracks client-side navigation; no extra Blazor page-view handler is needed.
+
+View the site's reports in **Cloudflare dashboard > Web Analytics** for
+`www.olsenjonas.no`. Reports include aggregate visits, page views, popular
+paths, and browser performance. Visits are not a count of unique people or
+identified user sessions. This snippet does not provide application exception
+monitoring; the existing availability workflow remains responsible for HTTP
+uptime checks.
+
+After deployment, visit the production site, navigate to Contact, and switch
+tabs to allow the beacon to send its final measurements. In browser developer
+tools, check that `beacon.min.js` loads and requests to
+`https://cloudflareinsights.com/cdn-cgi/rum` succeed, then allow a few minutes
+for the dashboard to update. The configured Cloudflare hostname must match
+the visited site; localhost and Azure preview hostnames may be rejected.
+Ad blockers can prevent measurement, and historical visits are not backfilled.
+
+See Cloudflare's [manual setup](https://developers.cloudflare.com/web-analytics/get-started/)
+and [SPA measurement](https://developers.cloudflare.com/web-analytics/get-started/web-analytics-spa/)
+documentation.
+
 ## SEO and link previews
 
 Run the two PowerShell 7 commands above after `dotnet publish`. CI does this

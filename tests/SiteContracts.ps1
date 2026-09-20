@@ -58,6 +58,7 @@ function Get-CanonicalUrl {
 
 $homePage = Read-RepositoryFile "Pages/Index.razor"
 $contactPage = Read-RepositoryFile "Pages/Contact.razor"
+$vesselsPage = Read-RepositoryFile "Pages/Vessels.razor"
 $privatePage = Read-RepositoryFile "Pages/Thea.razor"
 $notFoundPage = Read-RepositoryFile "Shared/MyNotFound.razor"
 $robots = Read-RepositoryFile "wwwroot/robots.txt"
@@ -66,7 +67,8 @@ $staticWebAppConfigText = Read-RepositoryFile "wwwroot/staticwebapp.config.json"
 
 $publicPages = @(
     @{ Name = "home page"; Content = $homePage },
-    @{ Name = "contact page"; Content = $contactPage }
+    @{ Name = "contact page"; Content = $contactPage },
+    @{ Name = "vessels page"; Content = $vesselsPage }
 )
 $canonicalUrls = @()
 

@@ -20,6 +20,8 @@ obj/
 TestResults/
 coverage/
 coverage.*
+__pycache__/
+*.pyc
 
 ## Local configuration and secrets
 .env

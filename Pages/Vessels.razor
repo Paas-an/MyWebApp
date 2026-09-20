@@ -1,0 +1,94 @@
+@page "/vessels"
+@using webapp.Features.Vessels
+@inject IVesselHistorySource HistorySource
+
+<PageTitle>Fartøy | Jonas Skogtrø Olsen</PageTitle>
+<HeadContent>
+    <meta name="description" content="Fartøy Jonas Skogtrø Olsen har arbeidet på.." />
+    <link rel="canonical" href="https://www.olsenjonas.no/vessels" />
+    <meta property="og:title" content="Fartøy | Jonas Skogtrø Olsen" />
+    <meta property="og:description" content="Fartøy Jonas Skogtrø Olsen har arbeidet på." />
+    <meta property="og:url" content="https://www.olsenjonas.no/vessels" />
+    <meta name="twitter:title" content="Fartøy | Jonas Skogtrø Olsen" />
+    <meta name="twitter:description" content="Fartøy Jonas Skogtrø Olsen har arbeidet på." />
+</HeadContent>
+
+<div class="vessels-page">
+    <header class="vessels-intro">
+        <h1>Fartøy</h1>
+        <p>Båtene jeg har arbeidet på.</p>
+    </header>
+    @if (loading)
+    {
+        <p role="status">Henter arbeidshistorikk …</p>
+    }
+    else if (loadFailed)
+    {
+        <div role="alert">
+            <p>Arbeidshistorikken kunne ikke lastes. Prøv igjen.</p>
+            <button type="button" class="btn btn-outline-primary" @onclick="LoadAsync">Prøv igjen</button>
+        </div>
+    }
+    else
+    {
+        <div class="vessels-controls" role="group" aria-label="Visning og sortering for begge båtlister">
+            <button type="button" class="vessels-sort" @onclick="ToggleSort" aria-controls="vessels-lists"
+                    aria-label="@(sortDescending ? "Sorter begge båtlister fra A til Å" : "Sorter begge båtlister fra Å til A")">
+                Navn @(sortDescending ? "Å–A ↓" : "A–Å ↑")
+            </button>
+            <label class="vessels-info-control">
+                <input type="checkbox" role="switch" @bind="showInfo" aria-controls="vessels-lists" aria-label="Info: vis totalt losset tonn, antall oppdrag og tonn under båtnavnene" />
+                <span>Info</span><span class="vessels-switch-state" aria-hidden="true">@(showInfo ? "På" : "Av")</span>
+            </label>
+        </div>
+        <div id="vessels-lists">
+            <VesselList Category="engineering" Title="Ingeniøroppdrag" Vessels="engineering"
+                        EmptyMessage="Ingeniøroppdrag legges til fortløpende."
+                        ShowInfo="showInfo" SortDescending="sortDescending" />
+            <VesselList Category="unloading" Title="Båter losset" Vessels="unloading"
+                        EmptyMessage="Ingen lossinger er registrert ennå."
+                        ShowInfo="showInfo" SortDescending="sortDescending" />
+        </div>
+        <span class="vessels-status" role="status">@sortStatus</span>
+    }
+</div>
+
+@code {
+    private IReadOnlyList<Vessel> engineering = [];
+    private IReadOnlyList<Vessel> unloading = [];
+    private bool loading = true;
+    private bool loadFailed;
+    private bool showInfo;
+    private bool sortDescending;
+    private string sortStatus = "";
+
+    protected override Task OnInitializedAsync() => LoadAsync();
+
+    private async Task LoadAsync()
+    {
+        loading = true;
+        loadFailed = false;
+        try
+        {
+            var engineeringTask = HistorySource.LoadAsync("engineering");
+            var unloadingTask = HistorySource.LoadAsync("unloading");
+            await Task.WhenAll(engineeringTask, unloadingTask);
+            engineering = (await engineeringTask).Vessels;
+            unloading = (await unloadingTask).Vessels;
+        }
+        catch (Exception error) when (error is HttpRequestException or System.Text.Json.JsonException or InvalidDataException)
+        {
+            loadFailed = true;
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private void ToggleSort()
+    {
+        sortDescending = !sortDescending;
+        sortStatus = sortDescending ? "sortert fra Å til A." : " sortert fra A til Å.";
+    }
+}

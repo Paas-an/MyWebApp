@@ -28,10 +28,15 @@ Assert-Equal @($normalizedRoutes | Select-Object -Unique).Count $normalizedRoute
 $contactRule = @($config.routes | Where-Object route -eq '/contact')
 Assert-Equal $contactRule.Count 1 'A unique rule must serve the contact route'
 Assert-Equal $contactRule[0].rewrite '/contact.html' 'The contact route must serve metadata without JavaScript'
+$vesselsRule = @($config.routes | Where-Object route -eq '/vessels')
+Assert-Equal $vesselsRule.Count 1 'A unique rule must serve the vessels route'
+Assert-Equal $vesselsRule[0].rewrite '/vessels.html' 'The vessels route must serve metadata without JavaScript'
+if ($config.navigationFallback.exclude -notcontains '/data/*') { throw 'Missing data must return an HTTP error rather than the app shell.' }
 
 $pages = @(
     @{ File = 'index.html'; Source = 'Pages/Index.razor'; Url = 'https://www.olsenjonas.no/' },
-    @{ File = 'contact.html'; Source = 'Pages/Contact.razor'; Url = 'https://www.olsenjonas.no/contact' }
+    @{ File = 'contact.html'; Source = 'Pages/Contact.razor'; Url = 'https://www.olsenjonas.no/contact' },
+    @{ File = 'vessels.html'; Source = 'Pages/Vessels.razor'; Url = 'https://www.olsenjonas.no/vessels' }
 )
 foreach ($page in $pages) {
     $htmlPath = Join-Path $PublishedRoot $page.File

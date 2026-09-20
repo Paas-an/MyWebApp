@@ -1,7 +1,9 @@
 {
   "routes": [
     { "route": "/contact", "rewrite": "/contact.html" },
-    { "route": "/contact.html", "redirect": "/contact", "statusCode": 301 }
+    { "route": "/contact.html", "redirect": "/contact", "statusCode": 301 },
+    { "route": "/vessels", "rewrite": "/vessels.html" },
+    { "route": "/vessels.html", "redirect": "/vessels", "statusCode": 301 }
   ],
   "navigationFallback": {
     "rewrite": "/index.html",
@@ -9,6 +11,7 @@
       "/css/*",
       "/js/*",
       "/_framework/*",
+      "/data/*",
       "/*.{ico,png,jpg,jpeg,gif,svg,webp,woff,woff2,ttf,eot}"
     ]
   }

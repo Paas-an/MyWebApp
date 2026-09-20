@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using webapp;
+using webapp.Features.Vessels;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -11,6 +12,7 @@ builder.Services.AddScoped(_ => new HttpClient
 {
     BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
 });
+builder.Services.AddScoped<IVesselHistorySource, JsonVesselHistorySource>();
 await builder.Build().RunAsync();
 
 

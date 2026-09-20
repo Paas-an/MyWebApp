@@ -1,0 +1,12 @@
+[
+  {
+    "entry_id": "a8e486080796520dc1800974193f110ba522581dbf8f36594e81992d8d514448-p1-r7",
+    "boat_name": "bjørnhaug / bautar",
+    "date": "2025-09-29",
+    "fish_tonnes": "310",
+    "parts": [
+      { "key": "bautar", "boat_name": "Bautar", "fish_tonnes": "85" },
+      { "key": "bjorkhaug", "boat_name": "Bjørkhaug", "fish_tonnes": "225" }
+    ]
+  }
+]

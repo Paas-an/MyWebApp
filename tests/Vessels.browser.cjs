@@ -5,12 +5,13 @@ const { resolve } = require('node:path');
 
 const baseURL = process.env.VESSELS_BASE_URL || 'http://127.0.0.1:5053';
 const data = JSON.parse(readFileSync(resolve(__dirname, '../wwwroot/data/vessels/unloading.json'), 'utf8'));
+const engineeringData = JSON.parse(readFileSync(resolve(__dirname, '../wwwroot/data/vessels/engineering.json'), 'utf8'));
+const totalVesselCount = data.vessels.length + engineeringData.vessels.length;
 const collator = new Intl.Collator('nb-NO', { sensitivity: 'base' });
 
-async function checkOrder(page, section, descending) {
+async function checkOrder(page, section) {
     const names = await page.locator(`.vessel-section--${section} .vessel-name`).allTextContents();
     const sorted = [...names].sort(collator.compare);
-    if (descending) sorted.reverse();
     expect(names).toEqual(sorted);
 }
 
@@ -38,16 +39,22 @@ async function main() {
             .filter(entry => entry.includeInTotal && entry.tonnes !== null)
             .reduce((total, entry) => total + entry.tonnes, 0);
         const totalLabel = new Intl.NumberFormat('nb-NO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(totalTonnes);
-        await expect(boats).toHaveCount(data.vessels.length, { timeout: 30000 });
-        await expect(page.locator('.vessel-section--engineering .vessel-empty')).toBeVisible();
+        await expect(boats).toHaveCount(totalVesselCount, { timeout: 30000 });
+        if (engineeringData.vessels.length) {
+            await expect(page.locator('.vessel-section--engineering .vessel-toggle')).toHaveCount(engineeringData.vessels.length);
+            await expect(page.locator('.vessel-section--engineering .vessel-empty')).toHaveCount(0);
+            await checkOrder(page, 'engineering');
+        } else {
+            await expect(page.locator('.vessel-section--engineering .vessel-empty')).toBeVisible();
+        }
         await expect(info).toHaveCount(1);
-        await expect(sort).toHaveCount(1);
+        await expect(sort).toHaveCount(0);
         await expect(info).not.toBeChecked();
         await expect(totalBadge).toHaveCount(0);
         await expect(page.locator('.vessel-info')).toHaveCount(0);
         await expect(page.locator('.vessel-history:visible')).toHaveCount(0);
-        await expect(page.locator('.vessel-list')).toHaveCSS('border-top-color', 'rgb(53, 167, 255)');
-        await checkOrder(page, 'unloading', false);
+        await expect(list).toHaveCSS('border-top-color', 'rgb(53, 167, 255)');
+        await checkOrder(page, 'unloading');
         const listSize = await list.evaluate(element => ({ height: element.clientHeight, content: element.scrollHeight }));
         expect(listSize.content).toBeGreaterThan(listSize.height);
         expect(listSize.height).toBeLessThanOrEqual(416);
@@ -57,7 +64,7 @@ async function main() {
 
         await info.check();
         await expect(totalBadge).toHaveText(`${totalLabel} totalt tonn losset`);
-        await expect(page.locator('.vessel-info')).toHaveCount(data.vessels.length);
+        await expect(page.locator('.vessel-info')).toHaveCount(totalVesselCount);
         await expect(page.locator('.vessel-history:visible')).toHaveCount(0);
         const koralhav = page.locator('.vessel-item').filter({ has: page.locator('.vessel-name', { hasText: /^Koralhav$/ }) });
         await koralhav.getByRole('button').click();
@@ -68,14 +75,9 @@ async function main() {
         await expect(totalBadge).toHaveCount(0);
         await expect(page.locator('.vessel-info')).toHaveCount(0);
         await expect(koralhav.locator('.vessel-history')).toBeVisible();
-        await sort.click();
-        await expect(sort).toHaveAttribute('aria-label', 'Sorter begge båtlister fra A til Å');
-        await checkOrder(page, 'unloading', true);
-        await expect(koralhav.locator('.vessel-history')).toBeVisible();
+        await checkOrder(page, 'unloading');
         await koralhav.getByRole('button').press('Enter');
         await expect(page.locator('.vessel-history:visible')).toHaveCount(0);
-        await sort.click();
-        await expect(sort).toHaveAttribute('aria-label', 'Sorter begge båtlister fra Å til A');
         await info.check();
         const arctic = page.locator('.vessel-item').filter({ has: page.locator('.vessel-name', { hasText: /^Arctic Swan$/ }) });
         await arctic.getByRole('button').click();
@@ -94,7 +96,7 @@ async function main() {
             await page.screenshot({ path: resolve(process.env.VESSELS_SCREENSHOT_DIR, 'vessels-mobile.png') });
         }
 
-        // Fixture data stays in this browser; the engineering JSON remains empty.
+        // Fixture data stays in this browser; the saved engineering history is unchanged.
         const engineeringPage = await context.newPage();
         await engineeringPage.route('**/data/vessels/engineering.json', route => route.fulfill({ json: {
             schemaVersion: 1, category: 'engineering', vessels: ['Årvik', 'Bjørn', 'Ægir'].map((name, index) => ({
@@ -104,17 +106,16 @@ async function main() {
         } }));
         await engineeringPage.goto(`${baseURL}/vessels`);
         await expect(engineeringPage.locator('.vessel-section--engineering .vessel-toggle')).toHaveCount(3);
-        await checkOrder(engineeringPage, 'engineering', false);
+        await checkOrder(engineeringPage, 'engineering');
         await engineeringPage.getByRole('switch').check();
         const engineeringBoat = engineeringPage.locator('.vessel-section--engineering .vessel-item').first();
         await expect(engineeringBoat.locator('.vessel-info')).toContainText('1 oppdrag');
         await expect(engineeringBoat.locator('.vessel-info')).not.toContainText('tonn');
         await engineeringBoat.getByRole('button').click();
         await expect(engineeringPage.getByRole('cell', { name: 'Test av instrumenter' })).toBeVisible();
-        await engineeringPage.getByRole('button', { name: /Sorter begge båtlister/ }).click();
-        await expect(engineeringPage.locator('.vessels-sort')).toHaveAttribute('aria-label', 'Sorter begge båtlister fra A til Å');
-        await checkOrder(engineeringPage, 'engineering', true);
-        await checkOrder(engineeringPage, 'unloading', true);
+        await engineeringPage.getByRole('switch').uncheck();
+        await checkOrder(engineeringPage, 'engineering');
+        await checkOrder(engineeringPage, 'unloading');
         await expect(engineeringPage.locator('.vessel-history:visible')).toHaveCount(1);
 
         // Both an HTTP failure and malformed hand-edited data must recover through Retry.
@@ -129,7 +130,7 @@ async function main() {
             await expect(retryPage.getByRole('alert')).toContainText('Arbeidshistorikken kunne ikke lastes');
             fail = false;
             await retryPage.getByRole('button', { name: 'Prøv igjen' }).click();
-            await expect(retryPage.locator('.vessel-toggle')).toHaveCount(data.vessels.length);
+            await expect(retryPage.locator('.vessel-toggle')).toHaveCount(totalVesselCount);
             await expect(retryPage.getByRole('alert')).toHaveCount(0);
             await retryPage.close();
         }

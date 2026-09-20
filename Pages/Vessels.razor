@@ -31,11 +31,7 @@
     }
     else
     {
-        <div class="vessels-controls" role="group" aria-label="Visning og sortering for begge båtlister">
-            <button type="button" class="vessels-sort" @onclick="ToggleSort" aria-controls="vessels-lists"
-                    aria-label="@(sortDescending ? "Sorter begge båtlister fra A til Å" : "Sorter begge båtlister fra Å til A")">
-                 @(sortDescending ? "ksitebafla " : "Alfabetisk ")
-            </button>
+        <div class="vessels-controls">
             <label class="vessels-info-control">
                 <input type="checkbox" role="switch" @bind="showInfo" aria-controls="vessels-lists" aria-label="Info: vis totalt losset tonn, antall oppdrag og tonn under båtnavnene" />
                 <span>Info</span><span class="vessels-switch-state" aria-hidden="true">@(showInfo ? "På" : "Av")</span>
@@ -44,12 +40,11 @@
         <div id="vessels-lists">
             <VesselList Category="engineering" Title="Ingeniøroppdrag" Vessels="engineering"
                         EmptyMessage="nye oppdrag legges til fortløpende."
-                        ShowInfo="showInfo" SortDescending="sortDescending" />
+                        ShowInfo="showInfo" />
             <VesselList Category="unloading" Title="Båter losset" Vessels="unloading"
                         EmptyMessage="Ingen lossinger er registrert ennå."
-                        ShowInfo="showInfo" SortDescending="sortDescending" />
+                        ShowInfo="showInfo" />
         </div>
-        <span class="vessels-status" role="status">@sortStatus</span>
     }
 </div>
 
@@ -59,8 +54,6 @@
     private bool loading = true;
     private bool loadFailed;
     private bool showInfo;
-    private bool sortDescending;
-    private string sortStatus = "";
 
     protected override Task OnInitializedAsync() => LoadAsync();
 
@@ -86,9 +79,4 @@
         }
     }
 
-    private void ToggleSort()
-    {
-        sortDescending = !sortDescending;
-        sortStatus = sortDescending ? "sortert fra Å til A." : " sortert fra A til Å.";
-    }
 }

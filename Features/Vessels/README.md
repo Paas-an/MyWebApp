@@ -4,7 +4,7 @@
 switch shows summaries beneath boat names and a total-tonnage badge above the
 unloading list. Totals include estimates, which remain labelled in the history.
 Each boat independently
-opens its history, and one Norwegian alphabetical sort controls both lists.
+opens its history. Both lists stay in Norwegian alphabetical order (A–Å).
 
 Each list scrolls within a height of `26rem` (about six collapsed rows), capped
 at 65% of the viewport height on shorter screens. Adjust `--vessel-list-max-height`
@@ -57,8 +57,58 @@ Rules:
 
 ## Adding engineering jobs
 
-`wwwroot/data/vessels/engineering.json` intentionally has an empty vessel list
-until issue #39 is supplied with records. It uses the same schema:
+Record visits in `assets/Enginering table.xlsx`, with one row per visit and these
+headers in the first worksheet (leading blank rows and columns are allowed):
+
+| båt | dato | info |
+| --- | --- | --- |
+| Actual vessel name | 2026-09-20 | Actual work performed |
+
+This is a format example, not a real job. Save the workbook in Excel, then run
+these commands from the repository root:
+
+```powershell
+# Install the Excel reader once.
+python -m pip install -r scripts/requirements-engineering.txt
+
+# Import again after saving new visits or edits.
+python scripts/import_engineering_history.py
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+The importer writes `wwwroot/data/vessels/engineering.json`. Reload the local page
+to see the imported visits; publish the updated JSON normally for the live site.
+Editing Excel alone does not update the website. Keep the workbook and generated
+JSON together in version control. The workbook is outside `wwwroot`; only the
+selected public columns become website data. Excel's temporary `~$` files are ignored.
+
+- Boat names and dates are required. Empty rows are ignored. Missing descriptions
+  display as `Ikke registrert`. Invalid dates or incomplete identities stop the
+  import before replacing the existing history.
+- `dato` accepts an Excel date, `YYYY-MM-DD`, or a continuous period such as
+  `2026-06-22 2026-06-26`. A period counts as one visit.
+- Repeat the same boat name on a new row for each visit. Capitalization and extra
+  spaces do not create a second boat. Different spellings remain separate boats.
+- IDs are generated from the boat name and date/period, so row sorting and edits
+  to the work description keep them unchanged. An optional `id` column can hold
+  your own unique visit ID; keep it unchanged when correcting dates. Separate
+  jobs on the same boat and date need distinct IDs to avoid accidental duplicates.
+- `--sheet "Name"` selects another worksheet. `--date-fix OLD=YYYY-MM-DD` explicitly
+  corrects a known typo during import; normally correct the date in Excel.
+
+The original MV Atlantic row uses dates in an embedded screenshot instead of a
+date cell. `engineering-import-notes.json` contains the five manually checked dates
+from that image and the SSAS cabling description transcribed from the adjacent
+note. The importer expands that undated row into five visits, using the row's
+`info` value if supplied, otherwise the transcribed description. Prices, status fields and other image contents
+are not exported. Keep that one undated row for this historical import; add new
+visits as normal dated rows. To move those five visits into Excel later, add five
+dated rows, remove the old undated row, and remove its image-date record together.
+The same file normalizes the source typo `202608-25` to `2026-08-25` for MV Scotia;
+it leaves the original workbook intact. Correcting the Excel date later works
+without changing the import command.
+
+Engineering history uses the same JSON schema as unloading, with no tonnage:
 
 ```json
 {
@@ -102,7 +152,7 @@ node tests/Vessels.browser.cjs
 `VESSELS_BASE_URL` overrides the server URL. `PLAYWRIGHT_CHROMIUM_EXECUTABLE`
 can select an existing Edge or Chrome executable, and `VESSELS_SCREENSHOT_DIR`
 optionally saves desktop and mobile screenshots to an existing directory.
-The checks cover shared sorting, Info independent of expansion, keyboard use,
+The checks cover alphabetical order, Info independent of expansion, keyboard use,
 empty and populated engineering lists, mobile overflow, and failed data loads.
 Engineering test records are intercepted in the browser and never saved to the
 public data file.

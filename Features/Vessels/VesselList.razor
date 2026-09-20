@@ -12,8 +12,8 @@
         }
         @if (ShowInfo && IsUnloading && TotalTonnes is { } totalTonnes)
         {
-            <span class="badge rounded-pill vessel-total" title="Totalt losset, inkludert estimerte mengder.">
-                @FormatTonnes(totalTonnes) totalt tonn losset
+            <span class="badge rounded-pill vessel-total" title="Totalt losset.">
+                @FormatTonnes(totalTonnes) totalt vekt losset
             </span>
         }
     </div>
@@ -76,7 +76,7 @@
                             <caption>@(IsUnloading ? "Lossehistorikk" : "Utført arbeid") · @vessel.Name</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">Dato om bord</th>
+                                    <th scope="col"></th>
                                     <th scope="col" class="@(IsUnloading ? "vessel-tonnes" : "")">@(IsUnloading ? "" : "Arbeidsbeskrivelse")</th>
                                 </tr>
                             </thead>
@@ -151,7 +151,7 @@
     private static string WeightLabel(VesselEntry entry) => entry.TonnageKind switch
     {
         "estimated" => "Estimat",
-        "landing" => "Produktvekt fra landing",
+        "landing" => "Produktvekt",
         "timesheet" => "Fra timeseddel",
         "reported" => "Oppgitt vekt",
         _ => "",

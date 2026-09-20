@@ -56,7 +56,7 @@ async function main() {
         await expect.poll(() => list.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
 
         await info.check();
-        await expect(totalBadge).toHaveText(`${totalLabel} tonn losset`);
+        await expect(totalBadge).toHaveText(`${totalLabel} totalt tonn losset`);
         await expect(page.locator('.vessel-info')).toHaveCount(data.vessels.length);
         await expect(page.locator('.vessel-history:visible')).toHaveCount(0);
         const koralhav = page.locator('.vessel-item').filter({ has: page.locator('.vessel-name', { hasText: /^Koralhav$/ }) });
@@ -69,13 +69,13 @@ async function main() {
         await expect(page.locator('.vessel-info')).toHaveCount(0);
         await expect(koralhav.locator('.vessel-history')).toBeVisible();
         await sort.click();
-        await expect(sort).toHaveText('Navn Å–A ↓');
+        await expect(sort).toHaveAttribute('aria-label', 'Sorter begge båtlister fra A til Å');
         await checkOrder(page, 'unloading', true);
         await expect(koralhav.locator('.vessel-history')).toBeVisible();
         await koralhav.getByRole('button').press('Enter');
         await expect(page.locator('.vessel-history:visible')).toHaveCount(0);
         await sort.click();
-        await expect(sort).toHaveText('Navn A–Å ↑');
+        await expect(sort).toHaveAttribute('aria-label', 'Sorter begge båtlister fra Å til A');
         await info.check();
         const arctic = page.locator('.vessel-item').filter({ has: page.locator('.vessel-name', { hasText: /^Arctic Swan$/ }) });
         await arctic.getByRole('button').click();
@@ -112,7 +112,7 @@ async function main() {
         await engineeringBoat.getByRole('button').click();
         await expect(engineeringPage.getByRole('cell', { name: 'Test av instrumenter' })).toBeVisible();
         await engineeringPage.getByRole('button', { name: /Sorter begge båtlister/ }).click();
-        await expect(engineeringPage.locator('.vessels-sort')).toHaveText('Navn Å–A ↓');
+        await expect(engineeringPage.locator('.vessels-sort')).toHaveAttribute('aria-label', 'Sorter begge båtlister fra A til Å');
         await checkOrder(engineeringPage, 'engineering', true);
         await checkOrder(engineeringPage, 'unloading', true);
         await expect(engineeringPage.locator('.vessel-history:visible')).toHaveCount(1);

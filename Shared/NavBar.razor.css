@@ -1,0 +1,105 @@
+.neon-navbar {
+    width: 100%;
+    margin: 0;
+    padding: 17px 22px;
+    background: #101827;
+    border: 1px solid #35a7ff;
+    border-radius: 0;
+    box-shadow:
+        0 0 3px #35a7ffad,
+        0 0 13px #35a7ff69,
+        inset 0 0 12px #35a7ff17;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.progress {
+    flex: 0 1 220px;
+    height: 16px;
+    overflow: visible;
+    background: #250d49;
+    border-radius: 3px;
+}
+
+.progress-bar {
+    background-color: #6f42c1;
+    border-radius: 3px;
+    box-shadow:
+        0 0 2px #6f42c1,
+        0 0 12px #6f42c173;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+/* NavLink rendrer lenkene i en egen Blazor-komponent. */
+.nav-links ::deep .neon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 9px 13px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(var(--neon-rgb), 0.5);
+    border-radius: 6px;
+}
+
+.nav-links ::deep .home-link {
+    --neon-rgb: 40, 217, 121;
+}
+
+.nav-links ::deep .contact-link {
+    --neon-rgb: 255, 59, 92;
+}
+
+.nav-links ::deep .vessels-link {
+    --neon-rgb: 255, 212, 59;
+}
+
+.nav-links ::deep .neon-link:is(.active, :hover, :focus-visible) {
+    border-color: rgb(var(--neon-rgb));
+    background: rgba(var(--neon-rgb), 0.1);
+    text-shadow: 0 0 8px rgba(var(--neon-rgb), 0.49);
+    box-shadow:
+        0 0 3px rgba(var(--neon-rgb), 0.68),
+        0 0 12px rgba(var(--neon-rgb), 0.41),
+        inset 0 0 9px rgba(var(--neon-rgb), 0.09);
+}
+
+@media (max-width: 640px) {
+    .neon-navbar {
+        padding: 20px 14px 16px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .progress {
+        flex: none;
+        width: 100%;
+    }
+
+    .nav-links ::deep .neon-link {
+        flex: 1;
+        padding-inline: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-bar-animated {
+        animation: none;
+    }
+}

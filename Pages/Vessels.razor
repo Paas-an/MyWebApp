@@ -26,7 +26,7 @@
     {
         <div role="alert">
             <p>Arbeidshistorikken kunne ikke lastes. Prøv igjen.</p>
-            <button type="button" class="btn btn-outline-primary" @onclick="LoadAsync">Prøv igjen</button>
+            <button type="button" class="vessels-retry" @onclick="LoadAsync">Prøv igjen</button>
         </div>
     }
     else
@@ -34,7 +34,7 @@
         <div class="vessels-controls" role="group" aria-label="Visning og sortering for begge båtlister">
             <button type="button" class="vessels-sort" @onclick="ToggleSort" aria-controls="vessels-lists"
                     aria-label="@(sortDescending ? "Sorter begge båtlister fra A til Å" : "Sorter begge båtlister fra Å til A")">
-                Navn @(sortDescending ? "Å–A ↓" : "A–Å ↑")
+                 @(sortDescending ? "ksitebafla " : "Alfabetisk ")
             </button>
             <label class="vessels-info-control">
                 <input type="checkbox" role="switch" @bind="showInfo" aria-controls="vessels-lists" aria-label="Info: vis totalt losset tonn, antall oppdrag og tonn under båtnavnene" />
@@ -43,7 +43,7 @@
         </div>
         <div id="vessels-lists">
             <VesselList Category="engineering" Title="Ingeniøroppdrag" Vessels="engineering"
-                        EmptyMessage="Ingeniøroppdrag legges til fortløpende."
+                        EmptyMessage="nye oppdrag legges til fortløpende."
                         ShowInfo="showInfo" SortDescending="sortDescending" />
             <VesselList Category="unloading" Title="Båter losset" Vessels="unloading"
                         EmptyMessage="Ingen lossinger er registrert ennå."

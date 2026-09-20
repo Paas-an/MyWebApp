@@ -1,0 +1,13 @@
+.vessels-page { max-width: 960px; }
+.vessels-intro h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 750; letter-spacing: -.04em; }
+.vessels-intro p { color: #52617a; font-size: 1.125rem; }
+.vessels-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.vessels-sort, .vessels-info-control { min-height: 44px; background: #fff; color: #172033; border-radius: .6rem; padding: .5rem .75rem; }
+.vessels-sort { border: 1px solid var(--neon-yellow); }
+.vessels-sort:hover, .vessels-sort:focus-visible { box-shadow: 0 0 18px rgb(255 212 59 / 22%); }
+.vessels-info-control { display: inline-flex; align-items: center; gap: .5rem; margin: 0; border: 1px solid var(--neon-red); }
+.vessels-info-control:has(input:checked) { border-color: var(--neon-blue); box-shadow: 0 0 18px rgb(53 167 255 / 15%); }
+.vessels-info-control:hover, .vessels-info-control:focus-within { box-shadow: 0 0 18px rgb(255 59 92 / 15%); }
+.vessels-info-control input { width: 18px; height: 18px; margin: 0; accent-color: #0071c1; }
+.vessels-switch-state { color: #52617a; font-size: .875rem; min-width: 20px; }
+.vessels-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }

@@ -21,6 +21,8 @@ jobs:
           for url in \
             "https://www.olsenjonas.no/" \
             "https://www.olsenjonas.no/contact" \
+            "https://www.olsenjonas.no/vessels" \
+            "https://www.olsenjonas.no/data/vessels/unloading.json" \
             "https://olsenjonas.no/" \
             "https://olsenjonas.no/contact" \
             "https://www.olsenjonas.no/robots.txt" \

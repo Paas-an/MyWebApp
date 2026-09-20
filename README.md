@@ -9,6 +9,15 @@ to Azure Static Web Apps.
 
 The repository includes `global.json` to select the supported SDK.
 
+## Vessel history
+
+The `/vessels` page shows engineering work and unloading history with shared
+name sorting and an Info switch. Each vessel opens its own dated history.
+Data is served as static JSON; no additional container or database is required.
+See [the vessel module guide](Features/Vessels/README.md) for the data format,
+CSV refresh command and validation checks. The importer uses Python 3 with no
+additional packages.
+
 ## Local development
 
 ```powershell
@@ -52,7 +61,7 @@ not add client-side tracking or collect visitor data.
 
 Cloudflare Web Analytics is loaded once from `wwwroot/index.html` using the
 site's public beacon token. `PublishSeo.ps1` also includes the snippet in the
-generated home and contact HTML shells. Cloudflare's default SPA measurement
+generated page HTML shells. Cloudflare's default SPA measurement
 tracks client-side navigation; no extra Blazor page-view handler is needed.
 
 View the site's reports in **Cloudflare dashboard > Web Analytics** for
@@ -78,8 +87,8 @@ documentation.
 
 Run the two PowerShell 7 commands above after `dotnet publish`. CI does this
 automatically. `PublishSeo.ps1` copies the literal `PageTitle` and `HeadContent`
-from the home/contact Razor pages into the published HTML shells. Azure serves
-`contact.html` internally for `/contact` and `/contact/`. This makes each route's
+from the home, contact and vessels Razor pages into the published HTML shells. Azure serves
+`contact.html` for `/contact` and `vessels.html` for `/vessels`. This makes each route's
 title, description and canonical URL available to crawlers that do not execute
 JavaScript. This is metadata generation, not prerendering of the visible page.
 

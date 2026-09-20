@@ -1,0 +1,4211 @@
+{
+  "schemaVersion": 1,
+  "category": "unloading",
+  "vessels": [
+    {
+      "id": "fangstdata-2002018461",
+      "name": "Arctic Swan",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-20a9d1fbb21e58a1c660",
+          "periods": [
+            {
+              "start": "2025-09-19",
+              "end": null
+            }
+          ],
+          "tonnes": 184.71,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-20/2002018461"
+          ]
+        },
+        {
+          "id": "unloading-8679de1f186926370c58",
+          "periods": [
+            {
+              "start": "2025-03-10",
+              "end": null
+            }
+          ],
+          "tonnes": 665.5,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-11/2002018461"
+          ]
+        },
+        {
+          "id": "unloading-cb1c95f62099acee96b2",
+          "periods": [
+            {
+              "start": "2025-02-10",
+              "end": "2025-02-11"
+            }
+          ],
+          "tonnes": 371.36,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-10/2002018461",
+            "https://fangstdata.no/offload/2025-2-11/2002018461"
+          ]
+        },
+        {
+          "id": "unloading-fe6f1ff3893a25304c23",
+          "periods": [
+            {
+              "start": "2024-12-21",
+              "end": "2024-12-22"
+            }
+          ],
+          "tonnes": 631.09,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-22/2002018461"
+          ]
+        },
+        {
+          "id": "unloading-9c868862afc358c44304",
+          "periods": [
+            {
+              "start": "2023-12-18",
+              "end": null
+            }
+          ],
+          "tonnes": 557.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-8a6d3d14a287fdec109d",
+          "periods": [
+            {
+              "start": "2022-10-28",
+              "end": "2022-10-29"
+            }
+          ],
+          "tonnes": 675.7,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-10-29/2002018461"
+          ]
+        },
+        {
+          "id": "unloading-7ef1d14ecb5abc6bedc8",
+          "periods": [
+            {
+              "start": "2022-02-03",
+              "end": null
+            }
+          ],
+          "tonnes": 600.69,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-2-3/2002018461"
+          ]
+        },
+        {
+          "id": "unloading-36e563b000cbb182f10f",
+          "periods": [
+            {
+              "start": "2022-01-07",
+              "end": null
+            }
+          ],
+          "tonnes": 673.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-1-7/2002018461"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2002019141",
+      "name": "Atlantic Star",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-1301d46827f7fd680b8e",
+          "periods": [
+            {
+              "start": "2025-11-09",
+              "end": null
+            }
+          ],
+          "tonnes": 753.82,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-9a39183d9b2de9130b51",
+          "periods": [
+            {
+              "start": "2025-10-28",
+              "end": null
+            }
+          ],
+          "tonnes": 353.48,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-28/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-faa40ee1989a4c151634",
+          "periods": [
+            {
+              "start": "2025-10-03",
+              "end": null
+            }
+          ],
+          "tonnes": 364.38,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-3/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-b99ae808ec72c05b66d6",
+          "periods": [
+            {
+              "start": "2025-08-26",
+              "end": null
+            }
+          ],
+          "tonnes": 854.31,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-26/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-02bd6ff951a540adf4cd",
+          "periods": [
+            {
+              "start": "2025-06-20",
+              "end": null
+            }
+          ],
+          "tonnes": 110.91,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-20/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-cc59a821b1da924bf243",
+          "periods": [
+            {
+              "start": "2025-04-09",
+              "end": null
+            }
+          ],
+          "tonnes": 717.68,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-9/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-eb51e3cb682ba6874f7c",
+          "periods": [
+            {
+              "start": "2025-03-03",
+              "end": null
+            }
+          ],
+          "tonnes": 881.0,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-4/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-dd07e81b6c0f7209fef8",
+          "periods": [
+            {
+              "start": "2024-09-25",
+              "end": "2024-09-26"
+            }
+          ],
+          "tonnes": 524.37,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-26/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-232c1193b39d934bbeee",
+          "periods": [
+            {
+              "start": "2024-08-30",
+              "end": "2024-08-31"
+            }
+          ],
+          "tonnes": 559.21,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-31/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-6ecc97f1600fda9d2183",
+          "periods": [
+            {
+              "start": "2024-07-07",
+              "end": "2024-07-08"
+            }
+          ],
+          "tonnes": 474.38,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-8/2002019141"
+          ]
+        },
+        {
+          "id": "unloading-6a8fb1b68b38b4d8a0a4",
+          "periods": [
+            {
+              "start": "2023-08-16",
+              "end": "2023-08-17"
+            }
+          ],
+          "tonnes": 875.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-deda3825cb5f9a6aa36d",
+          "periods": [
+            {
+              "start": "2023-07-12",
+              "end": null
+            }
+          ],
+          "tonnes": 753.82,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-bf410df6cd1d8d891230",
+          "periods": [
+            {
+              "start": "2023-05-19",
+              "end": null
+            }
+          ],
+          "tonnes": 801.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-ed0c33e2fbb47d15345b",
+          "periods": [
+            {
+              "start": "2023-04-17",
+              "end": null
+            }
+          ],
+          "tonnes": 753.82,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-670c154c519cf6546e92",
+          "periods": [
+            {
+              "start": "2022-06-08",
+              "end": null
+            }
+          ],
+          "tonnes": 796.92,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-6-9/2002019141"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2013062792",
+      "name": "Atlantic Viking",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-ce3991d913bd3fd92008",
+          "periods": [
+            {
+              "start": "2024-08-19",
+              "end": null
+            }
+          ],
+          "tonnes": 170.81,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-19/2013062792"
+          ]
+        },
+        {
+          "id": "unloading-14bcd18e0dd111b155d1",
+          "periods": [
+            {
+              "start": "2024-07-15",
+              "end": null
+            }
+          ],
+          "tonnes": 161.94,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-15/2013062792"
+          ]
+        },
+        {
+          "id": "unloading-3fb89dc765e07026240b",
+          "periods": [
+            {
+              "start": "2022-06-10",
+              "end": null
+            }
+          ],
+          "tonnes": 587.08,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-6-11/2013062792"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1997003984",
+      "name": "Bautar",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-9396ffa99ae4a2eea559",
+          "periods": [
+            {
+              "start": "2025-09-29",
+              "end": null
+            }
+          ],
+          "tonnes": 85.0,
+          "tonnageKind": "reported",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-70dd97ff73401eadfd6d",
+          "periods": [
+            {
+              "start": "2025-08-20",
+              "end": null
+            }
+          ],
+          "tonnes": 53.36,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-20/1997003984"
+          ]
+        },
+        {
+          "id": "unloading-2ae6766fe3f31a9c8f0a",
+          "periods": [
+            {
+              "start": "2025-02-11",
+              "end": null
+            }
+          ],
+          "tonnes": 76.78,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-11/1997003984"
+          ]
+        },
+        {
+          "id": "unloading-199c2468d7f7f8bc46a9",
+          "periods": [
+            {
+              "start": "2024-12-02",
+              "end": null
+            }
+          ],
+          "tonnes": 86.58,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-2/1997003984"
+          ]
+        },
+        {
+          "id": "unloading-aa9b2be484c35a05cda3",
+          "periods": [
+            {
+              "start": "2024-10-09",
+              "end": null
+            }
+          ],
+          "tonnes": 44.49,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-10-9/1997003984"
+          ]
+        },
+        {
+          "id": "unloading-b1aec09b25259c68bc2d",
+          "periods": [
+            {
+              "start": "2024-09-23",
+              "end": null
+            }
+          ],
+          "tonnes": 51.08,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-23/1997003984"
+          ]
+        },
+        {
+          "id": "unloading-7409cccd08ca24e21daa",
+          "periods": [
+            {
+              "start": "2024-07-22",
+              "end": null
+            }
+          ],
+          "tonnes": 109.66,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-23/1997003984"
+          ]
+        },
+        {
+          "id": "unloading-5d04e5c1e391c1928a04",
+          "periods": [
+            {
+              "start": "2023-11-18",
+              "end": null
+            }
+          ],
+          "tonnes": 50.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-e808324c547fa21d01c6",
+      "name": "Bjørkhaug",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-3c64c6706c5ec459eb57",
+          "periods": [
+            {
+              "start": "2025-09-29",
+              "end": null
+            }
+          ],
+          "tonnes": 225.0,
+          "tonnageKind": "reported",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2016074313",
+      "name": "Breivik Junior",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-22d5f88adaf4fff77e93",
+          "periods": [
+            {
+              "start": "2025-09-22",
+              "end": null
+            }
+          ],
+          "tonnes": 59.73,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-22/2016074313"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1999001513",
+      "name": "Båtsfjord",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-6cc07dd0692606433e61",
+          "periods": [
+            {
+              "start": "2025-10-04",
+              "end": null
+            }
+          ],
+          "tonnes": 64.39,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-4/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-96e86fe64a888d02116c",
+          "periods": [
+            {
+              "start": "2025-08-20",
+              "end": null
+            }
+          ],
+          "tonnes": 149.82,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-20/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-cb0002984b4fa45ad9f8",
+          "periods": [
+            {
+              "start": "2025-08-11",
+              "end": null
+            }
+          ],
+          "tonnes": 265.79,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-11/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-db8cc4c0b7cd55ac5ea0",
+          "periods": [
+            {
+              "start": "2025-07-18",
+              "end": null
+            }
+          ],
+          "tonnes": 103.55,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-18/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-d8bf7bb851c571b39b02",
+          "periods": [
+            {
+              "start": "2025-03-15",
+              "end": null
+            }
+          ],
+          "tonnes": 295.17,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-15/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-ed6b42007e5d8928373d",
+          "periods": [
+            {
+              "start": "2025-02-27",
+              "end": null
+            }
+          ],
+          "tonnes": 262.45,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-27/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-10bbf5049209ae1e9278",
+          "periods": [
+            {
+              "start": "2025-01-11",
+              "end": null
+            }
+          ],
+          "tonnes": 276.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-1-11/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-dbbb910b49cea1890cd9",
+          "periods": [
+            {
+              "start": "2024-08-07",
+              "end": null
+            }
+          ],
+          "tonnes": 95.84,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-7/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-04830bc1d28ba62b1d1a",
+          "periods": [
+            {
+              "start": "2024-07-31",
+              "end": null
+            }
+          ],
+          "tonnes": 285.77,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-31/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-7eedc7a2aac89c9fda9b",
+          "periods": [
+            {
+              "start": "2024-06-07",
+              "end": null
+            }
+          ],
+          "tonnes": 250.59,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-6-7/1999001513"
+          ]
+        },
+        {
+          "id": "unloading-ea96034113c26d47d6b2",
+          "periods": [
+            {
+              "start": "2023-08-10",
+              "end": null
+            }
+          ],
+          "tonnes": 104.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2001016401",
+      "name": "Doggi",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-1b40192df406ab324051",
+          "periods": [
+            {
+              "start": "2025-02-12",
+              "end": "2025-02-13"
+            }
+          ],
+          "tonnes": 221.27,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-13/2001016401"
+          ]
+        },
+        {
+          "id": "unloading-b077e98ca3c825158a6d",
+          "periods": [
+            {
+              "start": "2024-09-08",
+              "end": null
+            }
+          ],
+          "tonnes": 67.2,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-8/2001016401"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2001015521",
+      "name": "Fiskenes",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-75eda224b73e6d0258cd",
+          "periods": [
+            {
+              "start": "2025-07-24",
+              "end": null
+            }
+          ],
+          "tonnes": 141.66,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-24/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-63d569061d05ab1d3065",
+          "periods": [
+            {
+              "start": "2025-07-01",
+              "end": null
+            }
+          ],
+          "tonnes": 181.52,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-1/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-88064698b74c8150934f",
+          "periods": [
+            {
+              "start": "2025-05-31",
+              "end": null
+            }
+          ],
+          "tonnes": 109.26,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-5-31/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-aa32054423e7a4210006",
+          "periods": [
+            {
+              "start": "2025-04-29",
+              "end": null
+            }
+          ],
+          "tonnes": 204.04,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-29/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-0fd45a67423600e552aa",
+          "periods": [
+            {
+              "start": "2025-02-21",
+              "end": null
+            }
+          ],
+          "tonnes": 130.05,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-21/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-7748b814e04b578fdf5a",
+          "periods": [
+            {
+              "start": "2024-12-27",
+              "end": null
+            }
+          ],
+          "tonnes": 194.9,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-27/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-79eeca24b80c33091795",
+          "periods": [
+            {
+              "start": "2024-07-04",
+              "end": null
+            }
+          ],
+          "tonnes": 176.97,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-4/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-6a1e918b105df0fa5dc5",
+          "periods": [
+            {
+              "start": "2024-03-22",
+              "end": null
+            }
+          ],
+          "tonnes": 244.63,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-3-22/2001015521"
+          ]
+        },
+        {
+          "id": "unloading-4464cbfc56cd1a2c9085",
+          "periods": [
+            {
+              "start": "2023-07-31",
+              "end": null
+            }
+          ],
+          "tonnes": 196.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-3a39fbe149f766e7c5d5",
+          "periods": [
+            {
+              "start": "2023-06-22",
+              "end": null
+            }
+          ],
+          "tonnes": 130.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1997004871",
+      "name": "Fjellmøy",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-5b0549d96bb028ea868f",
+          "periods": [
+            {
+              "start": "2024-03-26",
+              "end": null
+            }
+          ],
+          "tonnes": 344.82,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-3-26/1997004871"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2014064512",
+      "name": "Gadus Neptun",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-ea686aa5f2eae0b426fe",
+          "periods": [
+            {
+              "start": "2025-10-24",
+              "end": null
+            }
+          ],
+          "tonnes": 482.98,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-24/2014064512"
+          ]
+        },
+        {
+          "id": "unloading-350c540e4119df8c59d9",
+          "periods": [
+            {
+              "start": "2023-11-17",
+              "end": null
+            }
+          ],
+          "tonnes": 593.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2013063493",
+      "name": "Gadus Njord",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-2ea840af6e98e0f60e0d",
+          "periods": [
+            {
+              "start": "2025-09-24",
+              "end": null
+            }
+          ],
+          "tonnes": 472.41,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-24/2013063493"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2013062152",
+      "name": "Gadus Poseidon",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-20d249d2520463841fd8",
+          "periods": [
+            {
+              "start": "2025-10-06",
+              "end": null
+            }
+          ],
+          "tonnes": 337.71,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-6/2013062152"
+          ]
+        },
+        {
+          "id": "unloading-a3ba409f27034d985e72",
+          "periods": [
+            {
+              "start": "2025-03-06",
+              "end": null
+            }
+          ],
+          "tonnes": 309.14,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-6/2013062152"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2012057189",
+      "name": "Haltentrål",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-d1f59ec0f0b175ac3f90",
+          "periods": [
+            {
+              "start": "2025-10-17",
+              "end": null
+            }
+          ],
+          "tonnes": 73.47,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-17/2012057189"
+          ]
+        },
+        {
+          "id": "unloading-cdac445ff708d003ce90",
+          "periods": [
+            {
+              "start": "2025-04-10",
+              "end": null
+            }
+          ],
+          "tonnes": 121.6,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-10/2012057189"
+          ]
+        },
+        {
+          "id": "unloading-1f8f55cc8a01190ea1aa",
+          "periods": [
+            {
+              "start": "2025-02-22",
+              "end": null
+            }
+          ],
+          "tonnes": 111.9,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-22/2012057189"
+          ]
+        },
+        {
+          "id": "unloading-75f16fd7b02c1a93b8d7",
+          "periods": [
+            {
+              "start": "2024-09-06",
+              "end": null
+            }
+          ],
+          "tonnes": 120.87,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-6/2012057189"
+          ]
+        },
+        {
+          "id": "unloading-ace987059ae20641827c",
+          "periods": [
+            {
+              "start": "2024-08-22",
+              "end": null
+            }
+          ],
+          "tonnes": 96.27,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-22/2012057189"
+          ]
+        },
+        {
+          "id": "unloading-2db78a6c93ebf33f4e4c",
+          "periods": [
+            {
+              "start": "2023-05-02",
+              "end": null
+            }
+          ],
+          "tonnes": 94.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1998004385",
+      "name": "Harhaug I",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8a149e0178e6d61d50ca",
+          "periods": [
+            {
+              "start": "2025-09-02",
+              "end": null
+            }
+          ],
+          "tonnes": 42.06,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-2/1998004385"
+          ]
+        },
+        {
+          "id": "unloading-693acac499bb03775524",
+          "periods": [
+            {
+              "start": "2024-11-13",
+              "end": null
+            }
+          ],
+          "tonnes": 144.66,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-11-13/1998004385"
+          ]
+        },
+        {
+          "id": "unloading-dcfa40f4102b41f1a092",
+          "periods": [
+            {
+              "start": "2024-08-22",
+              "end": null
+            }
+          ],
+          "tonnes": 29.72,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-22/1998004385"
+          ]
+        },
+        {
+          "id": "unloading-a7c622af43bfa5e5110d",
+          "periods": [
+            {
+              "start": "2024-08-10",
+              "end": null
+            }
+          ],
+          "tonnes": 79.24,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-10/1998004385"
+          ]
+        },
+        {
+          "id": "unloading-95045f56ebb9b2645b63",
+          "periods": [
+            {
+              "start": "2024-07-20",
+              "end": null
+            }
+          ],
+          "tonnes": 143.92,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-20/1998004385"
+          ]
+        },
+        {
+          "id": "unloading-c063b2ccf458b4b79f33",
+          "periods": [
+            {
+              "start": "2023-10-02",
+              "end": null
+            }
+          ],
+          "tonnes": 139.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-b6e04cb37df363921028",
+          "periods": [
+            {
+              "start": "2023-09-18",
+              "end": null
+            }
+          ],
+          "tonnes": 91.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2011054408",
+      "name": "Havtind",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-f8cf09e590396fdc1814",
+          "periods": [
+            {
+              "start": "2022-08-14",
+              "end": null
+            }
+          ],
+          "tonnes": 266.83,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-8-14/2011054408"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2013062252",
+      "name": "Ishavet",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-c7ca4e4e3f80ff063541",
+          "periods": [
+            {
+              "start": "2025-10-13",
+              "end": null
+            }
+          ],
+          "tonnes": 436.21,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-13/2013062252"
+          ]
+        },
+        {
+          "id": "unloading-9655146fb562ac90bb42",
+          "periods": [
+            {
+              "start": "2025-07-28",
+              "end": null
+            }
+          ],
+          "tonnes": 551.64,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-28/2013062252"
+          ]
+        },
+        {
+          "id": "unloading-2a24030d8ac62b92b60b",
+          "periods": [
+            {
+              "start": "2025-04-25",
+              "end": null
+            }
+          ],
+          "tonnes": 458.11,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-25/2013062252"
+          ]
+        },
+        {
+          "id": "unloading-474669c3e56671e6f431",
+          "periods": [
+            {
+              "start": "2024-06-13",
+              "end": null
+            }
+          ],
+          "tonnes": 360.81,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-6-13/2013062252"
+          ]
+        },
+        {
+          "id": "unloading-240d1c120d9770d3331e",
+          "periods": [
+            {
+              "start": "2022-01-31",
+              "end": null
+            }
+          ],
+          "tonnes": 452.89,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-1-31/2013062252"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2023123977",
+      "name": "K. Nyvoll",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-c392ede8dcea5e6e0cf0",
+          "periods": [
+            {
+              "start": "2025-09-03",
+              "end": null
+            }
+          ],
+          "tonnes": 187.82,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-3/2023123977"
+          ]
+        },
+        {
+          "id": "unloading-77132028e38d5394f97c",
+          "periods": [
+            {
+              "start": "2025-08-15",
+              "end": null
+            }
+          ],
+          "tonnes": 278.16,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-15/2023123977"
+          ]
+        },
+        {
+          "id": "unloading-68b308c2dc91aa585970",
+          "periods": [
+            {
+              "start": "2025-06-27",
+              "end": null
+            }
+          ],
+          "tonnes": 252.87,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-27/2023123977"
+          ]
+        },
+        {
+          "id": "unloading-e6263ebefe9d799504c0",
+          "periods": [
+            {
+              "start": "2024-09-10",
+              "end": null
+            }
+          ],
+          "tonnes": 117.66,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-10/2023123977"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2007039809",
+      "name": "Kap Farvel",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-a90f06129f6f57ef3098",
+          "periods": [
+            {
+              "start": "2025-11-03",
+              "end": null
+            }
+          ],
+          "tonnes": 201.06,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-11-3/2007039809"
+          ]
+        },
+        {
+          "id": "unloading-68b3249d94c265d52065",
+          "periods": [
+            {
+              "start": "2025-08-04",
+              "end": null
+            }
+          ],
+          "tonnes": 249.33,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-4/2007039809"
+          ]
+        },
+        {
+          "id": "unloading-7b8dac12d3fcd091c3aa",
+          "periods": [
+            {
+              "start": "2025-06-19",
+              "end": null
+            }
+          ],
+          "tonnes": 209.73,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-19/2007039809"
+          ]
+        },
+        {
+          "id": "unloading-2e75e1aedbbc97cefeca",
+          "periods": [
+            {
+              "start": "2025-05-09",
+              "end": null
+            }
+          ],
+          "tonnes": 262.65,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-5-9/2007039809"
+          ]
+        },
+        {
+          "id": "unloading-0f13a13ddfb7dafd276e",
+          "periods": [
+            {
+              "start": "2024-12-29",
+              "end": null
+            }
+          ],
+          "tonnes": 118.21,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-29/2007039809"
+          ]
+        },
+        {
+          "id": "unloading-a4e31463a7c7adc13256",
+          "periods": [
+            {
+              "start": "2023-05-02",
+              "end": null
+            }
+          ],
+          "tonnes": 200.0,
+          "tonnageKind": "reported",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-917b20aa6c2f2c1ab581",
+          "periods": [
+            {
+              "start": "2022-07-02",
+              "end": null
+            }
+          ],
+          "tonnes": 224.48,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-7-2/2007039809"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1990009532",
+      "name": "Koralen",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-c52f9eef3a4dfc9780c9",
+          "periods": [
+            {
+              "start": "2025-09-25",
+              "end": null
+            }
+          ],
+          "tonnes": 179.28,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-25/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-c9cc5ee876d3e8b0e710",
+          "periods": [
+            {
+              "start": "2025-08-14",
+              "end": null
+            }
+          ],
+          "tonnes": 193.98,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-14/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-ce808fa7a3012ad731a0",
+          "periods": [
+            {
+              "start": "2025-08-08",
+              "end": null
+            }
+          ],
+          "tonnes": 41.58,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-8/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-8008a06b53bb3d6a6b3c",
+          "periods": [
+            {
+              "start": "2025-04-28",
+              "end": null
+            }
+          ],
+          "tonnes": 189.91,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-28/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-b7d3027c45b4c0703873",
+          "periods": [
+            {
+              "start": "2025-03-19",
+              "end": null
+            }
+          ],
+          "tonnes": 177.03,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-20/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-9042659c575f3527de3a",
+          "periods": [
+            {
+              "start": "2024-12-14",
+              "end": null
+            }
+          ],
+          "tonnes": 139.52,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-14/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-fcf50858c7d3badc04e2",
+          "periods": [
+            {
+              "start": "2024-11-11",
+              "end": null
+            }
+          ],
+          "tonnes": 164.97,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-11-11/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-c739459d196a278da0b8",
+          "periods": [
+            {
+              "start": "2024-09-16",
+              "end": null
+            }
+          ],
+          "tonnes": 129.97,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-16/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-e05bf265a832bb99002d",
+          "periods": [
+            {
+              "start": "2024-08-02",
+              "end": null
+            }
+          ],
+          "tonnes": 124.42,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-2/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-4e84fef7635f8ed29835",
+          "periods": [
+            {
+              "start": "2024-03-27",
+              "end": null
+            }
+          ],
+          "tonnes": 216.03,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-3-27/1990009532"
+          ]
+        },
+        {
+          "id": "unloading-15dc3b1cf146e7931f7b",
+          "periods": [
+            {
+              "start": "2023-07-03",
+              "end": null
+            }
+          ],
+          "tonnes": 171.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-eeb39175c7b309261b17",
+          "periods": [
+            {
+              "start": "2023-04-18",
+              "end": null
+            }
+          ],
+          "tonnes": 226.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-d7c3c521e56b43e90ec5",
+          "periods": [
+            {
+              "start": "2022-01-31",
+              "end": null
+            }
+          ],
+          "tonnes": 159.94,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-1-31/1990009532"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2000013380",
+      "name": "Koralhav",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-e7b1c711ff324c291fa8",
+          "periods": [
+            {
+              "start": "2025-11-26",
+              "end": null
+            }
+          ],
+          "tonnes": 214.82,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-11-26/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-311cc8f137fbb0fd419e",
+          "periods": [
+            {
+              "start": "2025-10-09",
+              "end": null
+            }
+          ],
+          "tonnes": 185.97,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-9/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-48161c52fb9c074dadff",
+          "periods": [
+            {
+              "start": "2025-08-27",
+              "end": null
+            }
+          ],
+          "tonnes": 158.94,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-27/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-765e2630bb3726a927eb",
+          "periods": [
+            {
+              "start": "2025-07-21",
+              "end": null
+            }
+          ],
+          "tonnes": 214.69,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-21/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-a9b0e622da8bdf1ca51d",
+          "periods": [
+            {
+              "start": "2025-04-23",
+              "end": null
+            }
+          ],
+          "tonnes": 231.63,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-23/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-cd491cf8cfc894c9cd14",
+          "periods": [
+            {
+              "start": "2024-12-20",
+              "end": null
+            }
+          ],
+          "tonnes": 244.3,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-20/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-9770f61503ecf1bd9d29",
+          "periods": [
+            {
+              "start": "2024-11-14",
+              "end": null
+            }
+          ],
+          "tonnes": 178.34,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-11-14/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-979c6b7d9d752b2f73db",
+          "periods": [
+            {
+              "start": "2024-10-08",
+              "end": null
+            }
+          ],
+          "tonnes": 236.32,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-10-8/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-87e44bccc9383e4b4f62",
+          "periods": [
+            {
+              "start": "2024-08-28",
+              "end": null
+            }
+          ],
+          "tonnes": 179.78,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-28/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-53f3f9fc24c06c7ae144",
+          "periods": [
+            {
+              "start": "2023-04-17",
+              "end": null
+            }
+          ],
+          "tonnes": 138.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-709de35e1a950c5587a0",
+          "periods": [
+            {
+              "start": "2022-08-02",
+              "end": null
+            }
+          ],
+          "tonnes": 200.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-8-2/2000013380"
+          ]
+        },
+        {
+          "id": "unloading-3c6fd2f32caf44fbbf30",
+          "periods": [
+            {
+              "start": "2021-08-04",
+              "end": null
+            }
+          ],
+          "tonnes": 184.32,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2021-8-4/2000013380"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2020114294",
+      "name": "Kvalnes",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-56b2d1b92bdc266f65a2",
+          "periods": [
+            {
+              "start": "2025-06-12",
+              "end": null
+            }
+          ],
+          "tonnes": 23.89,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-12/2020114294"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name-1db4ea0a6e60203e6aa3",
+      "name": "Kågtind",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8b97cc8f98c62565c6ad",
+          "periods": [
+            {
+              "start": "2024-08-27",
+              "end": null
+            }
+          ],
+          "tonnes": 505.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1986003853",
+      "name": "Langenes",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8e1fa73a53eaf61b8ee1",
+          "periods": [
+            {
+              "start": "2022-07-01",
+              "end": null
+            }
+          ],
+          "tonnes": 197.31,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-7-1/1986003853"
+          ]
+        },
+        {
+          "id": "unloading-b7330597750608eb7446",
+          "periods": [
+            {
+              "start": "2022-06-30",
+              "end": null
+            },
+            {
+              "start": "2022-06-29",
+              "end": null
+            }
+          ],
+          "tonnes": 17.02,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-6-30/1986003853"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name-ed4d089e620121417983",
+      "name": "Langøy",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-2c708d378d947abcf883",
+          "periods": [
+            {
+              "start": "2023-09-18",
+              "end": null
+            }
+          ],
+          "tonnes": 688.59,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2015070934",
+      "name": "Leinebris",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-15ef4695b40049739edc",
+          "periods": [
+            {
+              "start": "2025-08-05",
+              "end": null
+            }
+          ],
+          "tonnes": 181.12,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-5/2015070934"
+          ]
+        },
+        {
+          "id": "unloading-996e289d2cf1092c0530",
+          "periods": [
+            {
+              "start": "2025-06-18",
+              "end": null
+            }
+          ],
+          "tonnes": 174.43,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-18/2015070934"
+          ]
+        },
+        {
+          "id": "unloading-dd176229658bc363b2af",
+          "periods": [
+            {
+              "start": "2025-04-04",
+              "end": null
+            }
+          ],
+          "tonnes": 237.9,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-4/2015070934"
+          ]
+        },
+        {
+          "id": "unloading-03e47b7225cc08c312f2",
+          "periods": [
+            {
+              "start": "2025-01-29",
+              "end": null
+            }
+          ],
+          "tonnes": 216.65,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-1-29/2015070934"
+          ]
+        },
+        {
+          "id": "unloading-bb4ac31fcfee35fae6b8",
+          "periods": [
+            {
+              "start": "2024-06-02",
+              "end": null
+            }
+          ],
+          "tonnes": 135.24,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-6-2/2015070934"
+          ]
+        },
+        {
+          "id": "unloading-157f8d53824dd79a37ee",
+          "periods": [
+            {
+              "start": "2023-08-06",
+              "end": null
+            }
+          ],
+          "tonnes": 132.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-cdc21c2368f2b1f65b1f",
+      "name": "Lodairo",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-4d86d523050a4f7e10d7",
+          "periods": [
+            {
+              "start": "2023-07-14",
+              "end": "2023-07-15"
+            }
+          ],
+          "tonnes": 420.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1999003712",
+      "name": "Loran",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-93debc26c808967f12c7",
+          "periods": [
+            {
+              "start": "2025-08-14",
+              "end": null
+            }
+          ],
+          "tonnes": 140.98,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-14/1999003712"
+          ]
+        },
+        {
+          "id": "unloading-4c244e51d8040920317a",
+          "periods": [
+            {
+              "start": "2024-07-15",
+              "end": null
+            }
+          ],
+          "tonnes": 254.47,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-15/1999003712"
+          ]
+        },
+        {
+          "id": "unloading-86a793bd64bb85e4f3d9",
+          "periods": [
+            {
+              "start": "2024-03-24",
+              "end": null
+            }
+          ],
+          "tonnes": 380.11,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-3-24/1999003712"
+          ]
+        },
+        {
+          "id": "unloading-e40a527f39b59c7570a8",
+          "periods": [
+            {
+              "start": "2023-11-12",
+              "end": null
+            }
+          ],
+          "tonnes": 313.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-eb3617b13d5420369d28",
+          "periods": [
+            {
+              "start": "2023-08-14",
+              "end": null
+            }
+          ],
+          "tonnes": 304.78,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-61e73de04bcee7115e44",
+          "periods": [
+            {
+              "start": "2022-07-15",
+              "end": null
+            }
+          ],
+          "tonnes": 297.39,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-7-15/1999003712"
+          ]
+        },
+        {
+          "id": "unloading-1f308a0fe63ef3127143",
+          "periods": [
+            {
+              "start": "2022-06-01",
+              "end": null
+            }
+          ],
+          "tonnes": 302.76,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-6-1/1999003712"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name-d02d56253c2906d2ec65",
+      "name": "Magne Arvesen",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-122af27d020073d9b897",
+          "periods": [
+            {
+              "start": "2023-11-06",
+              "end": null
+            }
+          ],
+          "tonnes": 755.5,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2005032205",
+      "name": "Molnes",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-7dbc7fc8ad03b48a2d83",
+          "periods": [
+            {
+              "start": "2025-11-12",
+              "end": null
+            }
+          ],
+          "tonnes": 121.67,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-11-12/2005032205"
+          ]
+        },
+        {
+          "id": "unloading-b911bcd391e300cbb8f5",
+          "periods": [
+            {
+              "start": "2025-08-20",
+              "end": null
+            }
+          ],
+          "tonnes": 592.05,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-20/2005032205"
+          ]
+        },
+        {
+          "id": "unloading-02057c4644dd724a6058",
+          "periods": [
+            {
+              "start": "2025-04-02",
+              "end": null
+            }
+          ],
+          "tonnes": 621.68,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-2/2005032205"
+          ]
+        },
+        {
+          "id": "unloading-ac12c7714359b1ab940d",
+          "periods": [
+            {
+              "start": "2025-01-09",
+              "end": null
+            }
+          ],
+          "tonnes": 291.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-1-9/2005032205"
+          ]
+        },
+        {
+          "id": "unloading-b9b36ee718450fb73271",
+          "periods": [
+            {
+              "start": "2023-08-07",
+              "end": null
+            }
+          ],
+          "tonnes": 519.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1999004246",
+      "name": "Nesbakk",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8f5dc885cc20ec4d0ab4",
+          "periods": [
+            {
+              "start": "2025-07-23",
+              "end": null
+            }
+          ],
+          "tonnes": 172.08,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-23/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-c261833bac198e8a9758",
+          "periods": [
+            {
+              "start": "2025-06-17",
+              "end": null
+            }
+          ],
+          "tonnes": 152.96,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-17/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-fbb24c7f1d100f06652a",
+          "periods": [
+            {
+              "start": "2025-04-08",
+              "end": null
+            }
+          ],
+          "tonnes": 287.77,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-8/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-6a4823b1d215b7b9699c",
+          "periods": [
+            {
+              "start": "2025-03-19",
+              "end": null
+            }
+          ],
+          "tonnes": 176.04,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-19/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-c5e60f0eaf749dc65b9b",
+          "periods": [
+            {
+              "start": "2025-02-27",
+              "end": null
+            }
+          ],
+          "tonnes": 235.23,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-26/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-e706f7c9d844aae068df",
+          "periods": [
+            {
+              "start": "2024-12-22",
+              "end": null
+            }
+          ],
+          "tonnes": 188.7,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-22/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-c1e11cd3931559bbda15",
+          "periods": [
+            {
+              "start": "2024-07-25",
+              "end": null
+            }
+          ],
+          "tonnes": 127.51,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-25/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-217916aa3761625839af",
+          "periods": [
+            {
+              "start": "2023-08-01",
+              "end": null
+            }
+          ],
+          "tonnes": 223.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-096acfa85b5dc6d0312d",
+          "periods": [
+            {
+              "start": "2022-06-28",
+              "end": null
+            }
+          ],
+          "tonnes": 244.64,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-6-28/1999004246"
+          ]
+        },
+        {
+          "id": "unloading-e1b008d10477628dcc10",
+          "periods": [
+            {
+              "start": "2022-02-05",
+              "end": null
+            }
+          ],
+          "tonnes": 382.94,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-2-6/1999004246"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2019108180",
+      "name": "Nokasa",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8a54d82d7d1267245c4e",
+          "periods": [
+            {
+              "start": "2024-10-08",
+              "end": null
+            }
+          ],
+          "tonnes": 64.34,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-10-8/2019108180"
+          ]
+        },
+        {
+          "id": "unloading-fd41b8165b16a1aecb69",
+          "periods": [
+            {
+              "start": "2024-09-24",
+              "end": null
+            }
+          ],
+          "tonnes": 248.41,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-24/2019108180"
+          ]
+        },
+        {
+          "id": "unloading-05b9896c9f934e69ed08",
+          "periods": [
+            {
+              "start": "2024-07-05",
+              "end": null
+            }
+          ],
+          "tonnes": 174.38,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-5/2019108180"
+          ]
+        },
+        {
+          "id": "unloading-4f45ff235c361d2390f5",
+          "periods": [
+            {
+              "start": "2023-12-07",
+              "end": null
+            }
+          ],
+          "tonnes": 198.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2020115475",
+      "name": "Nordbas",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-0de41cd56123be2e7dc1",
+          "periods": [
+            {
+              "start": "2025-10-27",
+              "end": null
+            }
+          ],
+          "tonnes": 123.64,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-27/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-2163fefb2bed78e03345",
+          "periods": [
+            {
+              "start": "2025-10-14",
+              "end": null
+            }
+          ],
+          "tonnes": 163.14,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-14/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-f3edaebcb2eb8f0d9ad5",
+          "periods": [
+            {
+              "start": "2025-08-22",
+              "end": null
+            }
+          ],
+          "tonnes": 291.55,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-22/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-044c1485a0a01b833c16",
+          "periods": [
+            {
+              "start": "2025-08-05",
+              "end": null
+            }
+          ],
+          "tonnes": 246.73,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-5/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-02d40949e8bae463a3e3",
+          "periods": [
+            {
+              "start": "2025-06-13",
+              "end": null
+            }
+          ],
+          "tonnes": 105.11,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-13/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-dc7a3c1796b50721fa86",
+          "periods": [
+            {
+              "start": "2025-03-14",
+              "end": null
+            }
+          ],
+          "tonnes": 238.33,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-14/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-1b21493e89eade4c5ae6",
+          "periods": [
+            {
+              "start": "2024-09-13",
+              "end": null
+            }
+          ],
+          "tonnes": 232.3,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-13/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-a83583e183a293794a30",
+          "periods": [
+            {
+              "start": "2024-08-23",
+              "end": null
+            }
+          ],
+          "tonnes": 168.92,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-23/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-242ecc11007d6a3965c0",
+          "periods": [
+            {
+              "start": "2024-08-09",
+              "end": null
+            }
+          ],
+          "tonnes": 286.65,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-9/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-d8460f430022f59cf441",
+          "periods": [
+            {
+              "start": "2024-07-16",
+              "end": null
+            }
+          ],
+          "tonnes": 194.02,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-16/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-6c9c19c0ab7ab975fe5a",
+          "periods": [
+            {
+              "start": "2024-06-17",
+              "end": null
+            }
+          ],
+          "tonnes": 230.73,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-6-17/2020115475"
+          ]
+        },
+        {
+          "id": "unloading-47b48d62a675161687d5",
+          "periods": [
+            {
+              "start": "2023-11-20",
+              "end": null
+            }
+          ],
+          "tonnes": 236.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-63531bcfbdaa31df52a2",
+          "periods": [
+            {
+              "start": "2023-11-03",
+              "end": null
+            }
+          ],
+          "tonnes": 255.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-3c8a39e4585dab4a11f3",
+          "periods": [
+            {
+              "start": "2023-09-26",
+              "end": null
+            }
+          ],
+          "tonnes": 260.44,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-a67ac7ed0f6e83781293",
+      "name": "Norditar",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-c17f35bdf1025bb51ca2",
+          "periods": [
+            {
+              "start": "2025-05-04",
+              "end": null
+            }
+          ],
+          "tonnes": 439.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1969000787",
+      "name": "Nordstar",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-6c927f168d33b31eddb3",
+          "periods": [
+            {
+              "start": "2025-08-18",
+              "end": null
+            }
+          ],
+          "tonnes": 375.61,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-18/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-41cc2e8aef7db275c3fe",
+          "periods": [
+            {
+              "start": "2025-06-02",
+              "end": "2025-06-03"
+            }
+          ],
+          "tonnes": 505.64,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-3/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-2ff4b049e490f3c19691",
+          "periods": [
+            {
+              "start": "2025-04-24",
+              "end": null
+            }
+          ],
+          "tonnes": 412.33,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-24/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-c1ca1255bc73a44b5e00",
+          "periods": [
+            {
+              "start": "2025-04-10",
+              "end": null
+            }
+          ],
+          "tonnes": 304.57,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-10/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-25fc7ba58585fab7d23c",
+          "periods": [
+            {
+              "start": "2025-03-21",
+              "end": null
+            }
+          ],
+          "tonnes": 467.92,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-21/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-d3a1d9f38d409b98052e",
+          "periods": [
+            {
+              "start": "2025-02-24",
+              "end": null
+            }
+          ],
+          "tonnes": 234.08,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-24/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-5ea58b6a3c9dd655ab7a",
+          "periods": [
+            {
+              "start": "2025-02-12",
+              "end": null
+            }
+          ],
+          "tonnes": 304.24,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-12/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-6a879747494f91043a03",
+          "periods": [
+            {
+              "start": "2024-12-01",
+              "end": null
+            }
+          ],
+          "tonnes": 280.98,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-12-1/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-d9eb9f20d7753da187f7",
+          "periods": [
+            {
+              "start": "2024-11-17",
+              "end": null
+            }
+          ],
+          "tonnes": 389.66,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-11-17/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-9e695bd88132ca6e5da8",
+          "periods": [
+            {
+              "start": "2024-09-05",
+              "end": "2024-09-06"
+            }
+          ],
+          "tonnes": 596.62,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-6/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-ebb33f90a97e739e9f3d",
+          "periods": [
+            {
+              "start": "2024-08-20",
+              "end": null
+            }
+          ],
+          "tonnes": 374.23,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-20/1969000787"
+          ]
+        },
+        {
+          "id": "unloading-880c8d3d23a653669d6c",
+          "periods": [
+            {
+              "start": "2023-11-22",
+              "end": "2023-11-23"
+            }
+          ],
+          "tonnes": 541.11,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-ca4cb2e4773ddc545800",
+      "name": "O Husby",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-9c5e7408117420de6b2a",
+          "periods": [
+            {
+              "start": "2023-08-12",
+              "end": null
+            }
+          ],
+          "tonnes": 268.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-31c028e827f4c80696d2",
+      "name": "Prawn",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-68b1470403073480acd0",
+          "periods": [
+            {
+              "start": "2022-01-24",
+              "end": null
+            }
+          ],
+          "tonnes": 600.0,
+          "tonnageKind": "reported",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2016073913",
+      "name": "Ramoen",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-d9b139dc3e30cf42599e",
+          "periods": [
+            {
+              "start": "2025-10-02",
+              "end": null
+            }
+          ],
+          "tonnes": 342.77,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-2/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-9984735c111846ed5a4d",
+          "periods": [
+            {
+              "start": "2025-08-28",
+              "end": null
+            }
+          ],
+          "tonnes": 543.88,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-28/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-ccb76ed6b0fc6dbad5f3",
+          "periods": [
+            {
+              "start": "2025-07-01",
+              "end": null
+            }
+          ],
+          "tonnes": 576.54,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-1/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-affd73cc7e9f3ae54a08",
+          "periods": [
+            {
+              "start": "2025-05-27",
+              "end": "2025-05-28"
+            }
+          ],
+          "tonnes": 797.51,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-5-28/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-000ee2e881c0358e8aea",
+          "periods": [
+            {
+              "start": "2025-04-22",
+              "end": null
+            }
+          ],
+          "tonnes": 1010.03,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-72b1b47b6cc819e71830",
+          "periods": [
+            {
+              "start": "2025-04-15",
+              "end": null
+            }
+          ],
+          "tonnes": 438.34,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-4-15/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-ec4238cceb27c029606a",
+          "periods": [
+            {
+              "start": "2025-03-12",
+              "end": null
+            }
+          ],
+          "tonnes": 741.83,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-13/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-cf5584d1b0198f67aaee",
+          "periods": [
+            {
+              "start": "2025-02-05",
+              "end": null
+            }
+          ],
+          "tonnes": 542.99,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-5/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-a1765cc61a220df5a5f9",
+          "periods": [
+            {
+              "start": "2024-10-07",
+              "end": null
+            }
+          ],
+          "tonnes": 408.64,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-10-7/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-63c685b21a19659b9298",
+          "periods": [
+            {
+              "start": "2024-09-02",
+              "end": null
+            }
+          ],
+          "tonnes": 389.84,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-3/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-a26ba7a641380a5bb71e",
+          "periods": [
+            {
+              "start": "2024-07-23",
+              "end": null
+            }
+          ],
+          "tonnes": 247.64,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-24/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-cc15e46b4cb3e4c964a1",
+          "periods": [
+            {
+              "start": "2024-06-24",
+              "end": null
+            }
+          ],
+          "tonnes": 640.62,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-6-25/2016073913"
+          ]
+        },
+        {
+          "id": "unloading-e586f8a5a5526ec42d76",
+          "periods": [
+            {
+              "start": "2023-10-09",
+              "end": null
+            }
+          ],
+          "tonnes": 1010.03,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-4bb87d6cc97dced30f4f",
+          "periods": [
+            {
+              "start": "2023-07-28",
+              "end": null
+            }
+          ],
+          "tonnes": 1200.0,
+          "tonnageKind": "reported",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-bc0d725b8e92478322dc",
+          "periods": [
+            {
+              "start": "2022-06-17",
+              "end": null
+            }
+          ],
+          "tonnes": 1010.03,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-bd8b9f6a6fa547f8bed8",
+          "periods": [
+            {
+              "start": "2023-06-26",
+              "end": "2023-06-27"
+            }
+          ],
+          "tonnes": 500.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2013062912",
+      "name": "Remøy",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-dae50230b4ee9f454e81",
+          "periods": [
+            {
+              "start": "2025-11-19",
+              "end": null
+            }
+          ],
+          "tonnes": 173.76,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-11-19/2013062912"
+          ]
+        },
+        {
+          "id": "unloading-603753470c6d1648017f",
+          "periods": [
+            {
+              "start": "2025-10-29",
+              "end": null
+            }
+          ],
+          "tonnes": 366.02,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-29/2013062912"
+          ]
+        },
+        {
+          "id": "unloading-c5da57eb63390a0a7bed",
+          "periods": [
+            {
+              "start": "2025-08-21",
+              "end": null
+            }
+          ],
+          "tonnes": 308.56,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-21/2013062912"
+          ]
+        },
+        {
+          "id": "unloading-d8422935c39fda42a095",
+          "periods": [
+            {
+              "start": "2024-03-25",
+              "end": null
+            }
+          ],
+          "tonnes": 693.58,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-3-25/2013062912"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1995005068",
+      "name": "Rypefjord",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-48f976a3e7a303aea9d7",
+          "periods": [
+            {
+              "start": "2025-08-16",
+              "end": null
+            }
+          ],
+          "tonnes": 234.7,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-16/1995005068"
+          ]
+        },
+        {
+          "id": "unloading-424dcfdf14610252dc15",
+          "periods": [
+            {
+              "start": "2025-03-17",
+              "end": null
+            }
+          ],
+          "tonnes": 268.13,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-17/1995005068"
+          ]
+        },
+        {
+          "id": "unloading-a95eb308e64c6f2d5cc1",
+          "periods": [
+            {
+              "start": "2025-02-24",
+              "end": null
+            }
+          ],
+          "tonnes": 37.48,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-24/1995005068"
+          ]
+        },
+        {
+          "id": "unloading-4fbcf993f089f5936ecd",
+          "periods": [
+            {
+              "start": "2025-02-19",
+              "end": null
+            }
+          ],
+          "tonnes": 294.69,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-19/1995005068"
+          ]
+        },
+        {
+          "id": "unloading-44ec9701753df7b73246",
+          "periods": [
+            {
+              "start": "2024-09-10",
+              "end": null
+            }
+          ],
+          "tonnes": 259.96,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-11/1995005068"
+          ]
+        },
+        {
+          "id": "unloading-3b67e559c23a400d59c6",
+          "periods": [
+            {
+              "start": "2024-07-10",
+              "end": null
+            }
+          ],
+          "tonnes": 157.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-10/1995005068"
+          ]
+        },
+        {
+          "id": "unloading-c945bccb0a599c23f21f",
+          "periods": [
+            {
+              "start": "2023-08-15",
+              "end": "2023-08-16"
+            }
+          ],
+          "tonnes": 192.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2017098773",
+      "name": "Sara Karin",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-78f483540a140862518b",
+          "periods": [
+            {
+              "start": "2025-08-06",
+              "end": null
+            }
+          ],
+          "tonnes": 100.18,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-6/2017098773"
+          ]
+        },
+        {
+          "id": "unloading-94ec87a154758f451a0b",
+          "periods": [
+            {
+              "start": "2025-05-02",
+              "end": null
+            }
+          ],
+          "tonnes": 131.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-b18bfaa6980acb7998ce",
+      "name": "Senja",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-ce629ce6d499e1298567",
+          "periods": [
+            {
+              "start": "2023-10-05",
+              "end": null
+            }
+          ],
+          "tonnes": 482.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-abdf680e1be1308c8a1c",
+          "periods": [
+            {
+              "start": "2021-01-04",
+              "end": null
+            }
+          ],
+          "tonnes": 499.33,
+          "tonnageKind": "estimated",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2020115075",
+      "name": "Stødig",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-47d99836b4f9ec8e607f",
+          "periods": [
+            {
+              "start": "2025-10-01",
+              "end": null
+            }
+          ],
+          "tonnes": 135.46,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-1/2020115075"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2020115234",
+      "name": "Sunderøy",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-c74c2383e5b51074b0ba",
+          "periods": [
+            {
+              "start": "2025-10-05",
+              "end": null
+            }
+          ],
+          "tonnes": 606.4,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-6/2020115234"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2000013801",
+      "name": "Synes",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8331434e4d712a6b4df5",
+          "periods": [
+            {
+              "start": "2025-09-26",
+              "end": null
+            }
+          ],
+          "tonnes": 341.99,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-26/2000013801"
+          ]
+        },
+        {
+          "id": "unloading-16e3026c580ed86428da",
+          "periods": [
+            {
+              "start": "2025-08-23",
+              "end": null
+            }
+          ],
+          "tonnes": 165.76,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-23/2000013801"
+          ]
+        },
+        {
+          "id": "unloading-050135ef62f7da31c493",
+          "periods": [
+            {
+              "start": "2025-02-25",
+              "end": null
+            }
+          ],
+          "tonnes": 196.14,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-25/2000013801"
+          ]
+        },
+        {
+          "id": "unloading-30b6c067fcd6b83db847",
+          "periods": [
+            {
+              "start": "2025-02-13",
+              "end": null
+            }
+          ],
+          "tonnes": 341.02,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-13/2000013801"
+          ]
+        },
+        {
+          "id": "unloading-4331fc62af24db1a6d62",
+          "periods": [
+            {
+              "start": "2025-01-03",
+              "end": null
+            }
+          ],
+          "tonnes": 210.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "unloading-4ee6cff618e4dd7f7034",
+          "periods": [
+            {
+              "start": "2024-09-12",
+              "end": null
+            }
+          ],
+          "tonnes": 233.68,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-12/2000013801"
+          ]
+        },
+        {
+          "id": "unloading-ee20286144ad32599d9f",
+          "periods": [
+            {
+              "start": "2023-12-22",
+              "end": null
+            }
+          ],
+          "tonnes": 122.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "name-a868efd77484b6997dce",
+      "name": "Tangenes",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-af4ce36f428942fa823f",
+          "periods": [
+            {
+              "start": "2023-07-24",
+              "end": null
+            }
+          ],
+          "tonnes": 335.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2018102613",
+      "name": "Veidar",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-28cfdb2f6f9beb7e87f6",
+          "periods": [
+            {
+              "start": "2025-10-21",
+              "end": null
+            }
+          ],
+          "tonnes": 123.97,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-10-21/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-6d906a80307b62550c5e",
+          "periods": [
+            {
+              "start": "2025-09-23",
+              "end": null
+            }
+          ],
+          "tonnes": 162.11,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-9-23/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-f8482b2d77b027849c65",
+          "periods": [
+            {
+              "start": "2025-08-12",
+              "end": null
+            }
+          ],
+          "tonnes": 168.37,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-8-12/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-212784c091658c9aab3d",
+          "periods": [
+            {
+              "start": "2025-07-08",
+              "end": null
+            }
+          ],
+          "tonnes": 223.44,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-7-8/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-dd88c4a0954c3187023a",
+          "periods": [
+            {
+              "start": "2025-03-24",
+              "end": null
+            }
+          ],
+          "tonnes": 244.95,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-3-24/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-6c8208ccda4225bde078",
+          "periods": [
+            {
+              "start": "2024-11-12",
+              "end": null
+            }
+          ],
+          "tonnes": 186.07,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-11-12/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-588fa753f3f9a1d03374",
+          "periods": [
+            {
+              "start": "2024-07-09",
+              "end": null
+            }
+          ],
+          "tonnes": 292.16,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-9/2018102613"
+          ]
+        },
+        {
+          "id": "unloading-b56c5f351f74f3ed4376",
+          "periods": [
+            {
+              "start": "2023-09-26",
+              "end": null
+            }
+          ],
+          "tonnes": 401.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-1998009101",
+      "name": "Veststeinen",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-99e211f953ff35312b5e",
+          "periods": [
+            {
+              "start": "2024-07-17",
+              "end": null
+            }
+          ],
+          "tonnes": 175.36,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-17/1998009101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name-8878f5e7da07d2027d58",
+      "name": "Vesttind",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-56f015daa0a50b9b7d84",
+          "periods": [
+            {
+              "start": "2023-08-04",
+              "end": null
+            }
+          ],
+          "tonnes": 482.0,
+          "tonnageKind": "timesheet",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "fangstdata-2002019621",
+      "name": "Vonar",
+      "note": null,
+      "entries": [
+        {
+          "id": "unloading-8dfc4c1b3df14e3eec6f",
+          "periods": [
+            {
+              "start": "2025-06-08",
+              "end": null
+            }
+          ],
+          "tonnes": 242.13,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-6-8/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-eb478099ae277029c1df",
+          "periods": [
+            {
+              "start": "2025-02-28",
+              "end": null
+            }
+          ],
+          "tonnes": 292.49,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-2-28/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-129e103e929f11a51445",
+          "periods": [
+            {
+              "start": "2025-01-31",
+              "end": null
+            }
+          ],
+          "tonnes": 244.53,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2025-1-31/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-f7d382d66a39d5000186",
+          "periods": [
+            {
+              "start": "2024-09-23",
+              "end": null
+            }
+          ],
+          "tonnes": 128.99,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-9-23/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-e27d6506910576e73d22",
+          "periods": [
+            {
+              "start": "2024-08-19",
+              "end": null
+            }
+          ],
+          "tonnes": 151.3,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-8-19/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-af38f3254037f2ba223c",
+          "periods": [
+            {
+              "start": "2024-07-19",
+              "end": null
+            }
+          ],
+          "tonnes": 118.89,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-7-19/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-40413e2168c26942b7ff",
+          "periods": [
+            {
+              "start": "2024-03-25",
+              "end": null
+            }
+          ],
+          "tonnes": 257.66,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2024-3-25/2002019621"
+          ]
+        },
+        {
+          "id": "unloading-0f7174081cc59635074e",
+          "periods": [
+            {
+              "start": "2022-06-07",
+              "end": null
+            }
+          ],
+          "tonnes": 267.58,
+          "tonnageKind": "landing",
+          "includeInTotal": true,
+          "description": null,
+          "sourceUrls": [
+            "https://fangstdata.no/offload/2022-6-7/2002019621"
+          ]
+        }
+      ]
+    }
+  ]
+}

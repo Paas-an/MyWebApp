@@ -11,7 +11,8 @@ $template = Get-Content -Raw -Encoding utf8 -LiteralPath (Join-Path $repositoryR
 $utf8 = [Text.UTF8Encoding]::new($false)
 $pages = @(
     @{ Source = "Pages/Index.razor"; Output = "index.html" },
-    @{ Source = "Pages/Contact.razor"; Output = "contact.html" }
+    @{ Source = "Pages/Contact.razor"; Output = "contact.html" },
+    @{ Source = "Pages/Vessels.razor"; Output = "vessels.html" }
 )
 
 if (-not $template.Contains("<!-- PAGE_METADATA -->")) {
@@ -38,7 +39,7 @@ foreach ($page in $pages) {
     [IO.File]::WriteAllText($destination, $html, $utf8)
 
     # dotnet publish may have compressed the original shell already. Remove
-    # only the stale variants of these two generated files; Azure compresses
+    # only the stale variants of these generated files; Azure compresses
     # the updated HTML responses itself.
     foreach ($extension in @('.br', '.gz')) {
         $compressedFile = "$destination$extension"
@@ -48,4 +49,4 @@ foreach ($page in $pages) {
     }
 }
 
-Write-Host "Published static SEO metadata for / and /contact."
+Write-Host "Published static SEO metadata for /, /contact and /vessels."

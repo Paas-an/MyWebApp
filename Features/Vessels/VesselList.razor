@@ -6,8 +6,8 @@
         <h2 id="@HeadingId">@Title</h2>
         @if (ShowInfo && IsUnloading && TotalTonnes is { } totalTonnes)
         {
-            <span class="badge rounded-pill vessel-total" title="Totalt losset, inkludert estimerte mengder.">
-                @FormatTonnes(totalTonnes) totalt tonn losset
+            <span class="badge rounded-pill vessel-total" title="Totalt losset.">
+                @FormatTonnes(totalTonnes) totalt vekt losset
             </span>
         }
     </div>
@@ -34,7 +34,7 @@
                                     @vessel.Entries.Count @(IsUnloading ? (vessel.Entries.Count == 1 ? "lossing" : "lossinger") : "oppdrag")
                                     @if (IsUnloading)
                                     {
-                                        <span> · @(vessel.TotalTonnes is { } total ? $"{FormatTonnes(total)} tonn totalt" : "Tonn ikke registrert")</span>
+                                        <span> · @(vessel.TotalTonnes is { } total ? $"{FormatTonnes(total)} total vekt" : "vekt ikke registrert")</span>
                                         @if (vessel.HasExcludedWeights)
                                         {
                                             <span> · ufullstendig vektgrunnlag</span>
@@ -54,8 +54,8 @@
                             <caption>@(IsUnloading ? "Lossehistorikk" : "Utført arbeid") · @vessel.Name</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">Dato om bord</th>
-                                    <th scope="col" class="@(IsUnloading ? "vessel-tonnes" : "")">@(IsUnloading ? "Tonn" : "Arbeidsbeskrivelse")</th>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="@(IsUnloading ? "vessel-tonnes" : "")">@(IsUnloading ? "" : "Arbeidsbeskrivelse")</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,7 +93,7 @@
         </ul>
         @if (IsUnloading)
         {
-            <p class="vessel-footnote">Tonn gjelder registrert last.</p>
+            <p class="vessel-footnote">registrert last opgitt i tonn.</p>
         }
     }
 </section>
@@ -127,7 +127,7 @@
     private static string WeightLabel(VesselEntry entry) => entry.TonnageKind switch
     {
         "estimated" => "Estimat",
-        "landing" => "Produktvekt fra landing",
+        "landing" => "Produktvekt",
         "timesheet" => "Fra timeseddel",
         "reported" => "Oppgitt vekt",
         _ => "",

@@ -1,26 +1,26 @@
 @page "/"
-@using System.Globalization
 
 <PageTitle>Jonas Skogtrø Olsen</PageTitle>
 <HeadContent>
     <meta name="description"
-          content="Jonas Skogtrø Olsen bygger og utforsker løsninger med .NET, Blazor og moderne webteknologi." />
+          content="Jonas Skogtrø Olsen – serviceingeniør hos Moltech. Arbeider med maritim elektronikk, navigasjon, kommunikasjon og systemintegrasjon." />
     <link rel="canonical" href="https://www.olsenjonas.no/" />
     <meta property="og:title" content="Jonas Skogtrø Olsen" />
     <meta property="og:description"
-          content="Utvikler med interesse for .NET, Blazor og moderne webteknologi." />
+          content="Jonas Skogtrø Olsen – serviceingeniør hos Moltech. Arbeider med maritim elektronikk, navigasjon, kommunikasjon og systemintegrasjon." />
     <meta property="og:url" content="https://www.olsenjonas.no/" />
     <meta name="twitter:title" content="Jonas Skogtrø Olsen" />
     <meta name="twitter:description"
-          content="Utvikler med interesse for .NET, Blazor og moderne webteknologi." />
+          content="Jonas Skogtrø Olsen – serviceingeniør hos Moltech. Arbeider med maritim elektronikk, navigasjon, kommunikasjon og systemintegrasjon." />
 </HeadContent>
 
 <section class="hero" aria-labelledby="hero-title">
-    <p class="hero-eyebrow">Utvikler · Norge</p>
-    <h1 id="hero-title">Hei, jeg er Jonas.</h1>
+    <p class="hero-eyebrow">Serviceingeniør · Maritim teknologi</p>
+    <h1 id="hero-title">Jonas Skogtrø Olsen</h1>
     <p class="hero-lead">
-        Jeg bygger og utforsker løsninger med .NET, Blazor og moderne
-        webteknologi.
+        Jeg arbeider med maritim elektronikk, systemintegrasjon og programvareutvikling.
+        Faglig er jeg særlig opptatt av samspillet mellom instrumenter, nettverk og
+        programvare om bord på fartøy.
     </p>
     <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="/contact">Ta kontakt</a>
@@ -31,18 +31,40 @@
     </div>
 </section>
 
-<section class="home-status" aria-labelledby="status-title">
-    <h2 id="status-title">Nettsiden er under utvikling</h2>
+<section class="home-status mb-4" aria-labelledby="about-title">
+    <h2 id="about-title">Faglig bakgrunn</h2>
     <p>
-        Porteføljen bygges ut trinnvis. I mellomtiden finner du kontaktinformasjon,
-        GitHub, LinkedIn og CV på kontaktsiden.
+        Jeg har åtte års arbeidserfaring fra fartøy, fra lossing av fryselast til
+        dagens arbeid med skipselektronikk.
     </p>
-    <p class="text-secondary mb-0">Sist besøkt: @GetTodaysDate()</p>
+    <p class="mb-0">
+        Jeg har fagbrev i dataelektronikerfaget og har studert ved NTNU på
+        Gløshaugen i Trondheim, der jeg skrev bacheloroppgave i systemutvikling.
+    </p>
 </section>
 
-@code {
-    private static string GetTodaysDate()
-    {
-        return DateTime.Now.ToString("d. MMMM yyyy", CultureInfo.GetCultureInfo("nb-NO"));
-    }
-}
+<section class="home-status mb-4" aria-labelledby="work-title">
+    <h2 id="work-title">Arbeid og ansvarsområder</h2>
+    <p>
+        Som serviceingeniør hos Moltech utfører jeg service og installasjon av
+        maritime navigasjons- og kommunikasjonssystemer. Oppdragene omfatter blant
+        annet installasjon av kompass, gyro og GPS, samt utskifting av skjermer
+        og annet elektronisk utstyr om bord.
+    </p>
+    <p class="mb-0">
+        Jeg bidrar også til utvikling og leveranse av MolBridge, et brosystem for
+        styring av skjermer og betjening av tilkoblede systemer. Arbeidet omfatter
+        konfigurasjon av programvare, oppsett av nettverkssvitsjer og integrasjon
+        av signalkilder og instrumentdata.
+    </p>
+</section>
+
+<section class="home-status" aria-labelledby="projects-title">
+    <h2 id="projects-title">Programvareutvikling</h2>
+    <p class="mb-0">
+        Ved siden av arbeidet utvikler jeg egne programvareprosjekter med maritim
+        anvendelse. Et eksempel er en løsning som bruker AIS-data til å følge
+        posisjonene til fartøy jeg har arbeidet på. Prosjektene kombinerer
+        programvareutvikling med behandling og sammenstilling av maritime data.
+    </p>
+</section>

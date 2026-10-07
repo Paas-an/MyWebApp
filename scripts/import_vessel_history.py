@@ -24,7 +24,7 @@ def identifier(prefix, value):
 
 def display_name(value):
     # Preserve abbreviations in canonical names while avoiding all-caps headings.
-    return " ".join(word if word in {"I", "II", "III", "IV"} else word.capitalize()
+    return " ".join(word.upper() if word.upper() in {"I", "II", "III", "IV"} else word.capitalize()
                     for word in value.strip().split())
 
 
@@ -45,6 +45,25 @@ def parse_tonnes(value):
     if not amount.is_finite() or amount < 0:
         raise ValueError(f"Invalid tonnage: {value!r}")
     return amount
+
+
+def landing_sources(row):
+    """Public citations and per-landing identities are distinct for annual datasets."""
+    raw = row.get("landing_source_url", "")
+    pages = set(re.findall(r"https://fangstdata\.no/offload/\d{4}-\d{1,2}-\d{1,2}/\d+\b", raw))
+    datasets = set(re.findall(r"https://register\.fiskeridir\.no/uttrekk/fangstdata_(\d{4})\.csv\.zip\b", raw))
+    if pages and datasets:
+        raise ValueError("Mixed landing sources require review")
+    if not datasets:
+        return sorted(pages), sorted(pages)
+    boat_id = row.get("landing_boat_id", "")
+    dates = row.get("landing_dates", "").split(";")
+    if not boat_id.isdigit() or not all(dates):
+        raise ValueError("Official data requires a vessel ID and landing dates")
+    dates = sorted({parse_date(day, "landing date") for day in dates})
+    # Files are indexed by catch year, which may precede the landing year.
+    place = normalize(row.get("landing_municipality", ""))
+    return [f"https://register.fiskeridir.no/uttrekk/fangstdata_{year}.csv.zip" for year in sorted(datasets)], [f"official:{boat_id}:{day}:{place}" for day in dates]
 
 
 def apply_splits(rows, splits):
@@ -97,7 +116,7 @@ def import_unloading(rows, splits=()):
                 if normalize(value):
                     aliases[normalize(value)].add(boat_id)
             if row.get("landing_boat_name", "").strip():
-                canonical_names[boat_id].add(row["landing_boat_name"].strip())
+                canonical_names[boat_id].add(normalize(row["landing_boat_name"]))
 
     vessels = {}
     entries = {}
@@ -137,6 +156,7 @@ def import_unloading(rows, splits=()):
         tonnage_kind = {
             "landing_reference": "landing", "estimated_average": "estimated",
             "user_entered": "reported", "extracted": "timesheet",
+            "unverified_reference": "unverified",
         }.get(status)
         if tonnage_kind is None:
             raise ValueError(f"Unknown tonnage status: {status!r}")
@@ -146,30 +166,32 @@ def import_unloading(rows, splits=()):
         # The owner includes estimated quantities in website totals, even when
         # the source's fish-summary flag excludes those estimates.
         included = tonnes is not None and (inclusion == "yes" or tonnage_kind == "estimated")
-        sources = sorted(set(re.findall(
-            r"https://fangstdata\.no/offload/\d{4}-\d{1,2}-\d{1,2}/\d+\b",
-            row.get("landing_source_url", ""))))
+        sources, landing_keys = landing_sources(row)
         if tonnage_kind == "landing" and not sources:
             raise ValueError(f"Landing weight has no usable source for {source_id}")
         # A cargo linked to several work rows is one unloading, with all work periods.
-        group_key = (vessel_id, tuple(sources)) if tonnage_kind == "landing" else (vessel_id, source_id)
-        for source in sources:
+        reference_cargo = tonnage_kind in {"landing", "unverified"} and bool(landing_keys)
+        group_key = (vessel_id, tuple(landing_keys)) if reference_cargo else (vessel_id, source_id)
+        for source in landing_keys:
             if source in source_groups and source_groups[source] != group_key:
                 raise ValueError(f"Overlapping landing references require review: {source}")
             source_groups[source] = group_key
         existing = entries.get(group_key)
         if existing:
-            if existing["tonnes"] != (float(tonnes) if tonnes is not None else None) or existing["includeInTotal"] != included:
+            if existing["tonnes"] != (float(tonnes) if tonnes is not None else None) or existing["includeInTotal"] != included or existing["tonnageKind"] != tonnage_kind:
                 raise ValueError(f"Conflicting quantities for the same landing: {sources}")
             if period not in existing["periods"]:
                 existing["periods"].append(period)
+            note = row.get("public_note", "").strip()
+            if note and note not in (existing["description"] or ""):
+                existing["description"] = " ".join(filter(None, [existing["description"], note]))
             merged_rows += 1
             continue
         entry = {
-            "id": identifier("unloading", "|".join(sources) if tonnage_kind == "landing" else source_id),
+            "id": identifier("unloading", "|".join(landing_keys) if reference_cargo else source_id),
             "periods": [period], "tonnes": float(tonnes) if tonnes is not None else None,
             "tonnageKind": tonnage_kind, "includeInTotal": included,
-            "description": None, "sourceUrls": sources,
+            "description": row.get("public_note", "").strip() or None, "sourceUrls": sources,
         }
         entries[group_key] = entry
         vessel["entries"].append(entry)

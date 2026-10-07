@@ -12,8 +12,8 @@
         }
         @if (ShowInfo && IsUnloading && TotalTonnes is { } totalTonnes)
         {
-            <span class="badge rounded-pill vessel-total" title="Totalt losset.">
-                @FormatTonnes(totalTonnes) totalt vekt losset
+            <span class="badge rounded-pill vessel-total" title="Sum av oppførte mengder, inkludert estimater og uavklarte mengder.">
+                @FormatTonnes(totalTonnes) tonn oppført
             </span>
         }
     </div>
@@ -89,6 +89,10 @@
                                             {
                                                 <span class="vessel-period">@period.Display</span>
                                             }
+                                            @if (IsUnloading && !string.IsNullOrWhiteSpace(entry.Description))
+                                            {
+                                                <span class="vessel-weight-note">@entry.Description</span>
+                                            }
                                         </td>
                                         @if (IsUnloading)
                                         {
@@ -97,7 +101,7 @@
                                                 <span class="vessel-weight-note">@WeightLabel(entry)</span>
                                                 @foreach (var url in entry.SourceUrls.Where(IsLandingUrl))
                                                 {
-                                                    <a class="vessel-source" href="@url" target="_blank" rel="noopener noreferrer">Fangstdata</a>
+                                                    <a class="vessel-source" href="@url" target="_blank" rel="noopener noreferrer">@(url.StartsWith("https://register.fiskeridir.no/", StringComparison.Ordinal) ? "Fiskeridirektoratet · CSV/ZIP" : "Fangstdata")</a>
                                                 }
                                             </td>
                                         }
@@ -115,7 +119,7 @@
         </ul>
         @if (IsUnloading)
         {
-            <p class="vessel-footnote">All vekt opgitt i tonn.</p>
+            <p class="vessel-footnote">Vekt oppgitt i tonn. Datoene viser utført arbeid. Produktvekt gjelder fartøyets registrerte landing, ikke nødvendigvis mengden losset under det enkelte oppdraget. Totalen inkluderer estimater, oppgitte og uavklarte mengder. Disse er merket i historikken.</p>
         }
     }
 </section>
@@ -154,9 +158,13 @@
         "landing" => "Produktvekt",
         "timesheet" => "Fra timeseddel",
         "reported" => "Oppgitt vekt",
+        "unverified" => "Uavklart mengde",
         _ => "",
     };
 
     private static bool IsLandingUrl(string url) => Uri.TryCreate(url, UriKind.Absolute, out var uri)
-        && uri.Scheme == Uri.UriSchemeHttps && uri.Host == "fangstdata.no" && uri.AbsolutePath.StartsWith("/offload/", StringComparison.Ordinal);
+        && uri.Scheme == Uri.UriSchemeHttps
+        && ((uri.Host == "fangstdata.no" && uri.AbsolutePath.StartsWith("/offload/", StringComparison.Ordinal))
+            || (uri.Host == "register.fiskeridir.no"
+                && System.Text.RegularExpressions.Regex.IsMatch(uri.AbsolutePath, @"^/uttrekk/fangstdata_\d{4}\.csv\.zip$")));
 }

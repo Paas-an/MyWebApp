@@ -34,7 +34,7 @@ async function main() {
         const info = page.getByRole('switch');
         const sort = page.getByRole('button', { name: /Sorter begge båtlister/ });
         const list = page.locator('.vessel-section--unloading .vessel-list');
-        const totalBadge = page.locator('.vessel-total');
+        const totalBadge = page.locator('.vessel-section--unloading .vessel-total');
         const totalTonnes = data.vessels.flatMap(vessel => vessel.entries)
             .filter(entry => entry.includeInTotal && entry.tonnes !== null)
             .reduce((total, entry) => total + entry.tonnes, 0);
@@ -63,7 +63,7 @@ async function main() {
         await expect.poll(() => list.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
 
         await info.check();
-        await expect(totalBadge).toHaveText(`${totalLabel} totalt tonn losset`);
+        await expect(totalBadge).toHaveText(`${totalLabel} tonn oppført`);
         await expect(page.locator('.vessel-info')).toHaveCount(totalVesselCount);
         await expect(page.locator('.vessel-history:visible')).toHaveCount(0);
         const koralhav = page.locator('.vessel-item').filter({ has: page.locator('.vessel-name', { hasText: /^Koralhav$/ }) });

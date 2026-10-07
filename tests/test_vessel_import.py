@@ -84,6 +84,17 @@ class VesselImportTests(unittest.TestCase):
         self.assertEqual(len(data["vessels"]), 2)
         self.assertEqual(len(next(v for v in data["vessels"] if v["id"] == "fangstdata-123")["entries"]), 3)
 
+    def test_name_casing_does_not_split_vessels_or_disable_canonical_name(self):
+        data, _ = module.import_unloading([
+            row(boat_name="RAMOEN"), row(entry_id="second", boat_name="ramoen"),
+            row(entry_id="third", boat_name="Ramoen"),
+            row(entry_id="fourth", boat_name="feillest navn", landing_boat_id="123", landing_boat_name="KÅGTIND II"),
+            row(entry_id="fifth", boat_name="kågtind", landing_boat_id="123", landing_boat_name="Kågtind ii"),
+        ])
+        self.assertEqual(len(data["vessels"]), 2)
+        self.assertEqual({v["name"] for v in data["vessels"]}, {"Ramoen", "Kågtind II"})
+        self.assertEqual(len(next(v for v in data["vessels"] if v["name"] == "Ramoen")["entries"]), 3)
+
     def test_conflicting_shared_weights_and_duplicate_ids_fail(self):
         landing = dict(landing_source_url="https://fangstdata.no/offload/2025-1-3/123", fish_tonnage_status="landing_reference")
         with self.assertRaisesRegex(ValueError, "Conflicting quantities"):
@@ -96,6 +107,55 @@ class VesselImportTests(unittest.TestCase):
         encoded = json.dumps(data)
         for private in ["PRIVATE", "employee", "piecework", "5000"]:
             self.assertNotIn(private, encoded)
+
+    def test_official_dataset_distinguishes_dates_and_vessels_but_merges_same_landing(self):
+        source = dict(landing_source_url="https://register.fiskeridir.no/uttrekk/fangstdata_2023.csv.zip",
+                      landing_dates="2023-07-24", landing_boat_id="123", fish_tonnage_status="landing_reference")
+        data, report = module.import_unloading([
+            row(date="2023-07-24", **source),
+            row(entry_id="second", date="2023-07-23", public_note="Arbeid dagen før landing.", **source),
+            row(entry_id="third", date="2023-08-24", **dict(source, landing_dates="2023-08-24")),
+            row(entry_id="fourth", date="2023-07-24", boat_name="another boat", **dict(source, landing_boat_id="456")),
+        ])
+        self.assertEqual(report["unloadings"], 3)
+        self.assertEqual(report["includedTonnes"], "360.75")
+        entries = [e for v in data["vessels"] for e in v["entries"]]
+        self.assertEqual(len({e["id"] for e in entries}), 3)
+        self.assertTrue(any(e["description"] == "Arbeid dagen før landing." for e in entries))
+
+    def test_official_source_rejects_missing_identity_and_overlapping_cargo(self):
+        source = dict(landing_source_url="https://register.fiskeridir.no/uttrekk/fangstdata_2023.csv.zip",
+                      landing_dates="2023-07-24", landing_boat_id="123", fish_tonnage_status="landing_reference")
+        for change in [{"landing_boat_id":""}, {"landing_dates":""}]:
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                module.import_unloading([row(**dict(source, **change))])
+        with self.assertRaisesRegex(ValueError, "Overlapping landing"):
+            module.import_unloading([row(**source), row(entry_id="second", **dict(source, landing_dates="2023-07-24;2023-07-25"))])
+
+    def test_catch_year_sources_can_precede_landing_and_span_years(self):
+        sources = "https://register.fiskeridir.no/uttrekk/fangstdata_2021.csv.zip ; https://register.fiskeridir.no/uttrekk/fangstdata_2022.csv.zip"
+        base = row(date="2022-01-07", landing_dates="2022-01-07", landing_boat_id="123",
+                   landing_municipality="ÅLESUND", landing_source_url=sources,
+                   fish_tonnage_status="landing_reference", fish_tonnes="673.00")
+        data, report = module.import_unloading([base, dict(base, entry_id="second", date="2022-01-06")])
+        entry = data["vessels"][0]["entries"][0]
+        self.assertEqual(report["unloadings"], 1)
+        self.assertEqual(report["includedTonnes"], "673.0")
+        self.assertEqual(len(entry["sourceUrls"]), 2)
+        self.assertEqual(len(entry["periods"]), 2)
+        _, report = module.import_unloading([base, dict(base, entry_id="other-town", landing_municipality="ØRSTA")])
+        self.assertEqual(report["unloadings"], 2)
+
+    def test_unverified_shared_cargo_stays_labelled_and_counts_once(self):
+        base = row(landing_dates="2022-01-07", landing_boat_id="123",
+                   landing_source_url="https://register.fiskeridir.no/uttrekk/fangstdata_2021.csv.zip",
+                   fish_tonnage_status="unverified_reference", public_note="Mengden er uavklart.")
+        data, report = module.import_unloading([base, dict(base, entry_id="second", date="2025-01-03")])
+        entry = data["vessels"][0]["entries"][0]
+        self.assertEqual(report["includedTonnes"], "120.25")
+        self.assertEqual(entry["tonnageKind"], "unverified")
+        self.assertEqual(len(entry["periods"]), 2)
+        self.assertEqual(entry["description"], "Mengden er uavklart.")
 
     def test_bad_dates_and_non_finite_weights_fail(self):
         for values in [{"date": ""}, {"end_date": "2024-01-01"}, {"fish_tonnes": "NaN"}, {"fish_tonnes": "-10"}]:
@@ -131,8 +191,9 @@ class VesselImportTests(unittest.TestCase):
                 if entry["tonnageKind"] == "estimated" and entry["tonnes"] is not None:
                     self.assertTrue(entry["includeInTotal"])
                 for url in entry["sourceUrls"]:
-                    self.assertNotIn(url, sources, "The same landing must not be counted twice")
-                    sources.add(url)
+                    if url.startswith("https://fangstdata.no/"):
+                        self.assertNotIn(url, sources, "The same landing must not be counted twice")
+                        sources.add(url)
 
 
 if __name__ == "__main__":

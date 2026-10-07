@@ -32,6 +32,16 @@ fields are exported; payroll, employee details, email metadata, original OCR tex
 and local file paths are never copied. The Excel workbook was cross-checked
 against the supplied CSV by stable entry ID, boat name and tonnes for the first import.
 
+The October 2026 original-data review supersedes the September mail audit. The
+current private input is `PDFTabelizer/output/audit-20261007/work-history-publication.csv`
+in the parent workspace. `PDFTabelizer/tools/prepare-october-publication.py` creates
+it from the preserved source export, reviewed corrections and original-data audit.
+It checks the original export hash and retains unresolved quantities explicitly.
+Import this publication CSV, not either earlier export.
+The original mailbox, timesheets, workbook, evidence snapshots and full audit
+report remain outside this repository. See `mail-audit-20260923.md` for the public
+historical review. See `original-data-audit-20261007.md` for the current changes and limits.
+
 Rules:
 
 - Each documented landing is one unloading. Multiple work rows linked to the
@@ -44,6 +54,8 @@ Rules:
 - Fangstdata vessel IDs and unambiguous name aliases already present in the
   source join spelling variants. No fuzzy name matching is performed. Unresolved
   names remain as supplied; an ID is a Fangstdata ID, not an IMO number.
+  Uppercase and lowercase variants are the same name, including canonical
+  reference names. Distinct vessel IDs still remain separate.
 - The owner-confirmed split in `unloading-splits.json` replaces the combined
   Bjørnhaug / Bautar row on 2025-09-29 with Bautar (85 tonnes) and Bjørkhaug
   (225 tonnes), both on the same date. Bautar joins its existing vessel history.
@@ -54,6 +66,16 @@ Rules:
 - Stable entry IDs, dates, status values and conflicting weights are checked
   before writing. Partially overlapping landing references require review rather
   than being counted twice. A failed import leaves the existing output intact.
+- Annual Fiskeridirektoratet dataset citations use vessel ID, municipality and landing dates
+  as their distinct cargo keys. Reusing the same annual download URL does not
+  merge unrelated landings. Catch year can precede landing year, and one cargo
+  can cite several annual files. Missing identities and overlapping cargo groups
+  fail validation. Unresolved reference quantities retain their cargo grouping
+  and display as `Uavklart mengde`; they are not registered product weights.
+- Only the separately reviewed `public_note` is exported as an unloading
+  description. Raw payroll descriptions remain private. Work dates are kept
+  separate from registered landing dates, and material quantity differences
+  are explained without treating a register match as proof of personal volume.
 
 ## Adding engineering jobs
 

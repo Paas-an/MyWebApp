@@ -3,6 +3,8 @@
 `/vessels` uses one shared list component for engineering and unloading. The Info
 switch shows summaries beneath boat names and a total-tonnage badge above the
 unloading list. Totals include estimates, which remain labelled in the history.
+Engineering history shows dates only; work descriptions are neither displayed
+nor exported to the public JSON. Source workbook notes remain intact.
 Each boat independently
 opens its history. Both lists stay in Norwegian alphabetical order (A–Å).
 
@@ -105,7 +107,7 @@ JSON together in version control. The workbook is outside `wwwroot`; only the
 selected public columns become website data. Excel's temporary `~$` files are ignored.
 
 - Boat names and dates are required. Empty rows are ignored. Missing descriptions
-  display as `Ikke registrert`. Invalid dates or incomplete identities stop the
+  are allowed; descriptions are never exported. Invalid dates or incomplete identities stop the
   import before replacing the existing history.
 - `dato` accepts an Excel date, `YYYY-MM-DD`, or a continuous period such as
   `2026-06-22 2026-06-26`. A period counts as one visit.
@@ -146,7 +148,7 @@ Engineering history uses the same JSON schema as unloading, with no tonnage:
       "tonnes": null,
       "tonnageKind": null,
       "includeInTotal": false,
-      "description": "Actual work performed",
+      "description": null,
       "sourceUrls": []
     }]
   }]

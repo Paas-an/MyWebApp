@@ -73,11 +73,14 @@
                             <p class="vessel-note">@vessel.Note</p>
                         }
                         <table>
-                            <caption>@(IsUnloading ? "Lossehistorikk" : "Utført arbeid") · @vessel.Name</caption>
+                            <caption>@(IsUnloading ? "Lossehistorikk" : "Oppdragshistorikk") · @vessel.Name</caption>
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
-                                    <th scope="col" class="@(IsUnloading ? "vessel-tonnes" : "")">@(IsUnloading ? "" : "Arbeidsbeskrivelse")</th>
+                                    @if (IsUnloading)
+                                    {
+                                        <th scope="col" class="vessel-tonnes"></th>
+                                    }
                                 </tr>
                             </thead>
                             <tbody>
@@ -104,10 +107,6 @@
                                                     <a class="vessel-source" href="@url" target="_blank" rel="noopener noreferrer">@(url.StartsWith("https://register.fiskeridir.no/", StringComparison.Ordinal) ? "Fiskeridirektoratet · CSV/ZIP" : "Fangstdata")</a>
                                                 }
                                             </td>
-                                        }
-                                        else
-                                        {
-                                            <td>@(string.IsNullOrWhiteSpace(entry.Description) ? "Ikke registrert" : entry.Description)</td>
                                         }
                                     </tr>
                                 }

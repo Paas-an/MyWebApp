@@ -113,7 +113,6 @@ def import_engineering(rows, date_fixes=None):
             periods = parse_periods(raw_date)
         except ValueError as error:
             raise ValueError(f"{location}: {error}") from error
-        description = text(row.get("info")) or None
         if not periods:
             raise ValueError(f"{location}: dato is required for each visit")
         source_id = text(row.get("id"))
@@ -127,10 +126,9 @@ def import_engineering(rows, date_fixes=None):
         })
         vessel["entries"].append({
             "id": entry_id, "periods": periods, "tonnes": None, "tonnageKind": None,
-            "includeInTotal": False, "description": description, "sourceUrls": [],
+            # Work descriptions stay in the source records, not the public website.
+            "includeInTotal": False, "description": None, "sourceUrls": [],
         })
-        if not description:
-            warnings.append(f"{location}: description not registered")
     if not vessels:
         raise ValueError("No visits found; existing history was not replaced")
     for vessel in vessels.values():

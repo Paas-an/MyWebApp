@@ -25,14 +25,14 @@ class EngineeringImportTests(unittest.TestCase):
         entries = data["vessels"][0]["entries"]
         self.assertEqual(entries[0]["periods"], [{"start": "2026-09-15", "end": None}])
         self.assertEqual(entries[1]["periods"], [{"start": "2026-06-22", "end": "2026-06-26"}])
-        self.assertEqual(entries[1]["description"], "Kamera og REM")
+        self.assertTrue(all(entry["description"] is None for entry in entries))
 
-    def test_missing_dates_are_rejected_and_missing_descriptions_stay_unknown(self):
+    def test_missing_dates_are_rejected_and_descriptions_are_not_required(self):
         with self.assertRaisesRegex(ValueError, "dato is required"):
             module.import_engineering([row(day=None)])
         data, report = module.import_engineering([row(description=None)])
         self.assertIsNone(data["vessels"][0]["entries"][0]["description"])
-        self.assertEqual(len(report["warnings"]), 1)
+        self.assertEqual(report["warnings"], [])
 
     def test_image_dates_create_distinct_visits_without_exporting_image_contents(self):
         records = [{"boat": "MV Atlantic", "dates": ["2026-06-17", "2026-07-09"]}]
@@ -84,9 +84,10 @@ class EngineeringImportTests(unittest.TestCase):
             module.import_engineering([row(id="visit-1"), row(name="Another boat", id="visit-1")])
 
     def test_exports_only_public_columns_and_keeps_prefixes(self):
-        data, _ = module.import_engineering([row(name="MS Freøy viking", private="NOT FOR EXPORT")])
+        data, _ = module.import_engineering([row(name="MS Freøy viking", description="PRIVATE WORK DETAILS", private="NOT FOR EXPORT")])
         self.assertEqual(data["vessels"][0]["name"], "MS Freøy Viking")
         self.assertNotIn("NOT FOR EXPORT", str(data))
+        self.assertNotIn("PRIVATE WORK DETAILS", str(data))
 
 
 if __name__ == "__main__":

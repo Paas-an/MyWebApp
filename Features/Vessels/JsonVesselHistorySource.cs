@@ -25,7 +25,10 @@ public sealed class JsonVesselHistorySource(HttpClient http) : IVesselHistorySou
             foreach (var entry in vessel.Entries)
             {
                 if (entry is null || string.IsNullOrWhiteSpace(entry.Id) || !entryIds.Add(entry.Id)
-                    || entry.Periods is null || entry.Periods.Count == 0 || entry.SourceUrls is null
+                    || entry.Periods is null || entry.SourceUrls is null
+                    || (entry.DateUnknown
+                        ? category != "engineering" || entry.Periods.Count != 0
+                        : entry.Periods.Count == 0)
                     || entry.Periods.Any(period => period is null || period.Start == default || period.End < period.Start)
                     || entry.Tonnes < 0 || (entry.IncludeInTotal && entry.Tonnes is null))
                     throw new InvalidDataException("Invalid work history entry.");

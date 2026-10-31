@@ -52,6 +52,33 @@ class EngineeringImportTests(unittest.TestCase):
         self.assertIsNone(entry["tonnes"])
         self.assertFalse(entry["includeInTotal"])
 
+    def test_confirmed_undated_visit_counts_once_and_keeps_id_when_dated(self):
+        undated = row(day=None, dateUnknown=True, id="confirmed-visit")
+        data, report = module.import_engineering([undated, row()])
+        entries = data["vessels"][0]["entries"]
+        self.assertEqual(report["visits"], 2)
+        self.assertEqual(entries[-1]["periods"], [])
+        self.assertTrue(entries[-1]["dateUnknown"])
+        dated, _ = module.import_engineering([dict(undated, dato="2026-09-16", dateUnknown=False)])
+        self.assertEqual(entries[-1]["id"], dated["vessels"][0]["entries"][0]["id"])
+        for invalid in (row(day=None, dateUnknown=True),
+                        row(dateUnknown=True, id="contradictory"),
+                        row(day=None, dateUnknown="true", id="not-a-boolean")):
+            with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                module.import_engineering([invalid])
+
+    def test_reviewed_period_correction_requires_one_visit_and_preserves_workbook_rows(self):
+        original = row(name="Benjaco")
+        correction = {"boat": "Benjaco", "originalDate": "2026-09-15",
+                      "correctedDate": "2026-09-15 2026-09-16"}
+        corrected = module.apply_visit_corrections([original], [correction])
+        self.assertEqual(original["dato"], "2026-09-15")
+        self.assertEqual(corrected[0]["dato"], correction["correctedDate"])
+        self.assertEqual(module.apply_visit_corrections(corrected, [correction]), corrected)
+        for rows in ([], [original, original]):
+            with self.subTest(rows=rows), self.assertRaisesRegex(ValueError, "Review visit correction"):
+                module.apply_visit_corrections(rows, [correction])
+
     def test_requires_explicit_correction_for_malformed_dates(self):
         with self.assertRaisesRegex(ValueError, "Invalid date"):
             module.import_engineering([row(day="202608-25")])

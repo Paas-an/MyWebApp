@@ -93,6 +93,23 @@ def expand_image_dates(rows, records):
     return rows
 
 
+def apply_visit_corrections(rows, corrections):
+    """Apply reviewed period corrections without modifying the source workbook."""
+    rows = [dict(row) for row in rows]
+    for correction in corrections:
+        original = parse_periods(correction["originalDate"])
+        corrected = parse_periods(correction["correctedDate"])
+        if not original or not corrected:
+            raise ValueError("Visit corrections require both original and corrected dates")
+        matching = [row for row in rows
+                    if text(row.get("båt")).casefold() == text(correction["boat"]).casefold()
+                    and parse_periods(row.get("dato")) in (original, corrected)]
+        if len(matching) != 1:
+            raise ValueError(f"Review visit correction for {correction['boat']}: expected one matching visit")
+        matching[0]["dato"] = correction["correctedDate"]
+    return rows
+
+
 def import_engineering(rows, date_fixes=None):
     date_fixes = date_fixes or {}
     vessels = {}
@@ -113,9 +130,12 @@ def import_engineering(rows, date_fixes=None):
             periods = parse_periods(raw_date)
         except ValueError as error:
             raise ValueError(f"{location}: {error}") from error
-        if not periods:
-            raise ValueError(f"{location}: dato is required for each visit")
+        date_unknown = row.get("dateUnknown") is True
         source_id = text(row.get("id"))
+        if date_unknown and (periods or not source_id):
+            raise ValueError(f"{location}: an undated visit requires a stable id and no date")
+        if not periods and not date_unknown:
+            raise ValueError(f"{location}: dato is required for each visit")
         identity = "id:" + source_id if source_id else "visit:" + json.dumps([key, periods], sort_keys=True)
         entry_id = identifier("engineering-job", identity)
         if entry_id in entry_ids:
@@ -126,6 +146,7 @@ def import_engineering(rows, date_fixes=None):
         })
         vessel["entries"].append({
             "id": entry_id, "periods": periods, "tonnes": None, "tonnageKind": None,
+            **({"dateUnknown": True} if date_unknown else {}),
             # Work descriptions stay in the source records, not the public website.
             "includeInTotal": False, "description": None, "sourceUrls": [],
         })
@@ -133,7 +154,7 @@ def import_engineering(rows, date_fixes=None):
         raise ValueError("No visits found; existing history was not replaced")
     for vessel in vessels.values():
         vessel["entries"].sort(key=lambda entry: (
-            entry["periods"][0]["start"], entry["id"]), reverse=True)
+            entry["periods"][0]["start"] if entry["periods"] else "", entry["id"]), reverse=True)
     data = {"schemaVersion": 1, "category": "engineering",
             "vessels": sorted(vessels.values(), key=lambda vessel: vessel["name"].casefold())}
     return data, {"vessels": len(vessels), "visits": len(entry_ids), "warnings": warnings}
@@ -145,7 +166,7 @@ def main():
     parser.add_argument("--sheet", help="Sheet name; defaults to the first worksheet")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--notes", type=Path, default=DEFAULT_NOTES,
-                        help="Reviewed date corrections and visits transcribed from source images")
+                        help="Reviewed date corrections, image dates and additional confirmed visits")
     parser.add_argument("--date-fix", action="append", default=[], metavar="OLD=YYYY-MM-DD",
                         help="Explicitly correct a source typo without editing the workbook")
     args = parser.parse_args()
@@ -159,6 +180,8 @@ def main():
             parse_periods(new)
             fixes[old] = new
         rows = expand_image_dates(read_rows(args.source, args.sheet), notes.get("imageVisits", []))
+        rows = apply_visit_corrections(rows, notes.get("visitCorrections", []))
+        rows.extend(notes.get("additionalVisits", []))
         data, report = import_engineering(rows, fixes)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

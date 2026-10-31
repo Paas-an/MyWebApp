@@ -84,13 +84,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var entry in vessel.Entries.OrderByDescending(entry => entry.Periods.Max(period => period.Start)))
+                                @foreach (var entry in vessel.Entries.OrderBy(entry => entry.DateUnknown)
+                                    .ThenByDescending(entry => entry.Periods.Select(period => period.Start).DefaultIfEmpty(DateOnly.MinValue).Max()))
                                 {
                                     <tr @key="entry.Id">
                                         <td>
-                                            @foreach (var period in entry.Periods.OrderByDescending(period => period.Start))
+                                            @if (!IsUnloading && entry.DateUnknown)
                                             {
-                                                <span class="vessel-period">@period.Display</span>
+                                                <span class="vessel-period">Dato ikke registrert</span>
+                                            }
+                                            else
+                                            {
+                                                @foreach (var period in entry.Periods.OrderByDescending(period => period.Start))
+                                                {
+                                                    <span class="vessel-period">@period.Display</span>
+                                                }
                                             }
                                             @if (IsUnloading && !string.IsNullOrWhiteSpace(entry.Description))
                                             {

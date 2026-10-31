@@ -30,6 +30,7 @@ public sealed class VesselEntry
 {
     public string Id { get; init; } = "";
     public List<WorkPeriod> Periods { get; init; } = [];
+    public bool DateUnknown { get; init; }
     public decimal? Tonnes { get; init; }
     public string? TonnageKind { get; init; }
     public bool IncludeInTotal { get; init; }

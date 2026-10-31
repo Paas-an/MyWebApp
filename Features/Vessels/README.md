@@ -109,6 +109,21 @@ selected public columns become website data. Excel's temporary `~$` files are ig
 - Boat names and dates are required. Empty rows are ignored. Missing descriptions
   are allowed; descriptions are never exported. Invalid dates or incomplete identities stop the
   import before replacing the existing history.
+- Additional owner-confirmed visits from the October 2026 screenshots are kept
+  in `engineering-import-notes.json` under `additionalVisits`. Screenshot rows
+  already present in Excel are omitted to avoid double-counting. The shared
+  Bømmelbas / Elisabeth trip records one visit to each boat. `visitCorrections`
+  extends Benjaco's existing September visit through 16 September.
+- Meløyfjord, Havstål and Nybo each have one confirmed assignment with no
+  supplied date. Only explicitly marked `dateUnknown: true` records with a stable
+  `id` may omit the date. These export with empty `periods`, count as assignments,
+  and display "Dato ikke registrert". Ordinary missing workbook dates still fail
+  validation. To date one later, retain its `id`, add `dato`, and remove
+  `dateUnknown`. Run `python scripts/import_engineering_history.py` and commit
+  both the notes and generated `wwwroot/data/vessels/engineering.json` before
+  merging; editing the notes alone does not change the website. When moving a
+  supplemental visit into Excel, remove its matching notes record in the same
+  update; duplicates are rejected by the importer.
 - `dato` accepts an Excel date, `YYYY-MM-DD`, or a continuous period such as
   `2026-06-22 2026-06-26`. A period counts as one visit.
 - Repeat the same boat name on a new row for each visit. Capitalization and extra

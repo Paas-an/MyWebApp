@@ -29,10 +29,107 @@
       "note": null,
       "entries": [
         {
-          "id": "engineering-job-42f68c19aee57e744f15",
+          "id": "engineering-job-456a958c878df5386ab8",
           "periods": [
             {
               "start": "2026-09-15",
+              "end": "2026-09-16"
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-64310036ad20a68944d9",
+      "name": "Havstål",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-b6866af2c14e8a0d6ce8",
+          "periods": [],
+          "tonnes": null,
+          "tonnageKind": null,
+          "dateUnknown": true,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-55b9a2321aab09887d27",
+      "name": "Meløyfjord",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-0ce12ce2bd53c409c31a",
+          "periods": [],
+          "tonnes": null,
+          "tonnageKind": null,
+          "dateUnknown": true,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-d41c5844260f1b11b77e",
+      "name": "MS Bømmelbas",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-2b8ea1213c7353d30570",
+          "periods": [
+            {
+              "start": "2026-10-14",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-2993a75452b61ede74f3",
+      "name": "MS Edna Synnøve",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-111c6fb6fc0b4752d247",
+          "periods": [
+            {
+              "start": "2026-10-06",
+              "end": "2026-10-07"
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-9d03f1141377950055e0",
+      "name": "MS Elisabeth",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-054c54e317f4a0446189",
+          "periods": [
+            {
+              "start": "2026-10-14",
               "end": null
             }
           ],
@@ -66,10 +163,136 @@
       ]
     },
     {
+      "id": "engineering-vessel-efb832bb72d2e2665d91",
+      "name": "MS Frohav",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-1275204e867fc280f47b",
+          "periods": [
+            {
+              "start": "2026-09-22",
+              "end": "2026-09-24"
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-f5e5d6213da2e6114795",
+      "name": "MS Krossfjord",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-83636edf69ebf1583e97",
+          "periods": [
+            {
+              "start": "2026-10-08",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-69110c9b96fb0b38b44f",
+      "name": "MS Midsund",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-799929b74743fe229f8f",
+          "periods": [
+            {
+              "start": "2026-10-09",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "engineering-job-e248ed06d8971781f307",
+          "periods": [
+            {
+              "start": "2026-09-25",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-898c444689911894675f",
+      "name": "MS Ola Ryggefjord",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-9f29d33f67c96a4f4a2d",
+          "periods": [
+            {
+              "start": "2026-10-09",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
       "id": "engineering-vessel-036470f1126a272f4aa8",
       "name": "MV Atlantic",
       "note": null,
       "entries": [
+        {
+          "id": "engineering-job-6367255fb18119a4c331",
+          "periods": [
+            {
+              "start": "2026-10-15",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        },
+        {
+          "id": "engineering-job-42dfd0eaafef9ae0f62e",
+          "periods": [
+            {
+              "start": "2026-09-02",
+              "end": null
+            }
+          ],
+          "tonnes": null,
+          "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        },
         {
           "id": "engineering-job-3dbdd2fbf046a3ca78cf",
           "periods": [
@@ -157,6 +380,23 @@
           ],
           "tonnes": null,
           "tonnageKind": null,
+          "includeInTotal": false,
+          "description": null,
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "id": "engineering-vessel-84d3c7483fb2eaaaeb8c",
+      "name": "Nybo",
+      "note": null,
+      "entries": [
+        {
+          "id": "engineering-job-6814a97bd3b11610ff90",
+          "periods": [],
+          "tonnes": null,
+          "tonnageKind": null,
+          "dateUnknown": true,
           "includeInTotal": false,
           "description": null,
           "sourceUrls": []

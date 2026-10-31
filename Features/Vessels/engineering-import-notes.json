@@ -14,5 +14,27 @@
         "2026-08-07"
       ]
     }
+  ],
+  "visitCorrections": [
+    {
+      "boat": "Benjaco",
+      "originalDate": "2026-09-15",
+      "correctedDate": "2026-09-15 2026-09-16"
+    }
+  ],
+  "additionalVisits": [
+    { "båt": "MV Atlantic", "dato": "2026-09-02" },
+    { "båt": "MV Atlantic", "dato": "2026-10-15" },
+    { "båt": "MS Bømmelbas", "dato": "2026-10-14" },
+    { "båt": "MS Elisabeth", "dato": "2026-10-14" },
+    { "båt": "MS Midsund", "dato": "2026-09-25" },
+    { "båt": "MS Midsund", "dato": "2026-10-09" },
+    { "båt": "MS Krossfjord", "dato": "2026-10-08" },
+    { "båt": "MS Ola Ryggefjord", "dato": "2026-10-09" },
+    { "båt": "MS Edna Synnøve", "dato": "2026-10-06 2026-10-07" },
+    { "båt": "MS Frohav", "dato": "2026-09-22 2026-09-24" },
+    { "båt": "Meløyfjord", "dateUnknown": true, "id": "meloyfjord-confirmed-undated-1" },
+    { "båt": "Havstål", "dateUnknown": true, "id": "havstal-confirmed-undated-1" },
+    { "båt": "Nybo", "dateUnknown": true, "id": "nybo-confirmed-undated-1" }
   ]
 }

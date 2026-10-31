@@ -137,10 +137,8 @@
     [Parameter] public string EmptyMessage { get; set; } = "Ingen oppdrag er registrert ennå.";
     [Parameter, EditorRequired] public IReadOnlyList<Vessel> Vessels { get; set; } = [];
     [Parameter] public bool ShowInfo { get; set; }
-    [Parameter] public bool SortDescending { get; set; }
 
     private readonly HashSet<string> openVessels = [];
-    // Presentation-only accent; the history and imported data stay independent.
     private const string PinkGlowVesselId = "fangstdata-2013062792";
     private static readonly CultureInfo Norwegian = CultureInfo.GetCultureInfo("nb-NO");
     private static readonly StringComparer NameComparer = StringComparer.Create(Norwegian, true);
@@ -149,9 +147,7 @@
     private decimal? TotalTonnes => Vessels.Any(vessel => vessel.TotalTonnes.HasValue)
         ? Vessels.Sum(vessel => vessel.TotalTonnes ?? 0)
         : null;
-    private IEnumerable<Vessel> SortedVessels => SortDescending
-        ? Vessels.OrderByDescending(vessel => vessel.Name, NameComparer)
-        : Vessels.OrderBy(vessel => vessel.Name, NameComparer);
+    private IEnumerable<Vessel> SortedVessels => Vessels.OrderBy(vessel => vessel.Name, NameComparer);
 
     private void Toggle(string id)
     {

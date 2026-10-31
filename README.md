@@ -1,22 +1,13 @@
 # MyWebApp
 
-A personal contact and portfolio site built with Blazor WebAssembly and deployed
-to Azure Static Web Apps.
+Personal portfolio built with Blazor WebAssembly and hosted on Azure Static Web Apps.
 
 ## Requirements
 
-- .NET 10 SDK
-
-The repository includes `global.json` to select the supported SDK.
-
-## Vessel history
-
-The `/vessels` page shows engineering work and unloading history with shared
-name sorting and an Info switch. Each vessel opens its own dated history.
-Data is served as static JSON; no additional container or database is required.
-See [the vessel module guide](Features/Vessels/README.md) for the data format,
-CSV refresh command and validation checks. The importer uses Python 3 with no
-additional packages.
+- .NET 10 SDK, selected by `global.json`.
+- Python 3 for vessel imports and import tests.
+- `openpyxl` for the engineering Excel importer:
+  `python -m pip install -r scripts/requirements-engineering.txt`.
 
 ## Local development
 
@@ -25,9 +16,11 @@ dotnet restore
 dotnet run
 ```
 
-## Validate a release
+## Release checks
 
 ```powershell
+python -m unittest discover -s tests -p "test_*.py"
+pwsh -NoProfile -File ./tests/SiteContracts.ps1
 dotnet restore
 dotnet build --configuration Release --no-restore
 dotnet publish --configuration Release --no-build
@@ -35,87 +28,26 @@ pwsh -NoProfile -File ./scripts/PublishSeo.ps1 -PublishedRoot ./bin/Release/net1
 pwsh -NoProfile -File ./tests/SeoMetadata.ps1 -PublishedRoot ./bin/Release/net10.0/publish/wwwroot
 ```
 
-The published static site is written to
-`bin/Release/net10.0/publish/wwwroot`.
+The published site is in `bin/Release/net10.0/publish/wwwroot`.
+Check `/`, `/contact`, `/vessels` and `/thea` on desktop and mobile before release.
 
-## Deployment
+## Deployment and monitoring
 
-Pushes to `main` and pull requests targeting `main` are validated by GitHub
-Actions. Successful builds are deployed to Azure Static Web Apps. The
-`AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_SAND_0CAAD6B03` repository secret must be
-configured for deployment.
+GitHub Actions validates pull requests and publishes changes merged into `main`.
+Deployment uses the repository secret
+`AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_SAND_0CAAD6B03`.
+The production monitor checks public routes after deployment and every six hours.
 
-## Site contracts and monitoring
+`PublishSeo.ps1` generates initial HTML metadata for the home, contact and vessel
+routes. `wwwroot/js/seo-bootstrap.js` hands metadata ownership to Blazor during
+startup; both are part of the deployment.
 
-Run the lightweight SEO and routing contract checks with:
+Cloudflare Web Analytics is configured in `wwwroot/index.html`.
+Reports for `www.olsenjonas.no` are available in the Cloudflare Web Analytics dashboard.
 
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./tests/SiteContracts.ps1
-```
+## Data and design
 
-GitHub Actions checks the production routes after each deployment and every six
-hours. The scheduled workflow only performs HTTP availability checks and does
-not add client-side tracking or collect visitor data.
-
-## Visitor analytics
-
-Cloudflare Web Analytics is loaded once from `wwwroot/index.html` using the
-site's public beacon token. `PublishSeo.ps1` also includes the snippet in the
-generated page HTML shells. Cloudflare's default SPA measurement
-tracks client-side navigation; no extra Blazor page-view handler is needed.
-
-View the site's reports in **Cloudflare dashboard > Web Analytics** for
-`www.olsenjonas.no`. Reports include aggregate visits, page views, popular
-paths, and browser performance. Visits are not a count of unique people or
-identified user sessions. This snippet does not provide application exception
-monitoring; the existing availability workflow remains responsible for HTTP
-uptime checks.
-
-After deployment, visit the production site, navigate to Contact, and switch
-tabs to allow the beacon to send its final measurements. In browser developer
-tools, check that `beacon.min.js` loads and requests to
-`https://cloudflareinsights.com/cdn-cgi/rum` succeed, then allow a few minutes
-for the dashboard to update. The configured Cloudflare hostname must match
-the visited site; localhost and Azure preview hostnames may be rejected.
-Ad blockers can prevent measurement, and historical visits are not backfilled.
-
-See Cloudflare's [manual setup](https://developers.cloudflare.com/web-analytics/get-started/)
-and [SPA measurement](https://developers.cloudflare.com/web-analytics/get-started/web-analytics-spa/)
-documentation.
-
-## SEO and link previews
-
-Run the two PowerShell 7 commands above after `dotnet publish`. CI does this
-automatically. `PublishSeo.ps1` copies the literal `PageTitle` and `HeadContent`
-from the home, contact and vessels Razor pages into the published HTML shells. Azure serves
-`contact.html` for `/contact` and `vessels.html` for `/vessels`. This makes each route's
-title, description and canonical URL available to crawlers that do not execute
-JavaScript. This is metadata generation, not prerendering of the visible page.
-
-`seo-bootstrap.js` removes only the generated route tags before Blazor starts;
-`HeadOutlet` then owns them during client navigation. The shared Open Graph
-image, Twitter large-image card and Schema.org `Person` JSON-LD remain in the
-HTML head. The person record uses only the name, role and profile links already
-published on the site; it does not claim eligibility for Google rich results.
-
-The shared 1200 x 630 PNG is `wwwroot/images/social-card.png`; its editable vector
-source is `assets/social-card.svg`. If the design changes, export the SVG to a
-PNG at the same dimensions and update both files. The card deliberately uses
-typography and the existing site colours rather than personal photographs.
-
-### Search Console after merging
-
-1. Open [Google Search Console](https://search.google.com/search-console/) and
-   add the Domain property `olsenjonas.no` (or use the existing property).
-2. Verify ownership using the DNS TXT record supplied by Google at the domain's
-   DNS provider. Keep that record after verification. No account credentials or
-   verification values belong in this repository.
-3. Submit `https://www.olsenjonas.no/sitemap.xml` in Sitemaps.
-4. Inspect `https://www.olsenjonas.no/` and `https://www.olsenjonas.no/contact`,
-   run the live URL test and request indexing if needed. These steps require
-   the site owner's Google account and are not performed by the deployment.
-5. After deployment, check both URLs in a link-preview inspector (for example
-   LinkedIn Post Inspector) to refresh old cached previews.
-
-Google documents [site ownership and sitemap submission](https://developers.google.com/search/docs/monitor-debug/search-console-start).
-Submitting a sitemap helps discovery but does not guarantee indexing.
+See [vessel data](Features/Vessels/README.md) for imports and date updates.
+Global styles are in `wwwroot/css/app.css`; component styles sit beside their
+Razor files. The editable sharing-card design is `assets/social-card.svg`, with
+its published PNG in `wwwroot/images/social-card.png`.

@@ -5,7 +5,6 @@
   "imageVisits": [
     {
       "boat": "MV Atlantic",
-      "description": "Kabling av SSAS",
       "dates": [
         "2026-06-17",
         "2026-07-09",
@@ -35,6 +34,6 @@
     { "båt": "MS Frohav", "dato": "2026-09-22 2026-09-24" },
     { "båt": "Meløyfjord", "dato": "2026-10-09" },
     { "båt": "Havstål", "dato": "2026-08-01" },
-    { "båt": "Nybo",  "dato": "2026-10-29" }
+    { "båt": "Nybo", "dato": "2026-10-29" }
   ]
 }

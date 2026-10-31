@@ -50,11 +50,15 @@
       "note": null,
       "entries": [
         {
-          "id": "engineering-job-b6866af2c14e8a0d6ce8",
-          "periods": [],
+          "id": "engineering-job-bb5e50e8070854121430",
+          "periods": [
+            {
+              "start": "2026-08-01",
+              "end": null
+            }
+          ],
           "tonnes": null,
           "tonnageKind": null,
-          "dateUnknown": true,
           "includeInTotal": false,
           "description": null,
           "sourceUrls": []
@@ -67,11 +71,15 @@
       "note": null,
       "entries": [
         {
-          "id": "engineering-job-0ce12ce2bd53c409c31a",
-          "periods": [],
+          "id": "engineering-job-020b9e9e132c03725d90",
+          "periods": [
+            {
+              "start": "2026-10-09",
+              "end": null
+            }
+          ],
           "tonnes": null,
           "tonnageKind": null,
-          "dateUnknown": true,
           "includeInTotal": false,
           "description": null,
           "sourceUrls": []
@@ -392,11 +400,15 @@
       "note": null,
       "entries": [
         {
-          "id": "engineering-job-6814a97bd3b11610ff90",
-          "periods": [],
+          "id": "engineering-job-24d84cdbc0b97d83197a",
+          "periods": [
+            {
+              "start": "2026-10-29",
+              "end": null
+            }
+          ],
           "tonnes": null,
           "tonnageKind": null,
-          "dateUnknown": true,
           "includeInTotal": false,
           "description": null,
           "sourceUrls": []

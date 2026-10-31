@@ -46,7 +46,6 @@ def parse_periods(value):
 
 
 def read_rows(source, sheet_name=None):
-    # Only the import command needs openpyxl; rule tests use the standard library.
     try:
         from openpyxl import load_workbook
     except ImportError as error:
@@ -88,8 +87,7 @@ def expand_image_dates(rows, records):
             raise ValueError(f"Review image dates for {record['boat']}: expected one undated workbook row")
         index = matching[0]
         original = rows[index]
-        description = text(original.get("info")) or record.get("description")
-        rows[index:index + 1] = [dict(original, dato=value, info=description) for value in record["dates"]]
+        rows[index:index + 1] = [dict(original, dato=value) for value in record["dates"]]
     return rows
 
 

@@ -30,17 +30,13 @@ foreach ($page in $pages) {
         throw "$($page.Source) must contain a literal PageTitle and HeadContent for static SEO publication."
     }
 
-    # Use the page's existing metadata as the single source for both crawlers
-    # and client-side navigation. No separate, hand-maintained contact document.
     $metadata = [regex]::Replace($head.Groups[1].Value.Trim(), '<(meta|link)\b', '<$1 data-initial-seo')
     $html = $template.Replace("<!-- PAGE_METADATA -->", $metadata)
     $html = $html.Replace('<title>Jonas Skogtrø Olsen</title>', "<title>$($title.Groups[1].Value)</title>")
     $destination = Join-Path $publishedDirectory $page.Output
     [IO.File]::WriteAllText($destination, $html, $utf8)
 
-    # dotnet publish may have compressed the original shell already. Remove
-    # only the stale variants of these generated files; Azure compresses
-    # the updated HTML responses itself.
+    # Remove stale compressed shells; Azure compresses the updated HTML itself.
     foreach ($extension in @('.br', '.gz')) {
         $compressedFile = "$destination$extension"
         if (Test-Path -LiteralPath $compressedFile -PathType Leaf) {

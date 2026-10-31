@@ -1,197 +1,74 @@
-# Vessel history
+# Vessel data
 
-`/vessels` uses one shared list component for engineering and unloading. The Info
-switch shows summaries beneath boat names and a total-tonnage badge above the
-unloading list. Totals include estimates, which remain labelled in the history.
-Engineering history shows dates only; work descriptions are neither displayed
-nor exported to the public JSON. Source workbook notes remain intact.
-Each boat independently
-opens its history. Both lists stay in Norwegian alphabetical order (A–Å).
+`/vessels` reads `wwwroot/data/vessels/engineering.json` and `unloading.json`.
+`VesselHistory.cs` defines the shared public format. Engineering descriptions
+remain in the source workbook and are not exported or displayed.
 
-Each list scrolls within a height of `26rem` (about six collapsed rows), capped
-at 65% of the viewport height on shorter screens. Adjust `--vessel-list-max-height`
-in `VesselList.razor.css` to change the size. Opening a boat keeps its dated history
-inside the same scrolling area; the heading, total badge and shared controls stay outside it.
+## Engineering history
 
-`IVesselHistorySource` separates data access from the page and list. The initial
-implementation reads static JSON. A later HTTP API can implement the same
-interface without changing the list controls. No backend or Docker runtime is
-required for this MVP.
-
-## Updating unloading history
-
-Use the reviewed, complete CSV export, not an unreviewed OCR export:
+Edit `assets/Enginering table.xlsx` or the `additionalVisits` records in
+`engineering-import-notes.json`, then regenerate the public data:
 
 ```powershell
-python scripts/import_vessel_history.py "path/to/work-history-complete.csv"
-python -m unittest discover -s tests -p "test_*.py"
-```
-
-The importer writes `wwwroot/data/vessels/unloading.json`. Commit that file along
-with any code changes and publish the site normally. The source CSV and Excel
-workbook stay outside the website repository. Only explicitly selected public
-fields are exported; payroll, employee details, email metadata, original OCR text
-and local file paths are never copied. The Excel workbook was cross-checked
-against the supplied CSV by stable entry ID, boat name and tonnes for the first import.
-
-The October 2026 original-data review supersedes the September mail audit. The
-current private input is `PDFTabelizer/output/audit-20261007/work-history-publication.csv`
-in the parent workspace. `PDFTabelizer/tools/prepare-october-publication.py` creates
-it from the preserved source export, reviewed corrections and original-data audit.
-It checks the original export hash and retains unresolved quantities explicitly.
-Import this publication CSV, not either earlier export.
-The original mailbox, timesheets, workbook, evidence snapshots and full audit
-report remain outside this repository. See `mail-audit-20260923.md` for the public
-historical review. See `original-data-audit-20261007.md` for the current changes and limits.
-
-Rules:
-
-- Each documented landing is one unloading. Multiple work rows linked to the
-  same landing retain all distinct work periods but contribute cargo weight once.
-- The supplied `fish_tonnes` is kept at its exported precision. Period averages
-  remain labelled estimates and are included in totals at the owner's request,
-  even when their source `include_in_fish_summary` flag is `no`. Other excluded
-  weights remain excluded. Blank weight is unknown,
-  while zero remains a real value.
-- Fangstdata vessel IDs and unambiguous name aliases already present in the
-  source join spelling variants. No fuzzy name matching is performed. Unresolved
-  names remain as supplied; an ID is a Fangstdata ID, not an IMO number.
-  Uppercase and lowercase variants are the same name, including canonical
-  reference names. Distinct vessel IDs still remain separate.
-- The owner-confirmed split in `unloading-splits.json` replaces the combined
-  Bjørnhaug / Bautar row on 2025-09-29 with Bautar (85 tonnes) and Bjørkhaug
-  (225 tonnes), both on the same date. Bautar joins its existing vessel history.
-  The importer applies this correction automatically while keeping the original
-  CSV and Excel payroll records intact. Edit this file to adjust the allocation;
-  its parts must add up to the original 310 tonnes. If the original row's name,
-  date or weight changes, the importer requires the correction to be reviewed.
-- Stable entry IDs, dates, status values and conflicting weights are checked
-  before writing. Partially overlapping landing references require review rather
-  than being counted twice. A failed import leaves the existing output intact.
-- Annual Fiskeridirektoratet dataset citations use vessel ID, municipality and landing dates
-  as their distinct cargo keys. Reusing the same annual download URL does not
-  merge unrelated landings. Catch year can precede landing year, and one cargo
-  can cite several annual files. Missing identities and overlapping cargo groups
-  fail validation. Unresolved reference quantities retain their cargo grouping
-  and display as `Uavklart mengde`; they are not registered product weights.
-- Only the separately reviewed `public_note` is exported as an unloading
-  description. Raw payroll descriptions remain private. Work dates are kept
-  separate from registered landing dates, and material quantity differences
-  are explained without treating a register match as proof of personal volume.
-
-## Adding engineering jobs
-
-Record visits in `assets/Enginering table.xlsx`, with one row per visit and these
-headers in the first worksheet (leading blank rows and columns are allowed):
-
-| båt | dato | info |
-| --- | --- | --- |
-| Actual vessel name | 2026-09-20 | Actual work performed |
-
-This is a format example, not a real job. Save the workbook in Excel, then run
-these commands from the repository root:
-
-```powershell
-# Install the Excel reader once.
 python -m pip install -r scripts/requirements-engineering.txt
-
-# Import again after saving new visits or edits.
 python scripts/import_engineering_history.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-The importer writes `wwwroot/data/vessels/engineering.json`. Reload the local page
-to see the imported visits; publish the updated JSON normally for the live site.
-Editing Excel alone does not update the website. Keep the workbook and generated
-JSON together in version control. The workbook is outside `wwwroot`; only the
-selected public columns become website data. Excel's temporary `~$` files are ignored.
+Commit the changed source and `wwwroot/data/vessels/engineering.json` together.
+Editing the workbook or notes alone does not update the website.
 
-- Boat names and dates are required. Empty rows are ignored. Missing descriptions
-  are allowed; descriptions are never exported. Invalid dates or incomplete identities stop the
-  import before replacing the existing history.
-- Additional owner-confirmed visits from the October 2026 screenshots are kept
-  in `engineering-import-notes.json` under `additionalVisits`. Screenshot rows
-  already present in Excel are omitted to avoid double-counting. The shared
-  Bømmelbas / Elisabeth trip records one visit to each boat. `visitCorrections`
-  extends Benjaco's existing September visit through 16 September.
-- Meløyfjord, Havstål and Nybo each have one confirmed assignment with no
-  supplied date. Only explicitly marked `dateUnknown: true` records with a stable
-  `id` may omit the date. These export with empty `periods`, count as assignments,
-  and display "Dato ikke registrert". Ordinary missing workbook dates still fail
-  validation. To date one later, retain its `id`, add `dato`, and remove
-  `dateUnknown`. Run `python scripts/import_engineering_history.py` and commit
-  both the notes and generated `wwwroot/data/vessels/engineering.json` before
-  merging; editing the notes alone does not change the website. When moving a
-  supplemental visit into Excel, remove its matching notes record in the same
-  update; duplicates are rejected by the importer.
-- `dato` accepts an Excel date, `YYYY-MM-DD`, or a continuous period such as
-  `2026-06-22 2026-06-26`. A period counts as one visit.
-- Repeat the same boat name on a new row for each visit. Capitalization and extra
-  spaces do not create a second boat. Different spellings remain separate boats.
-- IDs are generated from the boat name and date/period, so row sorting and edits
-  to the work description keep them unchanged. An optional `id` column can hold
-  your own unique visit ID; keep it unchanged when correcting dates. Separate
-  jobs on the same boat and date need distinct IDs to avoid accidental duplicates.
-- `--sheet "Name"` selects another worksheet. `--date-fix OLD=YYYY-MM-DD` explicitly
-  corrects a known typo during import; normally correct the date in Excel.
+- The first worksheet uses `båt`, `dato` and `info` headers; an `id` column is optional.
+  Use `--sheet "Name"` to select another worksheet.
+- `dato` accepts an Excel date, `YYYY-MM-DD`, or `YYYY-MM-DD YYYY-MM-DD` for one
+  continuous visit. A period counts as one assignment.
+- Boat names and dates are required. Blank rows are ignored. Invalid dates,
+  formula cells and duplicate visit IDs stop the import.
+- Names are grouped without case or extra whitespace; different spellings stay
+  separate. Keep an explicit `id` when correcting a visit's date. Separate jobs
+  on the same boat and date require distinct IDs.
+- For an undated confirmed visit, supply `dateUnknown: true` and a stable `id`.
+  It counts as an assignment and displays `Dato ikke registrert`. When the date
+  is known, add `dato`, remove `dateUnknown`, keep `id`, and rerun the importer.
+- Move supplemental visits into Excel by removing their matching notes records
+  in the same update, so they are not counted twice.
 
-The original MV Atlantic row uses dates in an embedded screenshot instead of a
-date cell. `engineering-import-notes.json` contains the five manually checked dates
-from that image and the SSAS cabling description transcribed from the adjacent
-note. The importer expands that undated row into five visits, using the row's
-`info` value if supplied, otherwise the transcribed description. Prices, status fields and other image contents
-are not exported. Keep that one undated row for this historical import; add new
-visits as normal dated rows. To move those five visits into Excel later, add five
-dated rows, remove the old undated row, and remove its image-date record together.
-The same file normalizes the source typo `202608-25` to `2026-08-25` for MV Scotia;
-it leaves the original workbook intact. Correcting the Excel date later works
-without changing the import command.
+The notes also supply dates for MV Atlantic's original undated image row,
+correct MV Scotia's `202608-25` typo, and extend Benjaco's September visit through
+16 September. Keep these overrides until their corresponding workbook rows are
+corrected. The workbook stays outside `wwwroot`.
 
-Engineering history uses the same JSON schema as unloading, with no tonnage:
+## Unloading history
 
-```json
-{
-  "schemaVersion": 1,
-  "category": "engineering",
-  "vessels": [{
-    "id": "stable-vessel-id",
-    "name": "Actual vessel name",
-    "note": null,
-    "entries": [{
-      "id": "stable-job-id",
-      "periods": [{ "start": "2026-09-20", "end": null }],
-      "tonnes": null,
-      "tonnageKind": null,
-      "includeInTotal": false,
-      "description": null,
-      "sourceUrls": []
-    }]
-  }]
-}
-```
-
-This is a format example, not a real job. Dates use ISO `YYYY-MM-DD`, weights are
-JSON numbers in metric tonnes, and IDs remain stable across edits. A boat may
-appear in both files; its engineering and unloading entries remain separate.
-
-The route's SEO shell is generated with the existing `PublishSeo.ps1` workflow,
-and missing `/data/*` URLs return errors instead of the SPA fallback.
-
-## Browser checks
-
-With Playwright available to Node and its Chromium browser installed, start the
-site and run the optional interaction checks from another terminal:
+Use the reviewed publication CSV, not an earlier OCR export. The private source
+CSV is kept outside this repository.
 
 ```powershell
-dotnet run --configuration Release --no-launch-profile --urls http://127.0.0.1:5053
-# In a second terminal:
-node tests/Vessels.browser.cjs
+python scripts/import_vessel_history.py "path/to/work-history-publication.csv"
+python -m unittest discover -s tests -p "test_*.py"
 ```
 
-`VESSELS_BASE_URL` overrides the server URL. `PLAYWRIGHT_CHROMIUM_EXECUTABLE`
-can select an existing Edge or Chrome executable, and `VESSELS_SCREENSHOT_DIR`
-optionally saves desktop and mobile screenshots to an existing directory.
-The checks cover alphabetical order, Info independent of expansion, keyboard use,
-empty and populated engineering lists, mobile overflow, and failed data loads.
-Engineering test records are intercepted in the browser and never saved to the
-public data file.
+Commit the generated `wwwroot/data/vessels/unloading.json` after importing.
+Original emails, payroll records and source workbooks stay outside the website.
+Only selected public fields and reviewed `public_note` values are exported.
+
+- A shared cargo counts once while retaining all distinct work periods.
+  Vessel IDs, landing dates and municipalities identify official references;
+  a shared annual dataset URL does not merge separate landings.
+- Weights use metric tonnes. Blank means unknown; zero is a real value.
+  Estimates are labelled and included in totals. Other excluded weights remain excluded.
+- Unresolved quantities retain the `Uavklart mengde` label. A vessel's registered
+  landing is not necessarily the amount unloaded during one assignment.
+- `unloading-splits.json` holds the confirmed Bautar/Bjørkhaug allocation.
+  Its parts must still add up to the original cargo weight.
+- Duplicate source IDs, invalid periods, overlapping references and conflicting
+  weights fail validation before the output is replaced.
+
+## Display
+
+Both lists use Norwegian alphabetical order. The Info switch shows assignment
+counts and weight summaries. Engineering dates remain separate from unloading
+history, even when a vessel appears in both lists.
+
+`--vessel-list-max-height` in `VesselList.razor.css` controls list height (`26rem`,
+capped at `65vh`). Expanded history stays inside the scrolling area.

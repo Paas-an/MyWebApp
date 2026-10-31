@@ -33,8 +33,9 @@
     { "båt": "MS Ola Ryggefjord", "dato": "2026-10-09" },
     { "båt": "MS Edna Synnøve", "dato": "2026-10-06 2026-10-07" },
     { "båt": "MS Frohav", "dato": "2026-09-22 2026-09-24" },
-    { "båt": "Meløyfjord", "dateUnknown": true, "id": "meloyfjord-confirmed-undated-1" },
-    { "båt": "Havstål", "dateUnknown": true, "id": "havstal-confirmed-undated-1" },
-    { "båt": "Nybo", "dateUnknown": true, "id": "nybo-confirmed-undated-1" }
+    { "båt": "Meløyfjord", "dateUnknown": true, "id": "2026-10-09" },
+    { "båt": "Havstål", "dateUnknown": true, "id": "2026-01-08
+      " },
+    { "båt": "Nybo", "dateUnknown": true, "id": "2026-10-29" }
   ]
 }
